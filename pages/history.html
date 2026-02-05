@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Historie - Claude Dashboard</title>
+  <link rel="stylesheet" href="page-common.css">
+</head>
+<body>
+  <div class="page-container">
+    <!-- Header -->
+    <header class="page-header">
+      <button id="btn-back" class="btn-back">← Zurück</button>
+      <h1>📈 Verbrauchs-Historie</h1>
+    </header>
+
+    <main class="page-content">
+      <!-- Zeitraum -->
+      <section class="card">
+        <h2 class="card-title">Zeitraum</h2>
+        
+        <div class="date-range">
+          <div class="form-group">
+            <label for="date-from">Von</label>
+            <input type="date" id="date-from">
+          </div>
+          <div class="form-group">
+            <label for="date-to">Bis</label>
+            <input type="date" id="date-to">
+          </div>
+          <button id="btn-apply" class="btn-primary">Anwenden</button>
+        </div>
+        
+        <div class="preset-buttons" style="margin-top: 12px;">
+          <button class="btn-preset" data-range="7">7 Tage</button>
+          <button class="btn-preset" data-range="30">30 Tage</button>
+          <button class="btn-preset" data-range="90">90 Tage</button>
+          <button class="btn-preset" data-range="all">Alles</button>
+        </div>
+      </section>
+
+      <!-- Statistiken -->
+      <section class="card">
+        <h2 class="card-title">Verbrauch im Zeitraum</h2>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <div id="stat-total" class="stat-value">0</div>
+            <div class="stat-label">Tokens gesamt</div>
+          </div>
+          <div class="stat-item">
+            <div id="stat-input" class="stat-value">0</div>
+            <div class="stat-label">Input</div>
+          </div>
+          <div class="stat-item">
+            <div id="stat-output" class="stat-value">0</div>
+            <div class="stat-label">Output</div>
+          </div>
+          <div class="stat-item">
+            <div id="stat-days" class="stat-value">0</div>
+            <div class="stat-label">Tage</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Korrektur -->
+      <section class="card">
+        <h2 class="card-title">Korrektur</h2>
+        <p class="hint" style="margin-bottom: 12px;">
+          Falls API-Daten unvollständig sind (z.B. vor Extension-Installation)
+        </p>
+        
+        <div class="form-group">
+          <label for="correction">Token-Korrektur (+/-)</label>
+          <div class="input-with-unit">
+            <input type="number" id="correction" value="0" step="10000">
+            <span class="unit">Tokens</span>
+          </div>
+        </div>
+        
+        <div class="data-info">
+          <span>Korrigierter Gesamtwert:</span>
+          <span id="corrected-total">0</span>
+        </div>
+        
+        <button id="btn-save-correction" class="btn-secondary">Korrektur speichern</button>
+      </section>
+
+      <!-- Tagesverlauf -->
+      <section class="card">
+        <h2 class="card-title">Tagesverlauf</h2>
+        <div id="chart" class="mini-chart">
+          <div class="empty-state">Keine Daten</div>
+        </div>
+      </section>
+
+      <!-- Export -->
+      <section class="card">
+        <button id="btn-export" class="btn-secondary" style="width: 100%;">
+          📥 Als JSON exportieren
+        </button>
+      </section>
+    </main>
+  </div>
+
+  <script src="history.js"></script>
+</body>
+</html>
