@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Themen-Log - Claude Dashboard</title>
+  <link rel="stylesheet" href="page-common.css">
+</head>
+<body>
+  <div class="page-container">
+    <!-- Header -->
+    <header class="page-header">
+      <button id="btn-back" class="btn-back">← Zurück</button>
+      <h1>📝 Themen-Log</h1>
+    </header>
+
+    <main class="page-content">
+      <!-- Info -->
+      <section class="card">
+        <p class="hint" style="margin: 0;">
+          Automatisch erfasst aus Chat-Titeln auf claude.ai
+        </p>
+      </section>
+
+      <!-- Filter -->
+      <section class="card">
+        <div class="form-group" style="margin: 0;">
+          <input type="text" id="filter-input" placeholder="🔍 Themen filtern...">
+        </div>
+      </section>
+
+      <!-- Topic List -->
+      <section class="card" id="topic-container">
+        <div class="empty-state">Keine Themen erfasst</div>
+      </section>
+    </main>
+  </div>
+
+  <script src="topics.js"></script>
+</body>
+</html>

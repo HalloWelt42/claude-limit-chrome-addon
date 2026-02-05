@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Einstellungen - Claude Dashboard</title>
+  <link rel="stylesheet" href="page-common.css">
+</head>
+<body>
+  <div class="page-container">
+    <!-- Header -->
+    <header class="page-header">
+      <button id="btn-back" class="btn-back">← Zurück</button>
+      <h1>Einstellungen</h1>
+    </header>
+
+    <main class="page-content">
+      <!-- Info -->
+      <section class="card">
+        <h2 class="card-title">ℹ️ So funktioniert's</h2>
+        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5;">
+          Diese Extension scraped deine Verbrauchsdaten direkt von 
+          <strong>claude.ai/settings/usage</strong>. 
+          Du musst nur eingeloggt sein – kein API Key nötig.
+        </p>
+        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5; margin-top: 8px;">
+          Klicke im Popup auf <strong>"Daten aktualisieren"</strong> um die 
+          Usage-Seite zu öffnen und die aktuellen Daten zu laden.
+        </p>
+      </section>
+
+      <!-- Theme -->
+      <section class="card">
+        <h2 class="card-title">🎨 Erscheinungsbild</h2>
+        
+        <div class="radio-group horizontal">
+          <label class="radio-item">
+            <input type="radio" name="theme" value="system" checked>
+            <span>System</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="theme" value="light">
+            <span>Hell</span>
+          </label>
+          <label class="radio-item">
+            <input type="radio" name="theme" value="dark">
+            <span>Dunkel</span>
+          </label>
+        </div>
+      </section>
+
+      <!-- Daten -->
+      <section class="card">
+        <h2 class="card-title">💾 Daten</h2>
+        
+        <div class="data-info">
+          <span>Gespeicherte Daten:</span>
+          <span id="storage-size">– KB</span>
+        </div>
+        
+        <div class="data-info">
+          <span>Erfasste Themen:</span>
+          <span id="topic-count">–</span>
+        </div>
+        
+        <div class="data-info">
+          <span>Historie-Einträge:</span>
+          <span id="history-count">–</span>
+        </div>
+        
+        <div class="button-row" style="margin-top: 16px;">
+          <button id="btn-export" class="btn-secondary">📥 Exportieren</button>
+          <button id="btn-import" class="btn-secondary">📤 Importieren</button>
+          <button id="btn-clear" class="btn-danger">🗑️ Löschen</button>
+        </div>
+        
+        <input type="file" id="import-file" accept=".json" style="display: none">
+      </section>
+
+      <!-- Debug -->
+      <section class="card">
+        <h2 class="card-title">🐛 Debug-Info</h2>
+        <div id="debug-info" style="font-size: 11px; color: var(--text-muted); font-family: monospace; white-space: pre-wrap;">
+          Lädt...
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
