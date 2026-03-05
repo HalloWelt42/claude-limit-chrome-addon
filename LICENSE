@@ -1,7 +1,7 @@
-Dashboard fuer Claude -- Non-Commercial License v2.0
+Dashboard fuer Claude — Non-Commercial License v2.0
 Nicht-kommerzielle Lizenz v2.0
 
-SPDX-License-Identifier: LicenseRef-DashboardFuerClaude-NC-2.0
+SPDX-License-Identifier: LicenseRef-ClaudeDashboard-NC-2.0
 
 Copyright (c) 2025-2026 HalloWelt42
 https://github.com/HalloWelt42/claude-limit-chrome-addon
@@ -129,7 +129,7 @@ oder anderes Material) an dieses Projekt erklärt der Beitragende:
      unwiderrufliches, weltweites, gebührenfreies Nutzungsrecht an dem
      Beitrag unter dieser Lizenz.
   c) Der Beitrag unterliegt vollständig dieser Lizenz (LicenseRef-
-     DashboardFuerClaude-NC-2.0). Der Beitragende kann keine abweichenden
+     ClaudeDashboard-NC-2.0). Der Beitragende kann keine abweichenden
      Lizenzbedingungen für seinen Beitrag geltend machen.
   d) Der Beitragende behält das Recht, seinen Beitrag anderweitig zu
      verwenden, solange dies nicht im Widerspruch zu dieser Lizenz steht.
@@ -144,7 +144,7 @@ other material) to this project, the contributor agrees that:
      irrevocable, worldwide, royalty-free right to use the contribution
      under this license.
   c) The contribution is fully subject to this license (LicenseRef-
-     DashboardFuerClaude-NC-2.0). The contributor may not claim different license
+     ClaudeDashboard-NC-2.0). The contributor may not claim different license
      terms for their contribution.
   d) The contributor retains the right to use their contribution
      elsewhere, provided this does not conflict with this license.
