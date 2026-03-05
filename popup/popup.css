@@ -515,7 +515,7 @@ body {
 }
 
 .topic-link:hover .topic-title {
-  color: var(--accent);
+  color: var(--text);
 }
 
 .badge {
