@@ -9,7 +9,7 @@ const el = {
   modelList: document.getElementById('model-list'),
   topicList: document.getElementById('topic-list'),
   topicCount: document.getElementById('topic-count'),
-  lastSync: document.getElementById('last-sync'),
+  popupVersion: document.getElementById('popup-version'),
   alertBar: document.getElementById('alert-bar'),
   alertText: document.getElementById('alert-text'),
   systemStatus: document.getElementById('system-status'),
@@ -87,7 +87,7 @@ async function loadAndDisplay() {
     updateModels(data);
     updateTopics(data);
     updateStatus(data);
-    updateSyncTime(data);
+    updateVersion();
   } catch (e) {
     console.error('Popup load error:', e);
     showAlert('Fehler beim Laden der Daten', 'error');
@@ -263,15 +263,10 @@ function updateStatus(data) {
 }
 
 
-function updateSyncTime(data) {
-  const last = data.usage?.lastSync;
-  if (last) {
-    const d = new Date(last);
-    el.lastSync.textContent = d.toLocaleTimeString('de-DE', {
-      hour: '2-digit', minute: '2-digit'
-    });
-  } else {
-    el.lastSync.textContent = '--:--';
+function updateVersion() {
+  const manifest = chrome.runtime.getManifest();
+  if (el.popupVersion) {
+    el.popupVersion.textContent = manifest.version;
   }
 }
 
