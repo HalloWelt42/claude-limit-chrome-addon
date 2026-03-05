@@ -1,4 +1,4 @@
-# Claude Dashboard
+# Dashboard fuer Claude
 
 Browser-Extension zur Anzeige deines Claude-Nutzungslimits.
 
@@ -78,7 +78,7 @@ claude-dashboard/
 
 ## Unterstützen
 
-Claude Dashboard ist ein privates Open-Source-Projekt. Kein Tracking, keine Werbung, keine Kompromisse.
+Dashboard fuer Claude ist ein privates Open-Source-Projekt. Kein Tracking, keine Werbung, keine Kompromisse.
 
 Wenn dir das Projekt gefällt, kannst du über den ❤️-Button im Popup "Danke sagen" -  oder direkt hier:
 

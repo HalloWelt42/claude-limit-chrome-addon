@@ -8,7 +8,9 @@ const elements = {
   statDays: document.getElementById('stat-days'),
   statMax5h: document.getElementById('stat-max-5h'),
   statMax7d: document.getElementById('stat-max-7d'),
-  chart: document.getElementById('chart')
+  chart: document.getElementById('chart'),
+  chartXAxis: document.getElementById('chart-x-axis'),
+  chartWrapper: document.getElementById('chart-wrapper')
 };
 
 let historyData = {};
@@ -120,16 +122,26 @@ function calculateStats() {
 }
 
 function renderChart(dailyData) {
-  // Clear
   elements.chart.textContent = '';
+  elements.chartXAxis.textContent = '';
 
   if (dailyData.length === 0 || dailyData.every(d => d.value === 0)) {
-    const empty = document.createElement('div');
-    empty.className = 'empty-state';
+    elements.chartWrapper.style.display = 'none';
+    const parent = elements.chartWrapper.parentElement;
+    let empty = parent.querySelector('.empty-state');
+    if (!empty) {
+      empty = document.createElement('div');
+      empty.className = 'empty-state';
+      parent.appendChild(empty);
+    }
     empty.textContent = 'Keine Daten im Zeitraum';
-    elements.chart.appendChild(empty);
     return;
   }
+
+  elements.chartWrapper.style.display = '';
+  const parent = elements.chartWrapper.parentElement;
+  const existingEmpty = parent.querySelector('.empty-state');
+  if (existingEmpty) existingEmpty.remove();
 
   // Aggregation bei vielen Tagen
   let step = 1;
@@ -137,16 +149,16 @@ function renderChart(dailyData) {
   else if (dailyData.length > 30) step = 2;
 
   const filtered = dailyData.filter((_, i) => i % step === 0);
-  const maxValue = Math.max(...filtered.map(d => d.value), 1);
 
+  // Bars relativ zu 100%
   for (const d of filtered) {
     const bar = document.createElement('div');
     bar.className = 'chart-bar';
-    const height = Math.max(2, (d.value / maxValue) * 100);
+    const height = Math.max(1, d.value);
     bar.style.height = height + '%';
-    bar.title = d.date + ': ' + d.value + '%';
+    bar.title = formatDateShort(d.date) + ': ' + d.value + '%';
 
-    // Farbe basierend auf Wert
+    // Farbe konsistent mit Popup (green/yellow/red)
     if (d.value >= 75) {
       bar.style.background = 'var(--red)';
     } else if (d.value >= 40) {
@@ -155,6 +167,31 @@ function renderChart(dailyData) {
 
     elements.chart.appendChild(bar);
   }
+
+  // X-Achse: Erstes und letztes Datum
+  if (filtered.length > 0) {
+    const first = document.createElement('span');
+    first.textContent = formatDateShort(filtered[0].date);
+    elements.chartXAxis.appendChild(first);
+
+    if (filtered.length > 2) {
+      const midIdx = Math.floor(filtered.length / 2);
+      const mid = document.createElement('span');
+      mid.textContent = formatDateShort(filtered[midIdx].date);
+      elements.chartXAxis.appendChild(mid);
+    }
+
+    if (filtered.length > 1) {
+      const last = document.createElement('span');
+      last.textContent = formatDateShort(filtered[filtered.length - 1].date);
+      elements.chartXAxis.appendChild(last);
+    }
+  }
+}
+
+function formatDateShort(dateStr) {
+  const d = new Date(dateStr);
+  return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
 }
 
 async function exportData() {

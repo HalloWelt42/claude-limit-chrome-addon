@@ -85,6 +85,14 @@ function renderTopics(filter = '') {
       const entry = document.createElement('div');
       entry.className = 'topic-entry';
 
+      if (t.url) {
+        entry.classList.add('topic-link');
+        entry.addEventListener('click', () => {
+          chrome.tabs.create({ url: t.url });
+        });
+        entry.title = t.title;
+      }
+
       const time = document.createElement('span');
       time.className = 'topic-time';
       time.textContent = t.time;
