@@ -220,29 +220,30 @@ body {
   letter-spacing: 0.04em;
 }
 
-.legend-grid-table {
+.legend-grid-labeled {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4px 12px;
-  width: 100%;
-}
-
-.legend-grid-cell {
-  display: flex;
+  grid-template-columns: auto 10px 10px auto;
+  gap: 2px 4px;
   align-items: center;
-  gap: 6px;
+  justify-content: center;
 }
 
 .legend-square {
   width: 10px;
   height: 10px;
   border-radius: 2px;
-  flex-shrink: 0;
 }
 
-.legend-grid-cell-label {
+.legend-grid-label-l {
   font-size: 10px;
   color: var(--text-muted);
+  text-align: right;
+}
+
+.legend-grid-label-r {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-align: left;
 }
 
 .legend-badge-sample {
