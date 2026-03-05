@@ -15,19 +15,25 @@ chrome.runtime.onStartup.addListener(() => {
 });
 
 async function initializeExtension() {
-  const data = await loadStorageData();
-  await updateBadge(data.usage?.fiveHour?.utilization || 0);
+  await updateBadge();
 
   await chrome.alarms.clear(SYNC_ALARM);
+  await chrome.alarms.clear(BADGE_ALARM);
   chrome.alarms.create(SYNC_ALARM, {
     periodInMinutes: 5,
     delayInMinutes: 0.1
+  });
+  chrome.alarms.create(BADGE_ALARM, {
+    periodInMinutes: 0.05,
+    delayInMinutes: 0.05
   });
 }
 
 chrome.alarms.onAlarm.addListener(async (alarm) => {
   if (alarm.name === SYNC_ALARM) {
     await syncAll();
+  } else if (alarm.name === BADGE_ALARM) {
+    rotateBadge();
   }
 });
 
@@ -55,7 +61,7 @@ async function syncUsage() {
     const orgUuid = await findChatOrgUuid();
     if (!orgUuid) {
       console.warn('[Claude Dashboard] Keine Chat-Org gefunden');
-      await updateBadge(0, '#6b7280');
+      await updateBadge();
       return { success: false, error: 'Nicht eingeloggt oder keine Chat-Organisation' };
     }
 
@@ -94,7 +100,7 @@ async function syncUsage() {
     await saveStorageData(data);
 
     const percent = usage.five_hour?.utilization || 0;
-    await updateBadge(percent);
+    await updateBadge();
 
     console.log(`[Claude Dashboard] Usage sync OK: ${percent}%`);
     return { success: true, percent };
@@ -106,7 +112,7 @@ async function syncUsage() {
     data.lastError = { message: error.message, time: new Date().toISOString() };
     await saveStorageData(data);
 
-    await updateBadge(0, '#6b7280');
+    await updateBadge();
     return { success: false, error: error.message };
   }
 }
@@ -192,58 +198,85 @@ function getColorForPercent(percent) {
   return '#ef4444';
 }
 
-async function updateBadge(percent, overrideColor = null) {
-  const color = overrideColor || getColorForPercent(percent);
+const BADGE_ALARM = 'badge-rotate';
+let badgePhase = 0;
 
-  await chrome.action.setBadgeText({ text: percent > 0 ? String(percent) : '' });
-  await chrome.action.setBadgeBackgroundColor({ color });
-  await drawPieIcon(percent, color);
+function getStatusColor(status) {
+  const map = {
+    operational: '#22c55e',
+    degraded: '#eab308',
+    partial_outage: '#ef4444',
+    major_outage: '#ef4444',
+    maintenance: '#3b82f6'
+  };
+  return map[status] || '#6b7280';
 }
 
-async function drawPieIcon(percent, color) {
+async function updateBadge() {
+  const data = await loadStorageData();
+  const fiveHour = data.usage?.fiveHour?.utilization || 0;
+  const sevenDay = data.usage?.sevenDay?.utilization || 0;
+  const statusOverall = data.status?.overall || 'operational';
+  const syncOk = data.usage?.lastSync ? true : false;
+  const syncAge = data.usage?.lastSync
+    ? (Date.now() - new Date(data.usage.lastSync).getTime()) / 60000
+    : Infinity;
+
+  const colors = [
+    getColorForPercent(fiveHour),
+    getColorForPercent(sevenDay),
+    getStatusColor(statusOverall),
+    syncOk ? (syncAge > 10 ? '#eab308' : '#22c55e') : '#6b7280'
+  ];
+
+  await drawGridIcon(colors);
+
+  const isOutage = statusOverall === 'partial_outage' || statusOverall === 'major_outage';
+  if (isOutage) {
+    await chrome.action.setBadgeText({ text: '!!!' });
+    await chrome.action.setBadgeBackgroundColor({ color: '#ef4444' });
+    await chrome.action.setBadgeTextColor({ color: '#000000' });
+    return;
+  }
+
+  if (badgePhase === 0 && fiveHour > 0) {
+    await chrome.action.setBadgeText({ text: 'd' + fiveHour });
+    await chrome.action.setBadgeBackgroundColor({ color: getColorForPercent(fiveHour) });
+    await chrome.action.setBadgeTextColor({ color: '#000000' });
+  } else if (badgePhase === 1 && sevenDay > 0) {
+    await chrome.action.setBadgeText({ text: 'w' + sevenDay });
+    await chrome.action.setBadgeBackgroundColor({ color: getColorForPercent(sevenDay) });
+    await chrome.action.setBadgeTextColor({ color: '#000000' });
+  } else {
+    await chrome.action.setBadgeText({ text: '' });
+  }
+}
+
+function rotateBadge() {
+  badgePhase = (badgePhase + 1) % 3;
+  updateBadge();
+}
+
+async function drawGridIcon(colors) {
   const size = 128;
   const canvas = new OffscreenCanvas(size, size);
   const ctx = canvas.getContext('2d');
-  const center = size / 2;
-  const radius = 52;
-  const innerRadius = 30;
+  const gap = Math.round(size * 0.125);
+  const half = Math.floor((size - gap) / 2);
 
   ctx.clearRect(0, 0, size, size);
 
-  // Background ring
-  ctx.fillStyle = '#374151';
-  ctx.beginPath();
-  ctx.arc(center, center, radius, 0, Math.PI * 2);
-  ctx.arc(center, center, innerRadius, 0, Math.PI * 2, true);
-  ctx.fill();
+  ctx.fillStyle = colors[0];
+  ctx.fillRect(0, 0, half, half);
 
-  // Filled arc
-  if (percent > 0) {
-    const startAngle = -Math.PI / 2;
-    const endAngle = startAngle + (Math.min(percent, 100) / 100) * Math.PI * 2;
+  ctx.fillStyle = colors[1];
+  ctx.fillRect(half + gap, 0, size - half - gap, half);
 
-    ctx.fillStyle = color;
-    ctx.beginPath();
-    ctx.moveTo(center, center);
-    ctx.arc(center, center, radius, startAngle, endAngle);
-    ctx.lineTo(center, center);
-    ctx.fill();
+  ctx.fillStyle = colors[2];
+  ctx.fillRect(0, half + gap, half, size - half - gap);
 
-    // Inner hole
-    ctx.fillStyle = '#1f2937';
-    ctx.beginPath();
-    ctx.arc(center, center, innerRadius, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  // Percentage text in center
-  if (percent > 0) {
-    ctx.fillStyle = '#ffffff';
-    ctx.font = 'bold 32px sans-serif';
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    ctx.fillText(String(percent), center, center + 1);
-  }
+  ctx.fillStyle = colors[3];
+  ctx.fillRect(half + gap, half + gap, size - half - gap, size - half - gap);
 
   const imageData = ctx.getImageData(0, 0, size, size);
   await chrome.action.setIcon({ imageData: { '128': imageData } });
