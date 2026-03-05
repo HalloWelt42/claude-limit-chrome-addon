@@ -2,9 +2,7 @@
 
 Browser-Extension zur Anzeige deines Claude-Nutzungslimits.
 
-<p align="center">
-  <img src="store/screenshots/screenshot-1-popup.png" alt="Dashboard fuer Claude - Popup" width="640">
-</p>
+![Dashboard fuer Claude - Popup](media/screenshot-popup.png)
 
 ## Features
 
