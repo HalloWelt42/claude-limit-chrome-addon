@@ -148,7 +148,7 @@ body {
 
 .status-dots {
   display: flex;
-  gap: 14px;
+  gap: 10px;
   width: 100%;
   justify-content: center;
 }

@@ -14,8 +14,10 @@ const el = {
   alertText: document.getElementById('alert-text'),
   systemStatus: document.getElementById('system-status'),
   statusWeb: document.getElementById('status-web'),
+  statusPlatform: document.getElementById('status-platform'),
   statusApi: document.getElementById('status-api'),
-  statusConsole: document.getElementById('status-console'),
+  statusCode: document.getElementById('status-code'),
+  statusGov: document.getElementById('status-gov'),
   btnSettings: document.getElementById('btn-settings'),
   btnTopics: document.getElementById('btn-topics'),
   btnHistory: document.getElementById('btn-history'),
@@ -254,8 +256,10 @@ function updateStatus(data) {
 
   el.systemStatus.classList.remove('hidden');
   el.statusWeb.className = 'dot ' + (status.components.web || '');
+  el.statusPlatform.className = 'dot ' + (status.components.platform || '');
   el.statusApi.className = 'dot ' + (status.components.api || '');
-  el.statusConsole.className = 'dot ' + (status.components.console || '');
+  el.statusCode.className = 'dot ' + (status.components.code || '');
+  el.statusGov.className = 'dot ' + (status.components.gov || '');
 }
 
 

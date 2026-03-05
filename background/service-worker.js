@@ -128,9 +128,10 @@ async function syncStatus() {
 
     const nameMap = {
       'claude.ai': 'web',
+      'platform': 'platform',
       'api': 'api',
-      'console': 'console',
-      'claude code': 'code'
+      'claude code': 'code',
+      'regierung': 'gov'
     };
 
     if (json.components) {
