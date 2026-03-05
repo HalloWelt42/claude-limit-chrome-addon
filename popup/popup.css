@@ -177,29 +177,6 @@ body {
   letter-spacing: 0.02em;
 }
 
-.btn-status-help {
-  background: none;
-  border: 1px solid var(--border);
-  color: var(--text-muted);
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  font-size: 10px;
-  font-weight: 600;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  margin-left: 8px;
-  transition: all 0.15s;
-}
-
-.btn-status-help:hover {
-  color: var(--text);
-  border-color: var(--text-muted);
-}
-
 .status-legend {
   background: var(--bg-card);
   border: 1px solid var(--border-subtle);
