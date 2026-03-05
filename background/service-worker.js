@@ -266,18 +266,19 @@ async function drawGridIcon(colors) {
   const half = Math.floor((size - gap) / 2);
 
   ctx.clearRect(0, 0, size, size);
+  const r = Math.round(size * 0.03);
 
   ctx.fillStyle = colors[0];
-  ctx.fillRect(0, 0, half, half);
+  ctx.beginPath(); ctx.roundRect(0, 0, half, half, r); ctx.fill();
 
   ctx.fillStyle = colors[1];
-  ctx.fillRect(half + gap, 0, size - half - gap, half);
+  ctx.beginPath(); ctx.roundRect(half + gap, 0, size - half - gap, half, r); ctx.fill();
 
   ctx.fillStyle = colors[2];
-  ctx.fillRect(0, half + gap, half, size - half - gap);
+  ctx.beginPath(); ctx.roundRect(0, half + gap, half, size - half - gap, r); ctx.fill();
 
   ctx.fillStyle = colors[3];
-  ctx.fillRect(half + gap, half + gap, size - half - gap, size - half - gap);
+  ctx.beginPath(); ctx.roundRect(half + gap, half + gap, size - half - gap, size - half - gap, r); ctx.fill();
 
   const imageData = ctx.getImageData(0, 0, size, size);
   await chrome.action.setIcon({ imageData: { '128': imageData } });
