@@ -5,12 +5,12 @@ const STATUS_URL = 'https://status.claude.com/api/v2/summary.json';
 
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('[Dashboard] Installiert');
+  console.log('[Dashboard fuer Claude] Installiert');
   initializeExtension();
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  console.log('[Dashboard] Browser gestartet');
+  console.log('[Dashboard fuer Claude] Browser gestartet');
   initializeExtension();
 });
 
@@ -55,12 +55,12 @@ async function syncAll() {
 }
 
 async function syncUsage() {
-  console.log('[Dashboard] Usage sync...');
+  console.log('[Dashboard fuer Claude] Usage sync...');
 
   try {
     const orgUuid = await findChatOrgUuid();
     if (!orgUuid) {
-      console.warn('[Dashboard] Keine Chat-Org gefunden');
+      console.warn('[Dashboard fuer Claude] Keine Chat-Org gefunden');
       await updateBadge();
       return { success: false, error: 'Nicht eingeloggt oder keine Chat-Organisation' };
     }
@@ -102,11 +102,11 @@ async function syncUsage() {
     const percent = usage.five_hour?.utilization || 0;
     await updateBadge();
 
-    console.log(`[Dashboard] Usage sync OK: ${percent}%`);
+    console.log(`[Dashboard fuer Claude] Usage sync OK: ${percent}%`);
     return { success: true, percent };
 
   } catch (error) {
-    console.error('[Dashboard] Usage sync failed:', error);
+    console.error('[Dashboard fuer Claude] Usage sync failed:', error);
 
     const data = await loadStorageData();
     data.lastError = { message: error.message, time: new Date().toISOString() };
@@ -128,10 +128,9 @@ async function syncStatus() {
 
     const nameMap = {
       'claude.ai': 'web',
-      'platform': 'platform',
       'api': 'api',
-      'claude code': 'code',
-      'government': 'gov'
+      'console': 'console',
+      'claude code': 'code'
     };
 
     if (json.components) {
@@ -165,7 +164,7 @@ async function syncStatus() {
 
     return { success: true };
   } catch (error) {
-    console.error('[Dashboard] Status sync failed:', error);
+    console.error('[Dashboard fuer Claude] Status sync failed:', error);
     return { success: false, error: error.message };
   }
 }
@@ -188,7 +187,7 @@ async function findChatOrgUuid() {
 
     return chatOrg?.uuid || null;
   } catch (error) {
-    console.error('[Dashboard] Org lookup failed:', error);
+    console.error('[Dashboard fuer Claude] Org lookup failed:', error);
     return null;
   }
 }
@@ -266,18 +265,19 @@ async function drawGridIcon(colors) {
   const half = Math.floor((size - gap) / 2);
 
   ctx.clearRect(0, 0, size, size);
+  const r = Math.round(size * 0.03);
 
   ctx.fillStyle = colors[0];
-  ctx.fillRect(0, 0, half, half);
+  ctx.beginPath(); ctx.roundRect(0, 0, half, half, r); ctx.fill();
 
   ctx.fillStyle = colors[1];
-  ctx.fillRect(half + gap, 0, size - half - gap, half);
+  ctx.beginPath(); ctx.roundRect(half + gap, 0, size - half - gap, half, r); ctx.fill();
 
   ctx.fillStyle = colors[2];
-  ctx.fillRect(0, half + gap, half, size - half - gap);
+  ctx.beginPath(); ctx.roundRect(0, half + gap, half, size - half - gap, r); ctx.fill();
 
   ctx.fillStyle = colors[3];
-  ctx.fillRect(half + gap, half + gap, size - half - gap, size - half - gap);
+  ctx.beginPath(); ctx.roundRect(half + gap, half + gap, size - half - gap, size - half - gap, r); ctx.fill();
 
   const imageData = ctx.getImageData(0, 0, size, size);
   await chrome.action.setIcon({ imageData: { '128': imageData } });
@@ -317,39 +317,17 @@ async function handleMessage(message, sender) {
 }
 
 async function addTopic(payload) {
-  const { date, time, title, url } = payload;
+  const { date, time, title } = payload;
   const data = await loadStorageData();
 
   if (!data.topics[date]) {
     data.topics[date] = [];
   }
 
-  const existing = data.topics[date].find(t => t.title === title);
-  let changed = false;
-
-  if (!existing) {
-    data.topics[date].push({ time, title, url });
+  const exists = data.topics[date].some(t => t.title === title);
+  if (!exists) {
+    data.topics[date].push({ time, title });
     data.topics[date].sort((a, b) => b.time.localeCompare(a.time));
-    changed = true;
-  } else if (url && !existing.url) {
-    existing.url = url;
-    changed = true;
-  }
-
-  // URL bei aelteren Eintraegen mit gleichem Titel nachtraeglich ergaenzen
-  if (url) {
-    for (const d of Object.keys(data.topics)) {
-      if (d === date) continue;
-      for (const t of data.topics[d]) {
-        if (t.title === title && !t.url) {
-          t.url = url;
-          changed = true;
-        }
-      }
-    }
-  }
-
-  if (changed) {
     await saveStorageData(data);
   }
 
@@ -393,4 +371,4 @@ function getDefaultData() {
   };
 }
 
-console.log('[Dashboard] Service Worker geladen');
+console.log('[Dashboard fuer Claude] Service Worker geladen');
