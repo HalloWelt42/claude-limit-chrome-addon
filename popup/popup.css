@@ -220,27 +220,29 @@ body {
   letter-spacing: 0.04em;
 }
 
-.legend-grid-row {
+.legend-grid-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px 12px;
+  width: 100%;
+}
+
+.legend-grid-cell {
   display: flex;
-  gap: 2px;
+  align-items: center;
+  gap: 6px;
 }
 
 .legend-square {
   width: 10px;
   height: 10px;
   border-radius: 2px;
+  flex-shrink: 0;
 }
 
-.legend-grid-labels {
-  display: flex;
-  gap: 8px;
+.legend-grid-cell-label {
   font-size: 10px;
   color: var(--text-muted);
-  width: 100%;
-}
-
-.legend-grid-labels span {
-  min-width: 60px;
 }
 
 .legend-badge-sample {
