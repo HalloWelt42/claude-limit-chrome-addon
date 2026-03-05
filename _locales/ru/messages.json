@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - Показывает лимиты 5ч/7д, статус системы и темы чатов с автосинхронизацией."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "Обновить"
+  },
+  "titleSettings": {
+    "message": "Настройки"
+  },
+  "titleStatusPage": {
+    "message": "Открыть страницу статуса"
+  },
+
+  "fiveHourLimit": {
+    "message": "5-часовой лимит"
+  },
+  "sevenDayLimit": {
+    "message": "7-дневный лимит"
+  },
+  "modelLimits7d": {
+    "message": "Лимиты моделей (7 дней)"
+  },
+  "todaysChats": {
+    "message": "Сегодняшние чаты"
+  },
+  "noChatsYet": {
+    "message": "Чаты еще не записаны"
+  },
+
+  "topicLog": {
+    "message": "Журнал тем"
+  },
+  "history": {
+    "message": "История"
+  },
+  "sayThanks": {
+    "message": "Поблагодарить"
+  },
+
+  "legendTitle": {
+    "message": "Легенда"
+  },
+  "iconGrid": {
+    "message": "Иконка (сетка 2x2)"
+  },
+  "fiveHLabel": {
+    "message": "5ч лимит"
+  },
+  "sevenDLabel": {
+    "message": "7 дней"
+  },
+  "statusLabel": {
+    "message": "Статус"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Точки статуса"
+  },
+  "operational": {
+    "message": "Работает"
+  },
+  "degraded": {
+    "message": "Ухудшение"
+  },
+  "partialOutage": {
+    "message": "Частичный сбой"
+  },
+  "majorOutage": {
+    "message": "Крупный сбой"
+  },
+  "maintenance": {
+    "message": "Обслуживание"
+  },
+  "badgeRotates": {
+    "message": "Badge (чередуется)"
+  },
+  "fiveHUsage": {
+    "message": "5ч использование"
+  },
+  "sevenDUsage": {
+    "message": "7д использование"
+  },
+  "outage": {
+    "message": "Сбой"
+  },
+  "sourceStatus": {
+    "message": "Источник: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Синхронизация не удалась"
+  },
+  "connectionError": {
+    "message": "Ошибка подключения"
+  },
+  "noDataClickSync": {
+    "message": "Нет данных -- нажмите Sync"
+  },
+  "errorLoadingData": {
+    "message": "Ошибка загрузки данных"
+  },
+  "resetNow": {
+    "message": "Сброс сейчас"
+  },
+  "resetIn": {
+    "message": "Сброс $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "через $1д $2ч",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "через $1ч $2м",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "через $1м",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Настройки"
+  },
+  "pageTitle_settings": {
+    "message": "Настройки - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "Как это работает"
+  },
+  "howItWorksText1": {
+    "message": "Это расширение считывает данные об использовании напрямую из <strong>Claude.ai API</strong>. Вы должны быть авторизованы на claude.ai -- ключ API не требуется."
+  },
+  "howItWorksText2": {
+    "message": "Данные синхронизируются автоматически каждые <strong>5 минут</strong>. Вы также можете вручную нажать иконку синхронизации во всплывающем окне."
+  },
+  "prerequisites": {
+    "message": "Требования"
+  },
+  "prereqPro": {
+    "message": "Подписка Claude Pro или Max"
+  },
+  "prereqLoggedIn": {
+    "message": "Авторизация на claude.ai"
+  },
+  "prereqCookies": {
+    "message": "Cookies включены для claude.ai"
+  },
+  "dataSection": {
+    "message": "Данные"
+  },
+  "storedData": {
+    "message": "Сохраненные данные"
+  },
+  "capturedTopics": {
+    "message": "Записанные темы"
+  },
+  "historyEntries": {
+    "message": "Записи истории"
+  },
+  "exportBtn": {
+    "message": "Экспорт"
+  },
+  "deleteAllData": {
+    "message": "Удалить все данные"
+  },
+  "debugInfo": {
+    "message": "Отладочная информация"
+  },
+  "loading": {
+    "message": "Загрузка..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 дней)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 дней",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Последняя синхронизация"
+  },
+  "never": {
+    "message": "никогда"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "не задан"
+  },
+  "fiveHLimitDebug": {
+    "message": "5ч лимит"
+  },
+  "sevenDLimitDebug": {
+    "message": "7д лимит"
+  },
+  "statusDebug": {
+    "message": "Статус"
+  },
+  "statusSyncLabel": {
+    "message": "Синхронизация статуса"
+  },
+  "unknown": {
+    "message": "неизвестно"
+  },
+  "lastErrorLabel": {
+    "message": "Последняя ошибка"
+  },
+  "exportFailed": {
+    "message": "Экспорт не удался"
+  },
+  "confirmDelete": {
+    "message": "Действительно удалить все данные? Это нельзя отменить."
+  },
+  "dataDeleted": {
+    "message": "Данные удалены!"
+  },
+  "errorGeneric": {
+    "message": "Ошибка: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Журнал тем - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "Журнал тем"
+  },
+  "searchPlaceholder": {
+    "message": "Поиск тем..."
+  },
+  "noTopicsRecorded": {
+    "message": "Темы не записаны"
+  },
+  "loadError": {
+    "message": "Ошибка загрузки"
+  },
+  "topicsCount": {
+    "message": "$1 тем",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "Нет результатов для \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Сегодня"
+  },
+  "yesterday": {
+    "message": "Вчера"
+  },
+
+  "pageTitle_history": {
+    "message": "История - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "История использования"
+  },
+  "periodTitle": {
+    "message": "Период"
+  },
+  "fromLabel": {
+    "message": "С"
+  },
+  "toLabel": {
+    "message": "По"
+  },
+  "applyBtn": {
+    "message": "Применить"
+  },
+  "days7": {
+    "message": "7 дней"
+  },
+  "days30": {
+    "message": "30 дней"
+  },
+  "days90": {
+    "message": "90 дней"
+  },
+  "allData": {
+    "message": "Все"
+  },
+  "usageInPeriod": {
+    "message": "Использование за период"
+  },
+  "syncPoints": {
+    "message": "Точки синхронизации"
+  },
+  "activeDays": {
+    "message": "Активные дни"
+  },
+  "max5hLimit": {
+    "message": "Макс. 5ч лимит"
+  },
+  "max7dLimit": {
+    "message": "Макс. 7д лимит"
+  },
+  "fiveHLimitHistory": {
+    "message": "История 5ч лимита"
+  },
+  "exportAsJson": {
+    "message": "Экспорт как JSON"
+  },
+  "noDataInPeriod": {
+    "message": "Нет данных за этот период"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- Поддержка"
+  },
+  "madeWithLove": {
+    "message": "Сделано с любовью в Саксонии-Анхальт"
+  },
+  "openSourceDesc": {
+    "message": "Открытый исходный код из Саксонии-Анхальт.<br>Без отслеживания, без рекламы, без компромиссов."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Купить мне кофе"
+  },
+  "orByCrypto": {
+    "message": "Или через криптовалюту:"
+  },
+  "copyAddress": {
+    "message": "Копировать адрес"
+  },
+  "copied": {
+    "message": "Скопировано!"
+  },
+  "thanksForSupport": {
+    "message": "Спасибо за вашу поддержку!"
+  },
+
+  "notLoggedInError": {
+    "message": "Не авторизован или нет организации чата"
+  }
+}

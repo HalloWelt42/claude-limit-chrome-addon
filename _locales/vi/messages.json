@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - Hien thi gioi han 5g/7n, trang thai he thong va chu de tro chuyen voi dong bo tu dong."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "Lam moi"
+  },
+  "titleSettings": {
+    "message": "Cai dat"
+  },
+  "titleStatusPage": {
+    "message": "Mo trang trang thai"
+  },
+
+  "fiveHourLimit": {
+    "message": "Gioi han 5 gio"
+  },
+  "sevenDayLimit": {
+    "message": "Gioi han 7 ngay"
+  },
+  "modelLimits7d": {
+    "message": "Gioi han model (7 ngay)"
+  },
+  "todaysChats": {
+    "message": "Tro chuyen hom nay"
+  },
+  "noChatsYet": {
+    "message": "Chua co cuoc tro chuyen nao"
+  },
+
+  "topicLog": {
+    "message": "Nhat ky chu de"
+  },
+  "history": {
+    "message": "Lich su"
+  },
+  "sayThanks": {
+    "message": "Cam on"
+  },
+
+  "legendTitle": {
+    "message": "Chu giai"
+  },
+  "iconGrid": {
+    "message": "Bieu tuong (Luoi 2x2)"
+  },
+  "fiveHLabel": {
+    "message": "Gioi han 5g"
+  },
+  "sevenDLabel": {
+    "message": "7 ngay"
+  },
+  "statusLabel": {
+    "message": "Trang thai"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Cham trang thai"
+  },
+  "operational": {
+    "message": "Hoat dong"
+  },
+  "degraded": {
+    "message": "Suy giam"
+  },
+  "partialOutage": {
+    "message": "Gian doan mot phan"
+  },
+  "majorOutage": {
+    "message": "Gian doan lon"
+  },
+  "maintenance": {
+    "message": "Bao tri"
+  },
+  "badgeRotates": {
+    "message": "Badge (xoay vong)"
+  },
+  "fiveHUsage": {
+    "message": "Su dung 5g"
+  },
+  "sevenDUsage": {
+    "message": "Su dung 7n"
+  },
+  "outage": {
+    "message": "Gian doan"
+  },
+  "sourceStatus": {
+    "message": "Nguon: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Dong bo that bai"
+  },
+  "connectionError": {
+    "message": "Loi ket noi"
+  },
+  "noDataClickSync": {
+    "message": "Chua co du lieu -- nhan Sync"
+  },
+  "errorLoadingData": {
+    "message": "Loi tai du lieu"
+  },
+  "resetNow": {
+    "message": "Dat lai ngay"
+  },
+  "resetIn": {
+    "message": "Dat lai $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "trong $1n $2g",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "trong $1g $2p",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "trong $1p",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Cai dat"
+  },
+  "pageTitle_settings": {
+    "message": "Cai dat - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "Cach hoat dong"
+  },
+  "howItWorksText1": {
+    "message": "Tien ich mo rong nay doc du lieu su dung truc tiep tu <strong>Claude.ai API</strong>. Ban phai dang nhap tren claude.ai -- khong can khoa API."
+  },
+  "howItWorksText2": {
+    "message": "Du lieu duoc dong bo tu dong moi <strong>5 phut</strong>. Ban cung co the nhan thu cong vao bieu tuong dong bo trong popup."
+  },
+  "prerequisites": {
+    "message": "Yeu cau"
+  },
+  "prereqPro": {
+    "message": "Goi dang ky Claude Pro hoac Max"
+  },
+  "prereqLoggedIn": {
+    "message": "Da dang nhap tren claude.ai"
+  },
+  "prereqCookies": {
+    "message": "Cookies duoc bat cho claude.ai"
+  },
+  "dataSection": {
+    "message": "Du lieu"
+  },
+  "storedData": {
+    "message": "Du lieu da luu"
+  },
+  "capturedTopics": {
+    "message": "Chu de da ghi"
+  },
+  "historyEntries": {
+    "message": "Muc lich su"
+  },
+  "exportBtn": {
+    "message": "Xuat"
+  },
+  "deleteAllData": {
+    "message": "Xoa toan bo du lieu"
+  },
+  "debugInfo": {
+    "message": "Thong tin go loi"
+  },
+  "loading": {
+    "message": "Dang tai..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 ngay)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 ngay",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Dong bo lan cuoi"
+  },
+  "never": {
+    "message": "chua bao gio"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "chua dat"
+  },
+  "fiveHLimitDebug": {
+    "message": "Gioi han 5g"
+  },
+  "sevenDLimitDebug": {
+    "message": "Gioi han 7n"
+  },
+  "statusDebug": {
+    "message": "Trang thai"
+  },
+  "statusSyncLabel": {
+    "message": "Dong bo trang thai"
+  },
+  "unknown": {
+    "message": "khong ro"
+  },
+  "lastErrorLabel": {
+    "message": "Loi gan nhat"
+  },
+  "exportFailed": {
+    "message": "Xuat that bai"
+  },
+  "confirmDelete": {
+    "message": "Ban co chac muon xoa toan bo du lieu? Thao tac nay khong the hoan tac."
+  },
+  "dataDeleted": {
+    "message": "Du lieu da xoa!"
+  },
+  "errorGeneric": {
+    "message": "Loi: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Nhat ky chu de - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "Nhat ky chu de"
+  },
+  "searchPlaceholder": {
+    "message": "Tim kiem chu de..."
+  },
+  "noTopicsRecorded": {
+    "message": "Chua ghi chu de nao"
+  },
+  "loadError": {
+    "message": "Loi tai"
+  },
+  "topicsCount": {
+    "message": "$1 chu de",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "Khong tim thay ket qua cho \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Hom nay"
+  },
+  "yesterday": {
+    "message": "Hom qua"
+  },
+
+  "pageTitle_history": {
+    "message": "Lich su - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "Lich su su dung"
+  },
+  "periodTitle": {
+    "message": "Giai doan"
+  },
+  "fromLabel": {
+    "message": "Tu"
+  },
+  "toLabel": {
+    "message": "Den"
+  },
+  "applyBtn": {
+    "message": "Ap dung"
+  },
+  "days7": {
+    "message": "7 ngay"
+  },
+  "days30": {
+    "message": "30 ngay"
+  },
+  "days90": {
+    "message": "90 ngay"
+  },
+  "allData": {
+    "message": "Tat ca"
+  },
+  "usageInPeriod": {
+    "message": "Su dung trong giai doan"
+  },
+  "syncPoints": {
+    "message": "Diem dong bo"
+  },
+  "activeDays": {
+    "message": "Ngay hoat dong"
+  },
+  "max5hLimit": {
+    "message": "Gioi han 5g toi da"
+  },
+  "max7dLimit": {
+    "message": "Gioi han 7n toi da"
+  },
+  "fiveHLimitHistory": {
+    "message": "Lich su gioi han 5g"
+  },
+  "exportAsJson": {
+    "message": "Xuat dang JSON"
+  },
+  "noDataInPeriod": {
+    "message": "Khong co du lieu trong giai doan nay"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- Ho tro"
+  },
+  "madeWithLove": {
+    "message": "Lam voi tinh yeu tai Sachsen-Anhalt"
+  },
+  "openSourceDesc": {
+    "message": "Ma nguon mo tu Sachsen-Anhalt.<br>Khong theo doi, khong quang cao, khong thoa hiep."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Mua cho toi mot ly ca phe"
+  },
+  "orByCrypto": {
+    "message": "Hoac qua tien dien tu:"
+  },
+  "copyAddress": {
+    "message": "Sao chep dia chi"
+  },
+  "copied": {
+    "message": "Da sao chep!"
+  },
+  "thanksForSupport": {
+    "message": "Cam on su ho tro cua ban!"
+  },
+
+  "notLoggedInError": {
+    "message": "Chua dang nhap hoac khong co to chuc tro chuyen"
+  }
+}

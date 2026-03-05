@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Claude用ダッシュボード"
+  },
+  "appDescription": {
+    "message": "Claude用ダッシュボード - 5時間/7日間の制限、システムステータス、チャットトピックを自動同期で表示します。"
+  },
+  "appDefaultTitle": {
+    "message": "Claude用ダッシュボード"
+  },
+
+  "titleSync": {
+    "message": "更新"
+  },
+  "titleSettings": {
+    "message": "設定"
+  },
+  "titleStatusPage": {
+    "message": "ステータスページを開く"
+  },
+
+  "fiveHourLimit": {
+    "message": "5時間制限"
+  },
+  "sevenDayLimit": {
+    "message": "7日間制限"
+  },
+  "modelLimits7d": {
+    "message": "モデル制限 (7日間)"
+  },
+  "todaysChats": {
+    "message": "今日のチャット"
+  },
+  "noChatsYet": {
+    "message": "まだチャットの記録がありません"
+  },
+
+  "topicLog": {
+    "message": "トピックログ"
+  },
+  "history": {
+    "message": "履歴"
+  },
+  "sayThanks": {
+    "message": "応援する"
+  },
+
+  "legendTitle": {
+    "message": "凡例"
+  },
+  "iconGrid": {
+    "message": "アイコン (2x2グリッド)"
+  },
+  "fiveHLabel": {
+    "message": "5時間制限"
+  },
+  "sevenDLabel": {
+    "message": "7日間"
+  },
+  "statusLabel": {
+    "message": "ステータス"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "ステータスドット"
+  },
+  "operational": {
+    "message": "正常稼働"
+  },
+  "degraded": {
+    "message": "パフォーマンス低下"
+  },
+  "partialOutage": {
+    "message": "部分的な障害"
+  },
+  "majorOutage": {
+    "message": "大規模障害"
+  },
+  "maintenance": {
+    "message": "メンテナンス"
+  },
+  "badgeRotates": {
+    "message": "Badge (ローテーション)"
+  },
+  "fiveHUsage": {
+    "message": "5時間使用量"
+  },
+  "sevenDUsage": {
+    "message": "7日間使用量"
+  },
+  "outage": {
+    "message": "障害"
+  },
+  "sourceStatus": {
+    "message": "ソース: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "同期に失敗しました"
+  },
+  "connectionError": {
+    "message": "接続エラー"
+  },
+  "noDataClickSync": {
+    "message": "データなし -- Syncをクリックしてください"
+  },
+  "errorLoadingData": {
+    "message": "データの読み込みエラー"
+  },
+  "resetNow": {
+    "message": "リセット済み"
+  },
+  "resetIn": {
+    "message": "リセット $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "$1日$2時間後",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "$1時間$2分後",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "$1分後",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "設定"
+  },
+  "pageTitle_settings": {
+    "message": "設定 - Claude用ダッシュボード"
+  },
+  "howItWorks": {
+    "message": "仕組み"
+  },
+  "howItWorksText1": {
+    "message": "この拡張機能は<strong>Claude.ai API</strong>から直接使用データを読み取ります。claude.aiにログインしている必要があります -- APIキーは不要です。"
+  },
+  "howItWorksText2": {
+    "message": "データは<strong>5分</strong>ごとに自動的に同期されます。ポップアップのSyncアイコンをクリックして手動で同期することもできます。"
+  },
+  "prerequisites": {
+    "message": "前提条件"
+  },
+  "prereqPro": {
+    "message": "Claude ProまたはMaxサブスクリプション"
+  },
+  "prereqLoggedIn": {
+    "message": "claude.aiにログイン済み"
+  },
+  "prereqCookies": {
+    "message": "claude.aiのCookieが有効"
+  },
+  "dataSection": {
+    "message": "データ"
+  },
+  "storedData": {
+    "message": "保存されたデータ"
+  },
+  "capturedTopics": {
+    "message": "取得したトピック"
+  },
+  "historyEntries": {
+    "message": "履歴エントリ"
+  },
+  "exportBtn": {
+    "message": "エクスポート"
+  },
+  "deleteAllData": {
+    "message": "全データを削除"
+  },
+  "debugInfo": {
+    "message": "デバッグ情報"
+  },
+  "loading": {
+    "message": "読み込み中..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2日間)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1日間",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "最終同期"
+  },
+  "never": {
+    "message": "なし"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "未設定"
+  },
+  "fiveHLimitDebug": {
+    "message": "5時間制限"
+  },
+  "sevenDLimitDebug": {
+    "message": "7日間制限"
+  },
+  "statusDebug": {
+    "message": "ステータス"
+  },
+  "statusSyncLabel": {
+    "message": "ステータスSync"
+  },
+  "unknown": {
+    "message": "不明"
+  },
+  "lastErrorLabel": {
+    "message": "最後のエラー"
+  },
+  "exportFailed": {
+    "message": "エクスポートに失敗しました"
+  },
+  "confirmDelete": {
+    "message": "本当に全データを削除しますか?この操作は元に戻せません。"
+  },
+  "dataDeleted": {
+    "message": "データを削除しました!"
+  },
+  "errorGeneric": {
+    "message": "エラー: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "トピックログ - Claude用ダッシュボード"
+  },
+  "topicLogTitle": {
+    "message": "トピックログ"
+  },
+  "searchPlaceholder": {
+    "message": "トピックを検索..."
+  },
+  "noTopicsRecorded": {
+    "message": "トピックの記録がありません"
+  },
+  "loadError": {
+    "message": "読み込みエラー"
+  },
+  "topicsCount": {
+    "message": "$1件のトピック",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "\"$1\"の検索結果はありません",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "今日"
+  },
+  "yesterday": {
+    "message": "昨日"
+  },
+
+  "pageTitle_history": {
+    "message": "履歴 - Claude用ダッシュボード"
+  },
+  "usageHistory": {
+    "message": "使用履歴"
+  },
+  "periodTitle": {
+    "message": "期間"
+  },
+  "fromLabel": {
+    "message": "開始"
+  },
+  "toLabel": {
+    "message": "終了"
+  },
+  "applyBtn": {
+    "message": "適用"
+  },
+  "days7": {
+    "message": "7日間"
+  },
+  "days30": {
+    "message": "30日間"
+  },
+  "days90": {
+    "message": "90日間"
+  },
+  "allData": {
+    "message": "すべて"
+  },
+  "usageInPeriod": {
+    "message": "期間内の使用量"
+  },
+  "syncPoints": {
+    "message": "Syncポイント"
+  },
+  "activeDays": {
+    "message": "アクティブ日数"
+  },
+  "max5hLimit": {
+    "message": "最大5時間制限"
+  },
+  "max7dLimit": {
+    "message": "最大7日間制限"
+  },
+  "fiveHLimitHistory": {
+    "message": "5時間制限履歴"
+  },
+  "exportAsJson": {
+    "message": "JSONでエクスポート"
+  },
+  "noDataInPeriod": {
+    "message": "この期間のデータはありません"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- サポート"
+  },
+  "madeWithLove": {
+    "message": "ザクセン=アンハルト州で愛を込めて作りました"
+  },
+  "openSourceDesc": {
+    "message": "ザクセン=アンハルト州発のオープンソース。<br>トラッキングなし、広告なし、妥協なし。"
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- コーヒーをおごる"
+  },
+  "orByCrypto": {
+    "message": "または暗号通貨で:"
+  },
+  "copyAddress": {
+    "message": "アドレスをコピー"
+  },
+  "copied": {
+    "message": "コピーしました!"
+  },
+  "thanksForSupport": {
+    "message": "ご支援ありがとうございます!"
+  },
+
+  "notLoggedInError": {
+    "message": "ログインしていないか、チャット組織がありません"
+  }
+}

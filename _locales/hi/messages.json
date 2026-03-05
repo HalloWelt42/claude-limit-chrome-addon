@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Claude के लिए डैशबोर्ड"
+  },
+  "appDescription": {
+    "message": "Claude के लिए डैशबोर्ड - 5 घंटे/7 दिन की सीमाएं, सिस्टम स्थिति और ऑटो-सिंक के साथ चैट विषय दिखाता है।"
+  },
+  "appDefaultTitle": {
+    "message": "Claude के लिए डैशबोर्ड"
+  },
+
+  "titleSync": {
+    "message": "रिफ्रेश"
+  },
+  "titleSettings": {
+    "message": "सेटिंग्स"
+  },
+  "titleStatusPage": {
+    "message": "स्थिति पेज खोलें"
+  },
+
+  "fiveHourLimit": {
+    "message": "5 घंटे की सीमा"
+  },
+  "sevenDayLimit": {
+    "message": "7 दिन की सीमा"
+  },
+  "modelLimits7d": {
+    "message": "मॉडल सीमाएं (7 दिन)"
+  },
+  "todaysChats": {
+    "message": "आज के चैट"
+  },
+  "noChatsYet": {
+    "message": "अभी तक कोई चैट रिकॉर्ड नहीं"
+  },
+
+  "topicLog": {
+    "message": "विषय लॉग"
+  },
+  "history": {
+    "message": "इतिहास"
+  },
+  "sayThanks": {
+    "message": "धन्यवाद कहें"
+  },
+
+  "legendTitle": {
+    "message": "लीजेंड"
+  },
+  "iconGrid": {
+    "message": "आइकन (2x2 ग्रिड)"
+  },
+  "fiveHLabel": {
+    "message": "5 घंटे सीमा"
+  },
+  "sevenDLabel": {
+    "message": "7 दिन"
+  },
+  "statusLabel": {
+    "message": "स्थिति"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "स्थिति डॉट्स"
+  },
+  "operational": {
+    "message": "सामान्य"
+  },
+  "degraded": {
+    "message": "प्रदर्शन में कमी"
+  },
+  "partialOutage": {
+    "message": "आंशिक रुकावट"
+  },
+  "majorOutage": {
+    "message": "गंभीर रुकावट"
+  },
+  "maintenance": {
+    "message": "रखरखाव"
+  },
+  "badgeRotates": {
+    "message": "Badge (घूमता है)"
+  },
+  "fiveHUsage": {
+    "message": "5 घंटे उपयोग"
+  },
+  "sevenDUsage": {
+    "message": "7 दिन उपयोग"
+  },
+  "outage": {
+    "message": "रुकावट"
+  },
+  "sourceStatus": {
+    "message": "स्रोत: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Sync विफल"
+  },
+  "connectionError": {
+    "message": "कनेक्शन त्रुटि"
+  },
+  "noDataClickSync": {
+    "message": "कोई डेटा नहीं -- Sync पर क्लिक करें"
+  },
+  "errorLoadingData": {
+    "message": "डेटा लोड करने में त्रुटि"
+  },
+  "resetNow": {
+    "message": "अभी रीसेट"
+  },
+  "resetIn": {
+    "message": "रीसेट $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "$1 दिन $2 घंटे में",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "$1 घंटे $2 मिनट में",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "$1 मिनट में",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "सेटिंग्स"
+  },
+  "pageTitle_settings": {
+    "message": "सेटिंग्स - Claude के लिए डैशबोर्ड"
+  },
+  "howItWorks": {
+    "message": "यह कैसे काम करता है"
+  },
+  "howItWorksText1": {
+    "message": "यह एक्सटेंशन सीधे <strong>Claude.ai API</strong> से आपका उपयोग डेटा पढ़ता है। आपको claude.ai पर लॉग इन होना चाहिए -- API कुंजी की आवश्यकता नहीं है।"
+  },
+  "howItWorksText2": {
+    "message": "डेटा हर <strong>5 मिनट</strong> में स्वचालित रूप से सिंक होता है। आप पॉपअप में Sync आइकन पर क्लिक करके मैन्युअल रूप से भी सिंक कर सकते हैं।"
+  },
+  "prerequisites": {
+    "message": "पूर्वापेक्षाएं"
+  },
+  "prereqPro": {
+    "message": "Claude Pro या Max सब्सक्रिप्शन"
+  },
+  "prereqLoggedIn": {
+    "message": "claude.ai पर लॉग इन"
+  },
+  "prereqCookies": {
+    "message": "claude.ai के लिए Cookie सक्षम"
+  },
+  "dataSection": {
+    "message": "डेटा"
+  },
+  "storedData": {
+    "message": "संग्रहीत डेटा"
+  },
+  "capturedTopics": {
+    "message": "कैप्चर किए गए विषय"
+  },
+  "historyEntries": {
+    "message": "इतिहास प्रविष्टियां"
+  },
+  "exportBtn": {
+    "message": "निर्यात"
+  },
+  "deleteAllData": {
+    "message": "सारा डेटा मिटाएं"
+  },
+  "debugInfo": {
+    "message": "Debug जानकारी"
+  },
+  "loading": {
+    "message": "लोड हो रहा है..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 दिन)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 दिन",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "अंतिम सिंक"
+  },
+  "never": {
+    "message": "कभी नहीं"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "सेट नहीं"
+  },
+  "fiveHLimitDebug": {
+    "message": "5 घंटे सीमा"
+  },
+  "sevenDLimitDebug": {
+    "message": "7 दिन सीमा"
+  },
+  "statusDebug": {
+    "message": "स्थिति"
+  },
+  "statusSyncLabel": {
+    "message": "स्थिति Sync"
+  },
+  "unknown": {
+    "message": "अज्ञात"
+  },
+  "lastErrorLabel": {
+    "message": "अंतिम त्रुटि"
+  },
+  "exportFailed": {
+    "message": "निर्यात विफल"
+  },
+  "confirmDelete": {
+    "message": "क्या आप वाकई सारा डेटा मिटाना चाहते हैं? यह पूर्ववत नहीं किया जा सकता।"
+  },
+  "dataDeleted": {
+    "message": "डेटा मिटा दिया गया!"
+  },
+  "errorGeneric": {
+    "message": "त्रुटि: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "विषय लॉग - Claude के लिए डैशबोर्ड"
+  },
+  "topicLogTitle": {
+    "message": "विषय लॉग"
+  },
+  "searchPlaceholder": {
+    "message": "विषय खोजें..."
+  },
+  "noTopicsRecorded": {
+    "message": "कोई विषय रिकॉर्ड नहीं"
+  },
+  "loadError": {
+    "message": "लोडिंग त्रुटि"
+  },
+  "topicsCount": {
+    "message": "$1 विषय",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "\"$1\" के लिए कोई परिणाम नहीं",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "आज"
+  },
+  "yesterday": {
+    "message": "कल"
+  },
+
+  "pageTitle_history": {
+    "message": "इतिहास - Claude के लिए डैशबोर्ड"
+  },
+  "usageHistory": {
+    "message": "उपयोग इतिहास"
+  },
+  "periodTitle": {
+    "message": "अवधि"
+  },
+  "fromLabel": {
+    "message": "से"
+  },
+  "toLabel": {
+    "message": "तक"
+  },
+  "applyBtn": {
+    "message": "लागू करें"
+  },
+  "days7": {
+    "message": "7 दिन"
+  },
+  "days30": {
+    "message": "30 दिन"
+  },
+  "days90": {
+    "message": "90 दिन"
+  },
+  "allData": {
+    "message": "सभी"
+  },
+  "usageInPeriod": {
+    "message": "अवधि में उपयोग"
+  },
+  "syncPoints": {
+    "message": "Sync पॉइंट्स"
+  },
+  "activeDays": {
+    "message": "सक्रिय दिन"
+  },
+  "max5hLimit": {
+    "message": "अधिकतम 5 घंटे सीमा"
+  },
+  "max7dLimit": {
+    "message": "अधिकतम 7 दिन सीमा"
+  },
+  "fiveHLimitHistory": {
+    "message": "5 घंटे सीमा इतिहास"
+  },
+  "exportAsJson": {
+    "message": "JSON के रूप में निर्यात"
+  },
+  "noDataInPeriod": {
+    "message": "इस अवधि में कोई डेटा नहीं"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- सहायता"
+  },
+  "madeWithLove": {
+    "message": "सैक्सोनी-आनहाल्ट में प्यार से बनाया गया"
+  },
+  "openSourceDesc": {
+    "message": "सैक्सोनी-आनहाल्ट से ओपन सोर्स।<br>कोई ट्रैकिंग नहीं, कोई विज्ञापन नहीं, कोई समझौता नहीं।"
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- मुझे एक कॉफी पिलाएं"
+  },
+  "orByCrypto": {
+    "message": "या क्रिप्टोकरेंसी के माध्यम से:"
+  },
+  "copyAddress": {
+    "message": "पता कॉपी करें"
+  },
+  "copied": {
+    "message": "कॉपी हो गया!"
+  },
+  "thanksForSupport": {
+    "message": "आपके सहयोग के लिए धन्यवाद!"
+  },
+
+  "notLoggedInError": {
+    "message": "लॉग इन नहीं हैं या कोई चैट संगठन नहीं है"
+  }
+}

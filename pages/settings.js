@@ -27,7 +27,7 @@ async function loadVersion() {
   try {
     const manifest = chrome.runtime.getManifest();
     if (elements.versionInfo) {
-      elements.versionInfo.textContent = i18n('footerText', [manifest.version]);
+      elements.versionInfo.textContent = i18n('footerText', [manifest.version, String(new Date().getFullYear())]);
     }
   } catch (e) {
     // Ignore
@@ -69,7 +69,7 @@ async function loadData() {
     elements.debugInfo.textContent = lines.join('\n');
 
   } catch (error) {
-    console.error('Error loading data:', error);
+    console.warn('Error loading data:', error);
     elements.debugInfo.textContent = i18n('errorGeneric', [error.message]);
   }
 }

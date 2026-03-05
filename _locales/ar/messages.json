@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "لوحة معلومات Claude"
+  },
+  "appDescription": {
+    "message": "لوحة معلومات Claude - تعرض حدود 5 ساعات/7 ايام وحالة النظام ومواضيع المحادثات مع المزامنة التلقائية."
+  },
+  "appDefaultTitle": {
+    "message": "لوحة معلومات Claude"
+  },
+
+  "titleSync": {
+    "message": "تحديث"
+  },
+  "titleSettings": {
+    "message": "الاعدادات"
+  },
+  "titleStatusPage": {
+    "message": "فتح صفحة الحالة"
+  },
+
+  "fiveHourLimit": {
+    "message": "حد 5 ساعات"
+  },
+  "sevenDayLimit": {
+    "message": "حد 7 ايام"
+  },
+  "modelLimits7d": {
+    "message": "حدود النموذج (7 ايام)"
+  },
+  "todaysChats": {
+    "message": "محادثات اليوم"
+  },
+  "noChatsYet": {
+    "message": "لا توجد محادثات مسجلة بعد"
+  },
+
+  "topicLog": {
+    "message": "سجل المواضيع"
+  },
+  "history": {
+    "message": "السجل"
+  },
+  "sayThanks": {
+    "message": "قل شكرا"
+  },
+
+  "legendTitle": {
+    "message": "وسيلة الايضاح"
+  },
+  "iconGrid": {
+    "message": "ايقونة (شبكة 2x2)"
+  },
+  "fiveHLabel": {
+    "message": "حد 5 ساعات"
+  },
+  "sevenDLabel": {
+    "message": "7 ايام"
+  },
+  "statusLabel": {
+    "message": "الحالة"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "نقاط الحالة"
+  },
+  "operational": {
+    "message": "يعمل بشكل طبيعي"
+  },
+  "degraded": {
+    "message": "اداء منخفض"
+  },
+  "partialOutage": {
+    "message": "انقطاع جزئي"
+  },
+  "majorOutage": {
+    "message": "انقطاع كبير"
+  },
+  "maintenance": {
+    "message": "صيانة"
+  },
+  "badgeRotates": {
+    "message": "Badge (يتناوب)"
+  },
+  "fiveHUsage": {
+    "message": "استخدام 5 ساعات"
+  },
+  "sevenDUsage": {
+    "message": "استخدام 7 ايام"
+  },
+  "outage": {
+    "message": "انقطاع"
+  },
+  "sourceStatus": {
+    "message": "المصدر: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "فشلت المزامنة"
+  },
+  "connectionError": {
+    "message": "خطا في الاتصال"
+  },
+  "noDataClickSync": {
+    "message": "لا توجد بيانات -- انقر على Sync"
+  },
+  "errorLoadingData": {
+    "message": "خطا في تحميل البيانات"
+  },
+  "resetNow": {
+    "message": "اعادة تعيين الان"
+  },
+  "resetIn": {
+    "message": "اعادة تعيين $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "بعد $1 يوم $2 ساعة",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "بعد $1 ساعة $2 دقيقة",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "بعد $1 دقيقة",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "الاعدادات"
+  },
+  "pageTitle_settings": {
+    "message": "الاعدادات - لوحة معلومات Claude"
+  },
+  "howItWorks": {
+    "message": "كيف يعمل"
+  },
+  "howItWorksText1": {
+    "message": "يقرا هذا الامتداد بيانات الاستخدام مباشرة من <strong>Claude.ai API</strong>. يجب ان تكون مسجلا للدخول في claude.ai -- لا حاجة لمفتاح API."
+  },
+  "howItWorksText2": {
+    "message": "تتم مزامنة البيانات تلقائيا كل <strong>5 دقائق</strong>. يمكنك ايضا النقر يدويا على ايقونة Sync في النافذة المنبثقة."
+  },
+  "prerequisites": {
+    "message": "المتطلبات المسبقة"
+  },
+  "prereqPro": {
+    "message": "اشتراك Claude Pro او Max"
+  },
+  "prereqLoggedIn": {
+    "message": "تسجيل الدخول في claude.ai"
+  },
+  "prereqCookies": {
+    "message": "تفعيل Cookie لـ claude.ai"
+  },
+  "dataSection": {
+    "message": "البيانات"
+  },
+  "storedData": {
+    "message": "البيانات المخزنة"
+  },
+  "capturedTopics": {
+    "message": "المواضيع الملتقطة"
+  },
+  "historyEntries": {
+    "message": "ادخالات السجل"
+  },
+  "exportBtn": {
+    "message": "تصدير"
+  },
+  "deleteAllData": {
+    "message": "حذف جميع البيانات"
+  },
+  "debugInfo": {
+    "message": "معلومات Debug"
+  },
+  "loading": {
+    "message": "جاري التحميل..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 يوم)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 يوم",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "اخر مزامنة"
+  },
+  "never": {
+    "message": "ابدا"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "غير محدد"
+  },
+  "fiveHLimitDebug": {
+    "message": "حد 5 ساعات"
+  },
+  "sevenDLimitDebug": {
+    "message": "حد 7 ايام"
+  },
+  "statusDebug": {
+    "message": "الحالة"
+  },
+  "statusSyncLabel": {
+    "message": "مزامنة الحالة"
+  },
+  "unknown": {
+    "message": "غير معروف"
+  },
+  "lastErrorLabel": {
+    "message": "اخر خطا"
+  },
+  "exportFailed": {
+    "message": "فشل التصدير"
+  },
+  "confirmDelete": {
+    "message": "هل تريد حقا حذف جميع البيانات؟ لا يمكن التراجع عن هذا الاجراء."
+  },
+  "dataDeleted": {
+    "message": "تم حذف البيانات!"
+  },
+  "errorGeneric": {
+    "message": "خطا: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "سجل المواضيع - لوحة معلومات Claude"
+  },
+  "topicLogTitle": {
+    "message": "سجل المواضيع"
+  },
+  "searchPlaceholder": {
+    "message": "البحث في المواضيع..."
+  },
+  "noTopicsRecorded": {
+    "message": "لا توجد مواضيع مسجلة"
+  },
+  "loadError": {
+    "message": "خطا في التحميل"
+  },
+  "topicsCount": {
+    "message": "$1 موضوع",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "لا توجد نتائج لـ \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "اليوم"
+  },
+  "yesterday": {
+    "message": "امس"
+  },
+
+  "pageTitle_history": {
+    "message": "السجل - لوحة معلومات Claude"
+  },
+  "usageHistory": {
+    "message": "سجل الاستخدام"
+  },
+  "periodTitle": {
+    "message": "الفترة"
+  },
+  "fromLabel": {
+    "message": "من"
+  },
+  "toLabel": {
+    "message": "الى"
+  },
+  "applyBtn": {
+    "message": "تطبيق"
+  },
+  "days7": {
+    "message": "7 ايام"
+  },
+  "days30": {
+    "message": "30 يوم"
+  },
+  "days90": {
+    "message": "90 يوم"
+  },
+  "allData": {
+    "message": "الكل"
+  },
+  "usageInPeriod": {
+    "message": "الاستخدام في الفترة"
+  },
+  "syncPoints": {
+    "message": "نقاط Sync"
+  },
+  "activeDays": {
+    "message": "الايام النشطة"
+  },
+  "max5hLimit": {
+    "message": "اقصى حد 5 ساعات"
+  },
+  "max7dLimit": {
+    "message": "اقصى حد 7 ايام"
+  },
+  "fiveHLimitHistory": {
+    "message": "سجل حد 5 ساعات"
+  },
+  "exportAsJson": {
+    "message": "تصدير كـ JSON"
+  },
+  "noDataInPeriod": {
+    "message": "لا توجد بيانات في هذه الفترة"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- الدعم"
+  },
+  "madeWithLove": {
+    "message": "صنع بحب في ساكسونيا-أنهالت"
+  },
+  "openSourceDesc": {
+    "message": "مفتوح المصدر من ساكسونيا-أنهالت.<br>بدون تتبع، بدون اعلانات، بدون تنازلات."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- اشتري لي قهوة"
+  },
+  "orByCrypto": {
+    "message": "او عبر العملات المشفرة:"
+  },
+  "copyAddress": {
+    "message": "نسخ العنوان"
+  },
+  "copied": {
+    "message": "تم النسخ!"
+  },
+  "thanksForSupport": {
+    "message": "شكرا لدعمك!"
+  },
+
+  "notLoggedInError": {
+    "message": "غير مسجل الدخول او لا يوجد تنظيم محادثات"
+  }
+}

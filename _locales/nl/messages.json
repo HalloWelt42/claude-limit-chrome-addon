@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard voor Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard voor Claude - Toont 5u/7d-limieten, systeemstatus en chatonderwerpen met automatische synchronisatie."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard voor Claude"
+  },
+
+  "titleSync": {
+    "message": "Vernieuwen"
+  },
+  "titleSettings": {
+    "message": "Instellingen"
+  },
+  "titleStatusPage": {
+    "message": "Statuspagina openen"
+  },
+
+  "fiveHourLimit": {
+    "message": "5-uurslimiet"
+  },
+  "sevenDayLimit": {
+    "message": "7-dagenlimiet"
+  },
+  "modelLimits7d": {
+    "message": "Modellimieten (7 dagen)"
+  },
+  "todaysChats": {
+    "message": "Chats van vandaag"
+  },
+  "noChatsYet": {
+    "message": "Nog geen chats vastgelegd"
+  },
+
+  "topicLog": {
+    "message": "Onderwerplog"
+  },
+  "history": {
+    "message": "Geschiedenis"
+  },
+  "sayThanks": {
+    "message": "Bedanken"
+  },
+
+  "legendTitle": {
+    "message": "Legenda"
+  },
+  "iconGrid": {
+    "message": "Icoon (2x2 raster)"
+  },
+  "fiveHLabel": {
+    "message": "5u-limiet"
+  },
+  "sevenDLabel": {
+    "message": "7 dagen"
+  },
+  "statusLabel": {
+    "message": "Status"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Statuspunten"
+  },
+  "operational": {
+    "message": "Operationeel"
+  },
+  "degraded": {
+    "message": "Verminderd"
+  },
+  "partialOutage": {
+    "message": "Gedeeltelijke storing"
+  },
+  "majorOutage": {
+    "message": "Grote storing"
+  },
+  "maintenance": {
+    "message": "Onderhoud"
+  },
+  "badgeRotates": {
+    "message": "Badge (roteert)"
+  },
+  "fiveHUsage": {
+    "message": "5u-gebruik"
+  },
+  "sevenDUsage": {
+    "message": "7d-gebruik"
+  },
+  "outage": {
+    "message": "Storing"
+  },
+  "sourceStatus": {
+    "message": "Bron: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard voor Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Synchronisatie mislukt"
+  },
+  "connectionError": {
+    "message": "Verbindingsfout"
+  },
+  "noDataClickSync": {
+    "message": "Nog geen gegevens -- klik op Sync"
+  },
+  "errorLoadingData": {
+    "message": "Fout bij laden van gegevens"
+  },
+  "resetNow": {
+    "message": "Reset nu"
+  },
+  "resetIn": {
+    "message": "Reset $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "over $1d $2u",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "over $1u $2m",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "over $1m",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Instellingen"
+  },
+  "pageTitle_settings": {
+    "message": "Instellingen - Dashboard voor Claude"
+  },
+  "howItWorks": {
+    "message": "Hoe het werkt"
+  },
+  "howItWorksText1": {
+    "message": "Deze extensie leest je gebruiksgegevens direct van de <strong>Claude.ai API</strong>. Je moet ingelogd zijn op claude.ai -- geen API-sleutel nodig."
+  },
+  "howItWorksText2": {
+    "message": "Gegevens worden automatisch elke <strong>5 minuten</strong> gesynchroniseerd. Je kunt ook handmatig op het sync-icoon in de popup klikken."
+  },
+  "prerequisites": {
+    "message": "Vereisten"
+  },
+  "prereqPro": {
+    "message": "Claude Pro of Max abonnement"
+  },
+  "prereqLoggedIn": {
+    "message": "Ingelogd op claude.ai"
+  },
+  "prereqCookies": {
+    "message": "Cookies ingeschakeld voor claude.ai"
+  },
+  "dataSection": {
+    "message": "Gegevens"
+  },
+  "storedData": {
+    "message": "Opgeslagen gegevens"
+  },
+  "capturedTopics": {
+    "message": "Vastgelegde onderwerpen"
+  },
+  "historyEntries": {
+    "message": "Geschiedenisvermeldingen"
+  },
+  "exportBtn": {
+    "message": "Exporteren"
+  },
+  "deleteAllData": {
+    "message": "Alle gegevens verwijderen"
+  },
+  "debugInfo": {
+    "message": "Debug-info"
+  },
+  "loading": {
+    "message": "Laden..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 dagen)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 dagen",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Laatste sync"
+  },
+  "never": {
+    "message": "nooit"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "niet ingesteld"
+  },
+  "fiveHLimitDebug": {
+    "message": "5u-limiet"
+  },
+  "sevenDLimitDebug": {
+    "message": "7d-limiet"
+  },
+  "statusDebug": {
+    "message": "Status"
+  },
+  "statusSyncLabel": {
+    "message": "Status sync"
+  },
+  "unknown": {
+    "message": "onbekend"
+  },
+  "lastErrorLabel": {
+    "message": "Laatste fout"
+  },
+  "exportFailed": {
+    "message": "Export mislukt"
+  },
+  "confirmDelete": {
+    "message": "Echt alle gegevens verwijderen? Dit kan niet ongedaan worden gemaakt."
+  },
+  "dataDeleted": {
+    "message": "Gegevens verwijderd!"
+  },
+  "errorGeneric": {
+    "message": "Fout: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Onderwerplog - Dashboard voor Claude"
+  },
+  "topicLogTitle": {
+    "message": "Onderwerplog"
+  },
+  "searchPlaceholder": {
+    "message": "Onderwerpen zoeken..."
+  },
+  "noTopicsRecorded": {
+    "message": "Geen onderwerpen vastgelegd"
+  },
+  "loadError": {
+    "message": "Fout bij laden"
+  },
+  "topicsCount": {
+    "message": "$1 onderwerpen",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "Geen resultaten voor \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Vandaag"
+  },
+  "yesterday": {
+    "message": "Gisteren"
+  },
+
+  "pageTitle_history": {
+    "message": "Geschiedenis - Dashboard voor Claude"
+  },
+  "usageHistory": {
+    "message": "Gebruiksgeschiedenis"
+  },
+  "periodTitle": {
+    "message": "Periode"
+  },
+  "fromLabel": {
+    "message": "Van"
+  },
+  "toLabel": {
+    "message": "Tot"
+  },
+  "applyBtn": {
+    "message": "Toepassen"
+  },
+  "days7": {
+    "message": "7 dagen"
+  },
+  "days30": {
+    "message": "30 dagen"
+  },
+  "days90": {
+    "message": "90 dagen"
+  },
+  "allData": {
+    "message": "Alles"
+  },
+  "usageInPeriod": {
+    "message": "Gebruik in periode"
+  },
+  "syncPoints": {
+    "message": "Sync-punten"
+  },
+  "activeDays": {
+    "message": "Actieve dagen"
+  },
+  "max5hLimit": {
+    "message": "Max 5u-limiet"
+  },
+  "max7dLimit": {
+    "message": "Max 7d-limiet"
+  },
+  "fiveHLimitHistory": {
+    "message": "5u-limiet geschiedenis"
+  },
+  "exportAsJson": {
+    "message": "Exporteren als JSON"
+  },
+  "noDataInPeriod": {
+    "message": "Geen gegevens in deze periode"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard voor Claude -- Ondersteuning"
+  },
+  "madeWithLove": {
+    "message": "Met liefde gemaakt in Saksen-Anhalt"
+  },
+  "openSourceDesc": {
+    "message": "Open source uit Saksen-Anhalt.<br>Geen tracking, geen advertenties, geen compromissen."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Koop een koffie voor mij"
+  },
+  "orByCrypto": {
+    "message": "Of via cryptovaluta:"
+  },
+  "copyAddress": {
+    "message": "Adres kopieren"
+  },
+  "copied": {
+    "message": "Gekopieerd!"
+  },
+  "thanksForSupport": {
+    "message": "Bedankt voor je steun!"
+  },
+
+  "notLoggedInError": {
+    "message": "Niet ingelogd of geen chatorganisatie"
+  }
+}
