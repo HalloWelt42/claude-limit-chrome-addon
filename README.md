@@ -21,11 +21,15 @@ Browser-Extension zur Anzeige deines Claude-Nutzungslimits.
 
 ## Installation
 
+### Chrome Web Store
+Direkt aus dem Chrome Web Store installieren.
+
+### Manuell (Entwicklermodus)
 1. Repository herunterladen/klonen
-2. `brave://extensions` oder `chrome://extensions` oeffnen
+2. `chrome://extensions` öffnen
 3. **Entwicklermodus** aktivieren (Schalter oben rechts)
 4. **"Entpackte Erweiterung laden"** klicken
-5. Den `claude-dashboard` Ordner auswaehlen
+5. Den `claude-dashboard` Ordner auswählen
 
 ## Verwendung
 
@@ -70,8 +74,43 @@ claude-dashboard/
 - Kein Tracking, keine Analytics
 - Open Source - Code jederzeit einsehbar
 
+➡️ [Vollständige Datenschutzerklärung](PRIVACY.md)
+
+## Unterstützen
+
+Claude Dashboard ist ein privates Open-Source-Projekt. Kein Tracking, keine Werbung, keine Kompromisse.
+
+Wenn dir das Projekt gefällt, kannst du über den ❤️-Button im Popup "Danke sagen" -  oder direkt hier:
+
+[![Ko-fi](https://ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/HalloWelt42)
+
+
+
+**Crypto:**
+
+| Coin | Adresse |
+| ------ | --------- |
+| BTC | `bc1qnd599khdkv3v3npmj9ufxzf6h4fzanny2acwqr` |
+| DOGE | `DL7tuiYCqm3xQjMDXChdxeQxqUGMACn1ZV` |
+| ETH | `0x8A28fc47bFFFA03C8f685fa0836E2dBe1CA14F27` |
+
+---
+
 ## Lizenz
 
-Nur fuer private Nutzung - Siehe [LICENSE](LICENSE) fuer Details.
+**Nicht-kommerzielle Nutzung** -  Siehe [LICENSE](LICENSE)
 
-Copyright (c) 2026 HalloWelt42
+✅ Private Nutzung, Installation, persönliche Anpassungen, Teilen mit Quellenangabe
+
+❌ Kommerzielle Nutzung, Verkauf, Einbindung in kommerzielle Produkte
+
+---
+
+## Support
+
+- 🐛 Bugs & Features: [GitHub Issues](https://github.com/HalloWelt42/claude-limit-chrome-addon/issues)
+- ☕ Unterstützen: [Ko-fi](https://ko-fi.com/HalloWelt42)
+
+---
+
+© 2025-2026 [HalloWelt42](https://github.com/HalloWelt42) — Nicht-kommerzielle Nutzung / Non-commercial use only

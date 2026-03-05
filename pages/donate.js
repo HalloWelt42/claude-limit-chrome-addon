@@ -1,7 +1,6 @@
 function initDonations() {
   let hasAnyOption = false;
 
-  // Ko-fi
   if (DONATE_CONFIG.kofi) {
     const el = document.getElementById('opt-kofi');
     el.href = DONATE_CONFIG.kofi;
@@ -9,15 +8,6 @@ function initDonations() {
     hasAnyOption = true;
   }
 
-  // PayPal
-  if (DONATE_CONFIG.paypal) {
-    const el = document.getElementById('opt-paypal');
-    el.href = DONATE_CONFIG.paypal;
-    el.classList.remove('hidden');
-    hasAnyOption = true;
-  }
-
-  // Bitcoin
   if (DONATE_CONFIG.btc?.address) {
     document.getElementById('opt-btc').classList.remove('hidden');
     document.getElementById('btc-address').textContent = DONATE_CONFIG.btc.address;
@@ -32,22 +22,6 @@ function initDonations() {
     hasAnyOption = true;
   }
 
-  // Litecoin
-  if (DONATE_CONFIG.ltc?.address) {
-    document.getElementById('opt-ltc').classList.remove('hidden');
-    document.getElementById('ltc-address').textContent = DONATE_CONFIG.ltc.address;
-    if (DONATE_CONFIG.ltc.qr) {
-      const img = document.createElement('img');
-      img.src = DONATE_CONFIG.ltc.qr;
-      img.alt = 'Litecoin QR';
-      const qr = document.getElementById('ltc-qr');
-      qr.textContent = '';
-      qr.appendChild(img);
-    }
-    hasAnyOption = true;
-  }
-
-  // Dogecoin
   if (DONATE_CONFIG.doge?.address) {
     document.getElementById('opt-doge').classList.remove('hidden');
     document.getElementById('doge-address').textContent = DONATE_CONFIG.doge.address;
@@ -62,22 +36,20 @@ function initDonations() {
     hasAnyOption = true;
   }
 
-  // Monero
-  if (DONATE_CONFIG.xmr?.address) {
-    document.getElementById('opt-xmr').classList.remove('hidden');
-    document.getElementById('xmr-address').textContent = DONATE_CONFIG.xmr.address;
-    if (DONATE_CONFIG.xmr.qr) {
+  if (DONATE_CONFIG.eth?.address) {
+    document.getElementById('opt-eth').classList.remove('hidden');
+    document.getElementById('eth-address').textContent = DONATE_CONFIG.eth.address;
+    if (DONATE_CONFIG.eth.qr) {
       const img = document.createElement('img');
-      img.src = DONATE_CONFIG.xmr.qr;
-      img.alt = 'Monero QR';
-      const qr = document.getElementById('xmr-qr');
+      img.src = DONATE_CONFIG.eth.qr;
+      img.alt = 'Ethereum QR';
+      const qr = document.getElementById('eth-qr');
       qr.textContent = '';
       qr.appendChild(img);
     }
     hasAnyOption = true;
   }
 
-  // Fallback wenn nichts konfiguriert
   if (!hasAnyOption) {
     document.getElementById('donate-options').classList.add('hidden');
     document.getElementById('no-options').classList.remove('hidden');
