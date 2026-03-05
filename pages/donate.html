@@ -3,101 +3,81 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Unterst&uuml;tzen - Claude Dashboard</title>
+  <title>Claude Dashboard &ndash; Unterst&uuml;tzen</title>
   <link rel="stylesheet" href="donate.css">
 </head>
 <body>
   <div class="donate-page">
+    <!-- Header -->
     <div class="donate-header">
-      <span class="heart">&#x1F49D;</span>
-      <h1>Danke f&uuml;r deine Unterst&uuml;tzung!</h1>
-      <p>Diese App ist kostenlos. Spenden helfen bei der Weiterentwicklung.</p>
+      <span class="icon">&#x2615;</span>
+      <h1>Made with &#x2764;&#xFE0F; in Sachsen-Anhalt</h1>
+      <p>Open Source aus Sachsen-Anhalt.<br>Kein Tracking, keine Werbung, keine Kompromisse.</p>
     </div>
 
-    <div id="main-view" class="donate-content">
-      <div id="donate-options" class="donate-options">
-        <a id="opt-kofi" href="" target="_blank" rel="noopener" class="donate-option hidden">
-          <div class="donate-icon kofi">&#x2615;</div>
-          <div class="donate-info">
-            <h3>Ko-fi</h3>
-            <p>Kreditkarte oder PayPal &middot; Kein Account n&ouml;tig</p>
-          </div>
-          <span class="donate-arrow">&rarr;</span>
-        </a>
+    <!-- Ko-fi Primary -->
+    <a id="kofi-btn" href="" target="_blank" rel="noopener" class="kofi-btn">
+      <span class="kofi-icon">&#x2615;</span>
+      <span>Ko-fi &ndash; Kaffee spendieren</span>
+    </a>
 
-        <div id="opt-btc" class="donate-option hidden" data-crypto="btc">
-          <div class="donate-icon btc">&#x20BF;</div>
-          <div class="donate-info">
-            <h3>Bitcoin</h3>
-            <p>Kryptow&auml;hrung</p>
-          </div>
-          <span class="donate-arrow">&rarr;</span>
-        </div>
+    <!-- Crypto -->
+    <p class="crypto-label">Oder per Kryptow&auml;hrung:</p>
 
-        <div id="opt-doge" class="donate-option hidden" data-crypto="doge">
-          <div class="donate-icon doge">&#xD0;</div>
-          <div class="donate-info">
-            <h3>Dogecoin</h3>
-            <p>Community-Krypto</p>
-          </div>
-          <span class="donate-arrow">&rarr;</span>
-        </div>
+    <div class="crypto-tabs">
+      <button class="crypto-tab active" data-crypto="btc">
+        <span class="coin-icon">&#x20BF;</span>
+        <span>Bitcoin</span>
+      </button>
+      <button class="crypto-tab" data-crypto="doge">
+        <span class="coin-icon">&#xD0;</span>
+        <span>Dogecoin</span>
+      </button>
+      <button class="crypto-tab" data-crypto="eth">
+        <span class="coin-icon">&#x039E;</span>
+        <span>Ethereum</span>
+      </button>
+    </div>
 
-        <div id="opt-eth" class="donate-option hidden" data-crypto="eth">
-          <div class="donate-icon eth">&#x039E;</div>
-          <div class="donate-info">
-            <h3>Ethereum</h3>
-            <p>Smart-Contract Plattform</p>
-          </div>
-          <span class="donate-arrow">&rarr;</span>
+    <!-- BTC -->
+    <div class="crypto-content active" id="crypto-btc">
+      <div class="crypto-box">
+        <div class="qr-code" id="btc-qr"><span class="placeholder">QR</span></div>
+        <div class="crypto-details">
+          <p class="crypto-name">Bitcoin (BTC)</p>
+          <p class="crypto-address" id="btc-address"></p>
+          <button class="copy-btn" data-coin="btc">&#x1F4CB; <span class="copy-text">Adresse kopieren</span></button>
         </div>
       </div>
+    </div>
 
-      <div id="no-options" class="no-options hidden">
-        <div class="icon">&#x1F527;</div>
-        <p>Spenden-Optionen werden noch eingerichtet.</p>
+    <!-- DOGE -->
+    <div class="crypto-content" id="crypto-doge">
+      <div class="crypto-box">
+        <div class="qr-code" id="doge-qr"><span class="placeholder">QR</span></div>
+        <div class="crypto-details">
+          <p class="crypto-name">Dogecoin (DOGE)</p>
+          <p class="crypto-address" id="doge-address"></p>
+          <button class="copy-btn" data-coin="doge">&#x1F4CB; <span class="copy-text">Adresse kopieren</span></button>
+        </div>
       </div>
     </div>
 
-    <div id="btc-view" class="crypto-detail">
-      <div class="icon">&#x20BF;</div>
-      <h2>Bitcoin</h2>
-      <p class="subtitle">Scanne den QR-Code oder kopiere die Adresse</p>
-      <div class="qr-code" id="btc-qr">QR-Code</div>
-      <div class="address-box">
-        <code id="btc-address"></code>
-        <button class="copy-btn" data-coin="btc">&#x1F4CB; Kopieren</button>
+    <!-- ETH -->
+    <div class="crypto-content" id="crypto-eth">
+      <div class="crypto-box">
+        <div class="qr-code" id="eth-qr"><span class="placeholder">QR</span></div>
+        <div class="crypto-details">
+          <p class="crypto-name">Ethereum (ETH)</p>
+          <p class="crypto-address" id="eth-address"></p>
+          <button class="copy-btn" data-coin="eth">&#x1F4CB; <span class="copy-text">Adresse kopieren</span></button>
+        </div>
       </div>
-      <button class="back-btn" data-back>&larr; Zur&uuml;ck</button>
     </div>
 
-    <div id="doge-view" class="crypto-detail">
-      <div class="icon">&#xD0;</div>
-      <h2>Dogecoin</h2>
-      <p class="subtitle">Scanne den QR-Code oder kopiere die Adresse</p>
-      <div class="qr-code" id="doge-qr">QR-Code</div>
-      <div class="address-box">
-        <code id="doge-address"></code>
-        <button class="copy-btn" data-coin="doge">&#x1F4CB; Kopieren</button>
-      </div>
-      <button class="back-btn" data-back>&larr; Zur&uuml;ck</button>
-    </div>
-
-    <div id="eth-view" class="crypto-detail">
-      <div class="icon">&#x039E;</div>
-      <h2>Ethereum</h2>
-      <p class="subtitle">Scanne den QR-Code oder kopiere die Adresse</p>
-      <div class="qr-code" id="eth-qr">QR-Code</div>
-      <div class="address-box">
-        <code id="eth-address"></code>
-        <button class="copy-btn" data-coin="eth">&#x1F4CB; Kopieren</button>
-      </div>
-      <button class="back-btn" data-back>&larr; Zur&uuml;ck</button>
-    </div>
-
+    <!-- Footer -->
     <div class="donate-footer">
-      Alle Spenden sind freiwillig und einmalig.<br>
-      Die App bleibt kostenlos.
+      Danke f&uuml;r deine Unterst&uuml;tzung! &#x2764;&#xFE0F;
     </div>
   </div>
 
