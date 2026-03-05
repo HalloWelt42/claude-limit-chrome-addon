@@ -138,32 +138,41 @@
     <div class="status-legend">
       <div class="legend-title">Legende</div>
 
-      <div class="legend-section-title">Status-Punkte</div>
-      <div class="legend-table">
-        <span class="dot operational"></span><span>Betriebsbereit</span>
-        <span class="dot degraded"></span><span>Eingeschr&auml;nkt</span>
-        <span class="dot partial_outage"></span><span>Teilausfall</span>
-        <span class="dot major_outage"></span><span>St&ouml;rung</span>
-        <span class="dot maintenance"></span><span>Wartung</span>
+      <!-- Icon-Grid zentriert oben -->
+      <div class="legend-icon-section">
+        <div class="legend-section-title">Icon (2x2 Grid)</div>
+        <div class="legend-grid-labeled">
+          <span class="legend-grid-label-l">5h-Limit</span>
+          <span class="legend-square" style="background:var(--green)"></span>
+          <span class="legend-square" style="background:var(--yellow)"></span>
+          <span class="legend-grid-label-r">7-Tage</span>
+          <span class="legend-grid-label-l">Status</span>
+          <span class="legend-square" style="background:var(--green)"></span>
+          <span class="legend-square" style="background:var(--green)"></span>
+          <span class="legend-grid-label-r">Sync</span>
+        </div>
       </div>
 
-      <div class="legend-section-title">Icon (2x2 Grid)</div>
-      <div class="legend-grid-labeled">
-        <span class="legend-grid-label-l">5h-Limit</span>
-        <span class="legend-square" style="background:var(--green)"></span>
-        <span class="legend-square" style="background:var(--yellow)"></span>
-        <span class="legend-grid-label-r">7-Tage</span>
-        <span class="legend-grid-label-l">Status</span>
-        <span class="legend-square" style="background:var(--green)"></span>
-        <span class="legend-square" style="background:var(--green)"></span>
-        <span class="legend-grid-label-r">Sync</span>
-      </div>
-
-      <div class="legend-section-title">Badge-Text (rotiert)</div>
-      <div class="legend-table">
-        <span class="legend-badge-sample" style="background:var(--green)">d12</span><span>5h-Verbrauch</span>
-        <span class="legend-badge-sample" style="background:var(--yellow)">w55</span><span>7-Tage-Verbrauch</span>
-        <span class="legend-badge-sample" style="background:var(--red)">!!!</span><span>System-Ausfall</span>
+      <!-- Status-Punkte + Badge 2-spaltig nebeneinander -->
+      <div class="legend-columns">
+        <div>
+          <div class="legend-section-title">Status-Punkte</div>
+          <div class="legend-table">
+            <span class="dot operational"></span><span>Betriebsbereit</span>
+            <span class="dot degraded"></span><span>Eingeschr&auml;nkt</span>
+            <span class="dot partial_outage"></span><span>Teilausfall</span>
+            <span class="dot major_outage"></span><span>St&ouml;rung</span>
+            <span class="dot maintenance"></span><span>Wartung</span>
+          </div>
+        </div>
+        <div>
+          <div class="legend-section-title">Badge (rotiert)</div>
+          <div class="legend-table">
+            <span class="legend-badge-sample" style="background:var(--green)">d12</span><span>5h-Verbrauch</span>
+            <span class="legend-badge-sample" style="background:var(--yellow)">w55</span><span>7-Tage-Verbr.</span>
+            <span class="legend-badge-sample" style="background:var(--red)">!!!</span><span>Ausfall</span>
+          </div>
+        </div>
       </div>
 
       <div class="legend-source">Quelle: status.anthropic.com</div>

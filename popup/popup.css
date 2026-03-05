@@ -5,16 +5,16 @@
 }
 
 :root {
-  --bg-base: #0c0c0c;
-  --bg-card: #161616;
-  --bg-elevated: #1e1e1e;
-  --bg-track: #262626;
-  --border: #2a2a2a;
-  --border-subtle: #222;
+  --bg-base: #1a1a2e;
+  --bg-card: #222240;
+  --bg-elevated: #2a2a4a;
+  --bg-track: #333355;
+  --border: #3a3a5c;
+  --border-subtle: #2e2e50;
 
-  --text: #e8e8e8;
-  --text-secondary: #888;
-  --text-muted: #555;
+  --text: #e8e8f0;
+  --text-secondary: #9a9ab0;
+  --text-muted: #6a6a85;
 
   --accent: #d97706;
   --accent-glow: rgba(217, 119, 6, 0.15);
@@ -178,14 +178,14 @@ body {
 
 /* Legende */
 .status-legend {
-  background: rgba(59, 130, 246, 0.08);
-  border: 1px solid rgba(59, 130, 246, 0.2);
+  background: rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.25);
   border-radius: var(--radius);
   padding: 12px 14px;
   margin-top: 4px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 10px;
 }
 
 .legend-title {
@@ -195,13 +195,32 @@ body {
   letter-spacing: 0.02em;
 }
 
+.legend-icon-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+}
+
+.legend-icon-section .legend-section-title {
+  text-align: center;
+}
+
+.legend-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 16px;
+}
+
 .legend-section-title {
   font-size: 10px;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-top: 2px;
+  margin-bottom: 4px;
 }
 
 .legend-table {
