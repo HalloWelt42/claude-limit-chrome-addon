@@ -1,23 +1,23 @@
 {
   "manifest_version": 3,
   "name": "Claude Dashboard",
-  "version": "1.2.0",
-  "description": "Token-Verbrauchsübersicht für Claude - 5h/7d Limits mit Auto-Sync",
-  
+  "version": "1.6.0",
+  "description": "Claude Usage Dashboard - Zeigt 5h/7d Limits, System-Status und Chat-Themen mit Auto-Sync.",
+
   "permissions": [
     "storage",
-    "alarms",
-    "notifications"
+    "alarms"
   ],
-  
+
   "host_permissions": [
-    "https://claude.ai/*"
+    "https://claude.ai/*",
+    "https://status.claude.com/*"
   ],
-  
+
   "background": {
     "service_worker": "background/service-worker.js"
   },
-  
+
   "action": {
     "default_popup": "popup/popup.html",
     "default_icon": {
@@ -28,7 +28,7 @@
     },
     "default_title": "Claude Dashboard"
   },
-  
+
   "content_scripts": [
     {
       "matches": ["https://claude.ai/*"],
@@ -36,18 +36,15 @@
       "run_at": "document_idle"
     }
   ],
-  
+
   "icons": {
     "16": "icons/icon-16.png",
     "32": "icons/icon-32.png",
     "48": "icons/icon-48.png",
     "128": "icons/icon-128.png"
   },
-  
-  "web_accessible_resources": [
-    {
-      "resources": ["icons/*"],
-      "matches": ["https://claude.ai/*"]
-    }
-  ]
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'; img-src 'self' https: data:;"
+  }
 }

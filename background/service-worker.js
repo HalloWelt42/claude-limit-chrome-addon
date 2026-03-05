@@ -1,225 +1,254 @@
-/**
- * service-worker.js - Background Service Worker
- * Ruft claude.ai API direkt auf um Usage-Daten zu holen
- */
-
 const STORAGE_KEY = 'claude-dashboard';
 const SYNC_ALARM = 'sync-usage';
-
-// API URLs
 const API_BASE = 'https://claude.ai/api';
+const STATUS_URL = 'https://status.claude.com/api/v2/summary.json';
 
-/**
- * Installation
- */
+
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('Claude Dashboard: Extension installiert');
+  console.log('[Claude Dashboard] Installiert');
   initializeExtension();
 });
 
-/**
- * Startup
- */
 chrome.runtime.onStartup.addListener(() => {
-  console.log('Claude Dashboard: Browser gestartet');
+  console.log('[Claude Dashboard] Browser gestartet');
   initializeExtension();
 });
 
-/**
- * Initialisierung
- */
 async function initializeExtension() {
   const data = await loadStorageData();
   await updateBadge(data.usage?.fiveHour?.utilization || 0);
-  
-  // Sync-Alarm: alle 5 Minuten
+
   await chrome.alarms.clear(SYNC_ALARM);
   chrome.alarms.create(SYNC_ALARM, {
     periodInMinutes: 5,
-    delayInMinutes: 0.1 // Erster Sync nach 6 Sekunden
+    delayInMinutes: 0.1
   });
-  
-  console.log('Claude Dashboard: Initialisiert');
 }
 
-/**
- * Alarm-Handler
- */
 chrome.alarms.onAlarm.addListener(async (alarm) => {
   if (alarm.name === SYNC_ALARM) {
-    await syncUsage();
+    await syncAll();
   }
 });
 
-/**
- * Holt Usage-Daten von der API
- */
+async function syncAll() {
+  const [usageResult, statusResult] = await Promise.allSettled([
+    syncUsage(),
+    syncStatus()
+  ]);
+
+  const usage = usageResult.status === 'fulfilled' ? usageResult.value : null;
+  const status = statusResult.status === 'fulfilled' ? statusResult.value : null;
+
+  return {
+    success: usage?.success || false,
+    error: usage?.error || null,
+    percent: usage?.percent || 0,
+    status: status?.success || false
+  };
+}
+
 async function syncUsage() {
-  console.log('Claude Dashboard: Sync...');
-  
+  console.log('[Claude Dashboard] Usage sync...');
+
   try {
-    // 1. Organization mit "chat" capability finden
     const orgUuid = await findChatOrgUuid();
     if (!orgUuid) {
-      console.log('Claude Dashboard: Keine Chat-Org gefunden');
+      console.warn('[Claude Dashboard] Keine Chat-Org gefunden');
       await updateBadge(0, '#6b7280');
-      return { success: false, error: 'Keine Chat-Organisation gefunden' };
+      return { success: false, error: 'Nicht eingeloggt oder keine Chat-Organisation' };
     }
-    
-    // 2. Usage-Daten holen
-    const usageResponse = await fetch(`${API_BASE}/organizations/${orgUuid}/usage`, {
+
+    const response = await fetch(`${API_BASE}/organizations/${orgUuid}/usage`, {
       credentials: 'include'
     });
-    
-    if (!usageResponse.ok) {
-      throw new Error(`Usage API: ${usageResponse.status}`);
+
+    if (!response.ok) {
+      throw new Error(`Usage API: HTTP ${response.status}`);
     }
-    
-    const usage = await usageResponse.json();
-    console.log('Claude Dashboard: Usage erhalten', usage);
-    
-    // 3. Daten speichern
+
+    const usage = await response.json();
     const data = await loadStorageData();
     const today = new Date().toISOString().split('T')[0];
-    
+
     data.orgUuid = orgUuid;
     data.usage = {
-      fiveHour: usage.five_hour,
-      sevenDay: usage.seven_day,
-      sevenDayOpus: usage.seven_day_opus,
-      sevenDaySonnet: usage.seven_day_sonnet,
-      extraUsage: usage.extra_usage,
+      fiveHour: usage.five_hour || null,
+      sevenDay: usage.seven_day || null,
+      sevenDayOpus: usage.seven_day_opus || null,
+      sevenDaySonnet: usage.seven_day_sonnet || null,
+      extraUsage: usage.extra_usage || {},
       lastSync: new Date().toISOString()
     };
-    
-    // Historie
+
     if (!data.history.daily[today]) {
       data.history.daily[today] = [];
     }
     data.history.daily[today].push({
       time: new Date().toISOString(),
-      fiveHour: usage.five_hour?.utilization,
-      sevenDay: usage.seven_day?.utilization
+      fiveHour: usage.five_hour?.utilization ?? null,
+      sevenDay: usage.seven_day?.utilization ?? null
     });
-    
+
+    data.lastError = null;
     await saveStorageData(data);
-    
-    // 4. Badge mit 5h-Limit aktualisieren (das relevantere)
+
     const percent = usage.five_hour?.utilization || 0;
     await updateBadge(percent);
-    
-    console.log('Claude Dashboard: Sync erfolgreich -', percent + '%');
+
+    console.log(`[Claude Dashboard] Usage sync OK: ${percent}%`);
     return { success: true, percent };
-    
+
   } catch (error) {
-    console.error('Claude Dashboard: Sync Fehler', error);
+    console.error('[Claude Dashboard] Usage sync failed:', error);
+
+    const data = await loadStorageData();
+    data.lastError = { message: error.message, time: new Date().toISOString() };
+    await saveStorageData(data);
+
     await updateBadge(0, '#6b7280');
     return { success: false, error: error.message };
   }
 }
 
-/**
- * Findet die UUID der Organization mit "chat" capability
- */
-async function findChatOrgUuid() {
-  // Prüfen ob wir die UUID schon haben
-  const data = await loadStorageData();
-  if (data.orgUuid) {
-    return data.orgUuid;
+async function syncStatus() {
+  try {
+    const response = await fetch(STATUS_URL);
+    if (!response.ok) throw new Error(`Status API: HTTP ${response.status}`);
+
+    const json = await response.json();
+    const components = {};
+    let overall = 'operational';
+
+    const nameMap = {
+      'claude.ai': 'web',
+      'api': 'api',
+      'console': 'console',
+      'claude code': 'code'
+    };
+
+    if (json.components) {
+      for (const comp of json.components) {
+        const name = comp.name?.toLowerCase();
+        for (const [key, id] of Object.entries(nameMap)) {
+          if (name?.includes(key)) {
+            components[id] = comp.status || 'operational';
+          }
+        }
+      }
+    }
+
+    if (json.status?.indicator) {
+      const indicatorMap = {
+        none: 'operational',
+        minor: 'degraded',
+        major: 'partial_outage',
+        critical: 'major_outage'
+      };
+      overall = indicatorMap[json.status.indicator] || 'operational';
+    }
+
+    const data = await loadStorageData();
+    data.status = {
+      overall,
+      components,
+      lastSync: new Date().toISOString()
+    };
+    await saveStorageData(data);
+
+    return { success: true };
+  } catch (error) {
+    console.error('[Claude Dashboard] Status sync failed:', error);
+    return { success: false, error: error.message };
   }
-  
+}
+
+async function findChatOrgUuid() {
+  const data = await loadStorageData();
+  if (data.orgUuid) return data.orgUuid;
+
   try {
     const response = await fetch(`${API_BASE}/organizations`, {
       credentials: 'include'
     });
-    
-    if (!response.ok) {
-      throw new Error(`Orgs API: ${response.status}`);
-    }
-    
+
+    if (!response.ok) throw new Error(`Orgs API: HTTP ${response.status}`);
+
     const orgs = await response.json();
-    
-    // Finde Org mit "chat" capability (das ist die Claude.ai Consumer Org)
-    const chatOrg = orgs.find(org => 
+    const chatOrg = orgs.find(org =>
       org.capabilities && org.capabilities.includes('chat')
     );
-    
+
     return chatOrg?.uuid || null;
-    
   } catch (error) {
-    console.error('Claude Dashboard: Org-Suche fehlgeschlagen', error);
+    console.error('[Claude Dashboard] Org lookup failed:', error);
     return null;
   }
 }
 
-/**
- * Bestimmt Farbe basierend auf Prozent
- */
 function getColorForPercent(percent) {
-  if (percent < 34) return '#22c55e'; // Grün
-  if (percent < 67) return '#eab308'; // Gelb
-  return '#ef4444'; // Rot
+  if (percent < 40) return '#22c55e';
+  if (percent < 75) return '#eab308';
+  return '#ef4444';
 }
 
-/**
- * Aktualisiert das Badge
- */
 async function updateBadge(percent, overrideColor = null) {
   const color = overrideColor || getColorForPercent(percent);
-  
-  const text = percent > 0 ? String(percent) : '';
-  await chrome.action.setBadgeText({ text });
+
+  await chrome.action.setBadgeText({ text: percent > 0 ? String(percent) : '' });
   await chrome.action.setBadgeBackgroundColor({ color });
-  
   await drawPieIcon(percent, color);
 }
 
-/**
- * Zeichnet das Torten-Icon
- */
 async function drawPieIcon(percent, color) {
   const size = 128;
   const canvas = new OffscreenCanvas(size, size);
   const ctx = canvas.getContext('2d');
-  
   const center = size / 2;
-  const radius = 54;
-  const innerRadius = 28;
-  
+  const radius = 52;
+  const innerRadius = 30;
+
   ctx.clearRect(0, 0, size, size);
-  
-  // Hintergrund-Ring
+
+  // Background ring
   ctx.fillStyle = '#374151';
   ctx.beginPath();
   ctx.arc(center, center, radius, 0, Math.PI * 2);
   ctx.arc(center, center, innerRadius, 0, Math.PI * 2, true);
   ctx.fill();
-  
-  // Gefüllter Anteil
+
+  // Filled arc
   if (percent > 0) {
+    const startAngle = -Math.PI / 2;
+    const endAngle = startAngle + (Math.min(percent, 100) / 100) * Math.PI * 2;
+
     ctx.fillStyle = color;
     ctx.beginPath();
     ctx.moveTo(center, center);
-    const startAngle = -Math.PI / 2;
-    const endAngle = startAngle + (percent / 100) * Math.PI * 2;
     ctx.arc(center, center, radius, startAngle, endAngle);
     ctx.lineTo(center, center);
     ctx.fill();
-    
-    // Donut-Loch
+
+    // Inner hole
     ctx.fillStyle = '#1f2937';
     ctx.beginPath();
     ctx.arc(center, center, innerRadius, 0, Math.PI * 2);
     ctx.fill();
   }
-  
+
+  // Percentage text in center
+  if (percent > 0) {
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 32px sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText(String(percent), center, center + 1);
+  }
+
   const imageData = ctx.getImageData(0, 0, size, size);
   await chrome.action.setIcon({ imageData: { '128': imageData } });
 }
 
-/**
- * Nachrichten-Handler
- */
 chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
   handleMessage(message, sender).then(sendResponse);
   return true;
@@ -228,47 +257,48 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 async function handleMessage(message, sender) {
   switch (message.type) {
     case 'SYNC_NOW':
-      return await syncUsage();
-    
+      return await syncAll();
+
     case 'ADD_TOPIC':
       return await addTopic(message.payload);
-    
+
     case 'GET_DATA':
       return await loadStorageData();
-    
-    case 'SAVE_SETTINGS':
+
+    case 'SAVE_SETTINGS': {
       const data = await loadStorageData();
       data.settings = { ...data.settings, ...message.payload };
       await saveStorageData(data);
       return { success: true };
-    
+    }
+
+    case 'CLEAR_DATA': {
+      await chrome.storage.local.remove(STORAGE_KEY);
+      return { success: true };
+    }
+
     default:
-      return { error: 'Unbekannt' };
+      return { error: 'Unknown message type' };
   }
 }
 
-/**
- * Fügt ein Thema hinzu
- */
 async function addTopic(payload) {
   const { date, time, title } = payload;
   const data = await loadStorageData();
-  
+
   if (!data.topics[date]) {
     data.topics[date] = [];
   }
-  
+
   const exists = data.topics[date].some(t => t.title === title);
   if (!exists) {
     data.topics[date].push({ time, title });
     data.topics[date].sort((a, b) => b.time.localeCompare(a.time));
     await saveStorageData(data);
   }
-  
+
   return { success: true };
 }
-
-// === Storage ===
 
 async function loadStorageData() {
   return new Promise((resolve) => {
@@ -291,11 +321,20 @@ function getDefaultData() {
     usage: {
       fiveHour: null,
       sevenDay: null,
+      sevenDayOpus: null,
+      sevenDaySonnet: null,
+      extraUsage: {},
       lastSync: null
     },
-    history: { daily: {} },
-    topics: {}
+    status: {
+      overall: null,
+      components: {},
+      lastSync: null
+    },
+    history: { daily: {}, correction: 0 },
+    topics: {},
+    lastError: null
   };
 }
 
-console.log('Claude Dashboard: Service Worker geladen');
+console.log('[Claude Dashboard] Service Worker geladen');

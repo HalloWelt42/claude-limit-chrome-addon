@@ -8,17 +8,20 @@
 </head>
 <body>
   <div class="page-container">
-    <!-- Header -->
     <header class="page-header">
-      <button id="btn-back" class="btn-back">← Zurück</button>
-      <h1>📈 Verbrauchs-Historie</h1>
+      <button id="btn-back" class="btn-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <h1>Verbrauchs-Historie</h1>
     </header>
 
     <main class="page-content">
       <!-- Zeitraum -->
       <section class="card">
         <h2 class="card-title">Zeitraum</h2>
-        
+
         <div class="date-range">
           <div class="form-group">
             <label for="date-from">Von</label>
@@ -30,7 +33,7 @@
           </div>
           <button id="btn-apply" class="btn-primary">Anwenden</button>
         </div>
-        
+
         <div class="preset-buttons" style="margin-top: 12px;">
           <button class="btn-preset" data-range="7">7 Tage</button>
           <button class="btn-preset" data-range="30">30 Tage</button>
@@ -42,54 +45,31 @@
       <!-- Statistiken -->
       <section class="card">
         <h2 class="card-title">Verbrauch im Zeitraum</h2>
-        
+
         <div class="stats-grid">
           <div class="stat-item">
-            <div id="stat-total" class="stat-value">0</div>
-            <div class="stat-label">Tokens gesamt</div>
-          </div>
-          <div class="stat-item">
-            <div id="stat-input" class="stat-value">0</div>
-            <div class="stat-label">Input</div>
-          </div>
-          <div class="stat-item">
-            <div id="stat-output" class="stat-value">0</div>
-            <div class="stat-label">Output</div>
+            <div id="stat-syncs" class="stat-value">0</div>
+            <div class="stat-label">Sync-Punkte</div>
           </div>
           <div class="stat-item">
             <div id="stat-days" class="stat-value">0</div>
-            <div class="stat-label">Tage</div>
+            <div class="stat-label">Aktive Tage</div>
+          </div>
+          <div class="stat-item">
+            <div id="stat-max-5h" class="stat-value">0%</div>
+            <div class="stat-label">Max 5h-Limit</div>
+          </div>
+          <div class="stat-item">
+            <div id="stat-max-7d" class="stat-value">0%</div>
+            <div class="stat-label">Max 7d-Limit</div>
           </div>
         </div>
-      </section>
-
-      <!-- Korrektur -->
-      <section class="card">
-        <h2 class="card-title">Korrektur</h2>
-        <p class="hint" style="margin-bottom: 12px;">
-          Falls API-Daten unvollständig sind (z.B. vor Extension-Installation)
-        </p>
-        
-        <div class="form-group">
-          <label for="correction">Token-Korrektur (+/-)</label>
-          <div class="input-with-unit">
-            <input type="number" id="correction" value="0" step="10000">
-            <span class="unit">Tokens</span>
-          </div>
-        </div>
-        
-        <div class="data-info">
-          <span>Korrigierter Gesamtwert:</span>
-          <span id="corrected-total">0</span>
-        </div>
-        
-        <button id="btn-save-correction" class="btn-secondary">Korrektur speichern</button>
       </section>
 
       <!-- Tagesverlauf -->
       <section class="card">
-        <h2 class="card-title">Tagesverlauf</h2>
-        <div id="chart" class="mini-chart">
+        <h2 class="card-title">5h-Limit Verlauf</h2>
+        <div id="chart" class="chart-container">
           <div class="empty-state">Keine Daten</div>
         </div>
       </section>
@@ -97,7 +77,7 @@
       <!-- Export -->
       <section class="card">
         <button id="btn-export" class="btn-secondary" style="width: 100%;">
-          📥 Als JSON exportieren
+          Als JSON exportieren
         </button>
       </section>
     </main>

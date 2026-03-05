@@ -1,0 +1,252 @@
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg: #1a1a1a;
+  --bg-card: #2d2d2d;
+  --bg-hover: #374151;
+  --text: #ffffff;
+  --text-muted: #9ca3af;
+  --accent: #f97316;
+  --heart: #ef4444;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #f3f4f6;
+    --bg-card: #ffffff;
+    --bg-hover: #e5e7eb;
+    --text: #1f2937;
+    --text-muted: #6b7280;
+  }
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+}
+
+.donate-page {
+  max-width: 480px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.donate-header {
+  background: linear-gradient(135deg, var(--accent), var(--heart));
+  padding: 40px 24px;
+  text-align: center;
+  color: white;
+}
+
+.donate-header .heart {
+  font-size: 56px;
+  margin-bottom: 16px;
+  display: block;
+}
+
+.donate-header h1 {
+  font-size: 22px;
+  margin-bottom: 8px;
+}
+
+.donate-header p {
+  font-size: 14px;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+.donate-content {
+  flex: 1;
+  padding: 24px;
+}
+
+.donate-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.donate-option {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 16px;
+  background: var(--bg-card);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+  color: inherit;
+  border: 1px solid transparent;
+}
+
+.donate-option:hover {
+  transform: translateX(4px);
+  border-color: var(--accent);
+}
+
+.donate-option.hidden {
+  display: none;
+}
+
+.donate-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  flex-shrink: 0;
+  color: white;
+}
+
+.donate-icon.kofi { background: #ff5e5b; }
+.donate-icon.paypal { background: #003087; }
+.donate-icon.btc { background: #f7931a; }
+.donate-icon.ltc { background: #345d9d; }
+.donate-icon.doge { background: #c2a633; }
+.donate-icon.xmr { background: #ff6600; }
+
+.donate-info {
+  flex: 1;
+}
+
+.donate-info h3 {
+  font-size: 15px;
+  margin-bottom: 4px;
+}
+
+.donate-info p {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+.donate-arrow {
+  color: var(--text-muted);
+  font-size: 18px;
+}
+
+/* Krypto-Detail Ansicht */
+.crypto-detail {
+  display: none;
+  padding: 24px;
+  text-align: center;
+}
+
+.crypto-detail.active {
+  display: block;
+}
+
+.crypto-detail .icon {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+.crypto-detail h2 {
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.crypto-detail .subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.qr-code {
+  width: 180px;
+  height: 180px;
+  background: white;
+  border-radius: 12px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #666;
+  font-size: 12px;
+}
+
+.qr-code img {
+  width: 160px;
+  height: 160px;
+}
+
+.address-box {
+  background: var(--bg-card);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.address-box code {
+  flex: 1;
+  font-size: 10px;
+  color: var(--text-muted);
+  word-break: break-all;
+  text-align: left;
+  font-family: monospace;
+}
+
+.copy-btn {
+  background: var(--bg-hover);
+  border: none;
+  color: var(--text);
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+
+.copy-btn:hover {
+  background: var(--accent);
+}
+
+.back-btn {
+  background: none;
+  border: 1px solid var(--bg-hover);
+  color: var(--text-muted);
+  padding: 10px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.2s;
+}
+
+.back-btn:hover {
+  border-color: var(--text-muted);
+  color: var(--text);
+}
+
+.donate-footer {
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 12px;
+  border-top: 1px solid var(--bg-card);
+  line-height: 1.6;
+}
+
+.no-options {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--text-muted);
+}
+
+.no-options .icon {
+  font-size: 48px;
+  margin-bottom: 16px;
+}
+
+.hidden {
+  display: none !important;
+}
