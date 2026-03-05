@@ -1,8 +1,3 @@
-/**
- * topics.js - Themen-Log Seite Logik
- */
-
-// DOM Elements
 const elements = {
   btnBack: document.getElementById('btn-back'),
   filterInput: document.getElementById('filter-input'),
@@ -11,30 +6,23 @@ const elements = {
 
 let allTopics = {};
 
-/**
- * Initialisierung
- */
 document.addEventListener('DOMContentLoaded', async () => {
   await loadTopics();
   setupEventListeners();
 });
 
-/**
- * Event Listeners
- */
 function setupEventListeners() {
-  elements.btnBack.addEventListener('click', () => {
-    window.close();
-  });
-  
+  elements.btnBack.addEventListener('click', () => window.close());
+
+  let debounceTimer;
   elements.filterInput.addEventListener('input', () => {
-    renderTopics(elements.filterInput.value.toLowerCase());
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+      renderTopics(elements.filterInput.value.toLowerCase().trim());
+    }, 150);
   });
 }
 
-/**
- * Lädt Themen
- */
 async function loadTopics() {
   try {
     const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
@@ -42,102 +30,129 @@ async function loadTopics() {
     renderTopics();
   } catch (error) {
     console.error('Fehler beim Laden:', error);
-    elements.topicContainer.innerHTML = '<div class="empty-state">Fehler beim Laden</div>';
+    elements.topicContainer.textContent = '';
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'Fehler beim Laden';
+    elements.topicContainer.appendChild(empty);
   }
 }
 
-/**
- * Rendert Themen-Liste
- */
 function renderTopics(filter = '') {
   const dates = Object.keys(allTopics).sort().reverse();
-  
+
+  elements.topicContainer.textContent = '';
+
   if (dates.length === 0) {
-    elements.topicContainer.innerHTML = '<div class="empty-state">Keine Themen erfasst</div>';
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'Keine Themen erfasst';
+    elements.topicContainer.appendChild(empty);
     return;
   }
-  
-  let html = '';
+
   let hasResults = false;
-  
+
   for (const date of dates) {
     const topics = allTopics[date] || [];
-    
-    // Filter anwenden
-    const filtered = filter 
+
+    const filtered = filter
       ? topics.filter(t => t.title.toLowerCase().includes(filter))
       : topics;
-    
+
     if (filtered.length === 0) continue;
-    
     hasResults = true;
-    const dateLabel = formatRelativeDate(date);
-    
-    html += `
-      <div class="day-group">
-        <div class="day-header" data-date="${date}">
-          <span>${dateLabel} – ${date}</span>
-          <span>${filtered.length} Themen</span>
-        </div>
-        <div class="day-content">
-          ${filtered.map(t => `
-            <div class="topic-entry">
-              <span class="topic-time">${t.time}</span>
-              <span class="topic-title">${escapeHtml(highlightMatch(t.title, filter))}</span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-    `;
+
+    const group = document.createElement('div');
+    group.className = 'day-group';
+
+    const header = document.createElement('div');
+    header.className = 'day-header';
+
+    const headerLabel = document.createElement('span');
+    headerLabel.textContent = formatRelativeDate(date) + ' \u2013 ' + date;
+
+    const headerCount = document.createElement('span');
+    headerCount.textContent = filtered.length + ' Themen';
+
+    header.appendChild(headerLabel);
+    header.appendChild(headerCount);
+
+    const content = document.createElement('div');
+    content.className = 'day-content';
+
+    for (const t of filtered) {
+      const entry = document.createElement('div');
+      entry.className = 'topic-entry';
+
+      const time = document.createElement('span');
+      time.className = 'topic-time';
+      time.textContent = t.time;
+
+      const title = document.createElement('span');
+      title.className = 'topic-title';
+
+      if (filter) {
+        highlightText(title, t.title, filter);
+      } else {
+        title.textContent = t.title;
+      }
+
+      entry.appendChild(time);
+      entry.appendChild(title);
+      content.appendChild(entry);
+    }
+
+    group.appendChild(header);
+    group.appendChild(content);
+    elements.topicContainer.appendChild(group);
   }
-  
+
   if (!hasResults) {
-    html = '<div class="empty-state">Keine Treffer für "' + escapeHtml(filter) + '"</div>';
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'Keine Treffer f\u00fcr "' + filter + '"';
+    elements.topicContainer.appendChild(empty);
   }
-  
-  elements.topicContainer.innerHTML = html;
 }
 
-/**
- * Formatiert relatives Datum
- */
+function highlightText(container, text, filter) {
+  const lower = text.toLowerCase();
+  let lastIndex = 0;
+
+  while (true) {
+    const idx = lower.indexOf(filter, lastIndex);
+    if (idx === -1) break;
+
+    // Text vor dem Match
+    if (idx > lastIndex) {
+      container.appendChild(document.createTextNode(text.slice(lastIndex, idx)));
+    }
+
+    // Hervorgehobener Text
+    const mark = document.createElement('mark');
+    mark.textContent = text.slice(idx, idx + filter.length);
+    container.appendChild(mark);
+
+    lastIndex = idx + filter.length;
+  }
+
+  // Rest
+  if (lastIndex < text.length) {
+    container.appendChild(document.createTextNode(text.slice(lastIndex)));
+  }
+}
+
 function formatRelativeDate(dateStr) {
-  const date = new Date(dateStr);
   const today = new Date();
   const yesterday = new Date(today);
   yesterday.setDate(today.getDate() - 1);
-  
+
   const todayStr = today.toISOString().split('T')[0];
   const yesterdayStr = yesterday.toISOString().split('T')[0];
-  
+
   if (dateStr === todayStr) return 'Heute';
   if (dateStr === yesterdayStr) return 'Gestern';
-  
-  return date.toLocaleDateString('de-DE', { weekday: 'long' });
-}
 
-/**
- * Hebt Suchbegriff hervor
- */
-function highlightMatch(text, filter) {
-  if (!filter) return text;
-  
-  const regex = new RegExp(`(${escapeRegex(filter)})`, 'gi');
-  return text.replace(regex, '<mark>$1</mark>');
-}
-
-/**
- * Escaped RegExp Sonderzeichen
- */
-function escapeRegex(str) {
-  return str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-}
-
-/**
- * Escaped HTML
- */
-function escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
+  return new Date(dateStr).toLocaleDateString('de-DE', { weekday: 'long' });
 }

@@ -1,32 +1,18 @@
-/**
- * history.js - Historie-Seite Logik
- */
-
-const STORAGE_KEY = 'claude-dashboard';
-
-// DOM Elements
 const elements = {
   btnBack: document.getElementById('btn-back'),
   btnApply: document.getElementById('btn-apply'),
   btnExport: document.getElementById('btn-export'),
-  btnSaveCorrection: document.getElementById('btn-save-correction'),
   dateFrom: document.getElementById('date-from'),
   dateTo: document.getElementById('date-to'),
-  correction: document.getElementById('correction'),
-  statTotal: document.getElementById('stat-total'),
-  statInput: document.getElementById('stat-input'),
-  statOutput: document.getElementById('stat-output'),
+  statSyncs: document.getElementById('stat-syncs'),
   statDays: document.getElementById('stat-days'),
-  correctedTotal: document.getElementById('corrected-total'),
+  statMax5h: document.getElementById('stat-max-5h'),
+  statMax7d: document.getElementById('stat-max-7d'),
   chart: document.getElementById('chart')
 };
 
 let historyData = {};
-let currentStats = { total: 0, input: 0, output: 0 };
 
-/**
- * Initialisierung
- */
 document.addEventListener('DOMContentLoaded', async () => {
   await loadData();
   setupEventListeners();
@@ -34,209 +20,156 @@ document.addEventListener('DOMContentLoaded', async () => {
   calculateStats();
 });
 
-/**
- * Event Listeners
- */
 function setupEventListeners() {
-  elements.btnBack.addEventListener('click', () => {
-    window.close();
-  });
-  
+  elements.btnBack.addEventListener('click', () => window.close());
   elements.btnApply.addEventListener('click', calculateStats);
-  
-  elements.correction.addEventListener('input', updateCorrectedTotal);
-  
-  elements.btnSaveCorrection.addEventListener('click', saveCorrection);
-  
   elements.btnExport.addEventListener('click', exportData);
-  
-  // Preset Buttons
+
   document.querySelectorAll('.btn-preset[data-range]').forEach(btn => {
     btn.addEventListener('click', () => {
-      const range = btn.dataset.range;
-      setDateRange(range);
+      // Aktiven Preset markieren
+      document.querySelectorAll('.btn-preset').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      setDateRange(btn.dataset.range);
       calculateStats();
     });
   });
 }
 
-/**
- * Lädt Daten
- */
 async function loadData() {
   try {
     const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
     historyData = data?.history?.daily || {};
-    elements.correction.value = data?.history?.correction || 0;
   } catch (error) {
     console.error('Fehler beim Laden:', error);
   }
 }
 
-/**
- * Setzt Standard-Datumswerte (letzte 30 Tage)
- */
 function setDefaultDates() {
   const today = new Date();
-  const thirtyDaysAgo = new Date(today);
-  thirtyDaysAgo.setDate(today.getDate() - 30);
-  
+  const sevenDaysAgo = new Date(today);
+  sevenDaysAgo.setDate(today.getDate() - 7);
+
   elements.dateTo.value = today.toISOString().split('T')[0];
-  elements.dateFrom.value = thirtyDaysAgo.toISOString().split('T')[0];
+  elements.dateFrom.value = sevenDaysAgo.toISOString().split('T')[0];
 }
 
-/**
- * Setzt Datumsbereich basierend auf Preset
- */
 function setDateRange(range) {
   const today = new Date();
   const to = today.toISOString().split('T')[0];
-  
+
   if (range === 'all') {
     const dates = Object.keys(historyData).sort();
     elements.dateFrom.value = dates[0] || to;
     elements.dateTo.value = to;
     return;
   }
-  
+
   const days = parseInt(range);
   const from = new Date(today);
   from.setDate(today.getDate() - days);
-  
+
   elements.dateFrom.value = from.toISOString().split('T')[0];
   elements.dateTo.value = to;
 }
 
-/**
- * Berechnet Statistiken für den Zeitraum
- */
 function calculateStats() {
   const from = elements.dateFrom.value;
   const to = elements.dateTo.value;
-  
   if (!from || !to) return;
-  
-  let total = 0;
-  let input = 0;
-  let output = 0;
-  let days = 0;
-  const dailyTotals = [];
-  
-  // Alle Tage im Bereich durchgehen
+
+  let totalSyncs = 0;
+  let activeDays = 0;
+  let max5h = 0;
+  let max7d = 0;
+  const dailyMax5h = [];
+
   const current = new Date(from);
   const end = new Date(to);
-  
+
   while (current <= end) {
     const dateStr = current.toISOString().split('T')[0];
-    const dayData = historyData[dateStr];
-    
-    if (dayData) {
-      total += dayData.total || 0;
-      input += dayData.input || 0;
-      output += dayData.output || 0;
-      days++;
+    const entries = historyData[dateStr];
+
+    let dayMax5h = 0;
+
+    if (entries && Array.isArray(entries) && entries.length > 0) {
+      activeDays++;
+      totalSyncs += entries.length;
+
+      for (const entry of entries) {
+        const fh = entry.fiveHour ?? 0;
+        const sd = entry.sevenDay ?? 0;
+        if (fh > max5h) max5h = fh;
+        if (sd > max7d) max7d = sd;
+        if (fh > dayMax5h) dayMax5h = fh;
+      }
     }
-    
-    dailyTotals.push({
-      date: dateStr,
-      total: dayData?.total || 0
-    });
-    
+
+    dailyMax5h.push({ date: dateStr, value: dayMax5h });
     current.setDate(current.getDate() + 1);
   }
-  
-  currentStats = { total, input, output };
-  
-  // Anzeige aktualisieren
-  elements.statTotal.textContent = formatTokens(total);
-  elements.statInput.textContent = formatTokens(input);
-  elements.statOutput.textContent = formatTokens(output);
-  elements.statDays.textContent = days;
-  
-  updateCorrectedTotal();
-  renderChart(dailyTotals);
+
+  elements.statSyncs.textContent = totalSyncs;
+  elements.statDays.textContent = activeDays;
+  elements.statMax5h.textContent = max5h + '%';
+  elements.statMax7d.textContent = max7d + '%';
+
+  renderChart(dailyMax5h);
 }
 
-/**
- * Aktualisiert korrigierten Gesamtwert
- */
-function updateCorrectedTotal() {
-  const correction = parseInt(elements.correction.value) || 0;
-  const corrected = currentStats.total + correction;
-  elements.correctedTotal.textContent = formatTokens(corrected);
-}
+function renderChart(dailyData) {
+  // Clear
+  elements.chart.textContent = '';
 
-/**
- * Speichert Korrekturwert
- */
-async function saveCorrection() {
-  try {
-    const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
-    data.history.correction = parseInt(elements.correction.value) || 0;
-    
-    await chrome.storage.local.set({ [STORAGE_KEY]: data });
-    
-    elements.btnSaveCorrection.textContent = '✓ Gespeichert';
-    setTimeout(() => {
-      elements.btnSaveCorrection.textContent = 'Korrektur speichern';
-    }, 2000);
-    
-  } catch (error) {
-    console.error('Fehler beim Speichern:', error);
-    alert('Fehler beim Speichern');
-  }
-}
-
-/**
- * Rendert Mini-Chart
- */
-function renderChart(dailyTotals) {
-  if (dailyTotals.length === 0 || dailyTotals.every(d => d.total === 0)) {
-    elements.chart.innerHTML = '<div class="empty-state">Keine Daten im Zeitraum</div>';
+  if (dailyData.length === 0 || dailyData.every(d => d.value === 0)) {
+    const empty = document.createElement('div');
+    empty.className = 'empty-state';
+    empty.textContent = 'Keine Daten im Zeitraum';
+    elements.chart.appendChild(empty);
     return;
   }
-  
-  const maxValue = Math.max(...dailyTotals.map(d => d.total));
-  
-  // Bei vielen Tagen: nur jeden n-ten zeigen
+
+  // Aggregation bei vielen Tagen
   let step = 1;
-  if (dailyTotals.length > 60) step = 3;
-  else if (dailyTotals.length > 30) step = 2;
-  
-  const bars = dailyTotals
-    .filter((_, i) => i % step === 0)
-    .map(d => {
-      const height = maxValue > 0 ? (d.total / maxValue) * 100 : 0;
-      return `<div class="chart-bar" style="height: ${Math.max(2, height)}%" title="${d.date}: ${formatTokens(d.total)}"></div>`;
-    })
-    .join('');
-  
-  elements.chart.innerHTML = bars;
+  if (dailyData.length > 60) step = 3;
+  else if (dailyData.length > 30) step = 2;
+
+  const filtered = dailyData.filter((_, i) => i % step === 0);
+  const maxValue = Math.max(...filtered.map(d => d.value), 1);
+
+  for (const d of filtered) {
+    const bar = document.createElement('div');
+    bar.className = 'chart-bar';
+    const height = Math.max(2, (d.value / maxValue) * 100);
+    bar.style.height = height + '%';
+    bar.title = d.date + ': ' + d.value + '%';
+
+    // Farbe basierend auf Wert
+    if (d.value >= 75) {
+      bar.style.background = 'var(--red)';
+    } else if (d.value >= 40) {
+      bar.style.background = 'var(--yellow)';
+    }
+
+    elements.chart.appendChild(bar);
+  }
 }
 
-/**
- * Exportiert Daten als JSON
- */
 async function exportData() {
   try {
     const from = elements.dateFrom.value;
     const to = elements.dateTo.value;
-    const correction = parseInt(elements.correction.value) || 0;
-    
+
     const exportObj = {
       period: { from, to },
-      stats: {
-        ...currentStats,
-        corrected: currentStats.total + correction
-      },
-      correction,
       daily: {}
     };
-    
-    // Nur Daten im Zeitraum
+
     const current = new Date(from);
     const end = new Date(to);
-    
+
     while (current <= end) {
       const dateStr = current.toISOString().split('T')[0];
       if (historyData[dateStr]) {
@@ -244,32 +177,16 @@ async function exportData() {
       }
       current.setDate(current.getDate() + 1);
     }
-    
+
     const blob = new Blob([JSON.stringify(exportObj, null, 2)], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
-    
     const a = document.createElement('a');
     a.href = url;
-    a.download = `claude-usage-${from}-to-${to}.json`;
+    a.download = 'claude-usage-' + from + '-to-' + to + '.json';
     a.click();
-    
     URL.revokeObjectURL(url);
-    
   } catch (error) {
     console.error('Export fehlgeschlagen:', error);
     alert('Export fehlgeschlagen');
   }
-}
-
-/**
- * Formatiert Token-Zahlen
- */
-function formatTokens(num) {
-  if (num >= 1000000) {
-    return (num / 1000000).toFixed(2) + 'M';
-  }
-  if (num >= 1000) {
-    return (num / 1000).toFixed(1) + 'K';
-  }
-  return num.toString();
 }

@@ -8,82 +8,78 @@
 </head>
 <body>
   <div class="page-container">
-    <!-- Header -->
     <header class="page-header">
-      <button id="btn-back" class="btn-back">← Zurück</button>
+      <button id="btn-back" class="btn-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
       <h1>Einstellungen</h1>
     </header>
 
     <main class="page-content">
-      <!-- Info -->
+      <!-- Funktionsweise -->
       <section class="card">
-        <h2 class="card-title">ℹ️ So funktioniert's</h2>
-        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5;">
-          Diese Extension scraped deine Verbrauchsdaten direkt von 
-          <strong>claude.ai/settings/usage</strong>. 
-          Du musst nur eingeloggt sein – kein API Key nötig.
+        <h2 class="card-title">So funktioniert's</h2>
+        <p class="card-text">
+          Diese Extension ruft deine Verbrauchsdaten direkt von der
+          <strong>Claude.ai API</strong> ab. Du musst eingeloggt sein auf
+          claude.ai &ndash; es wird kein API Key ben&ouml;tigt.
         </p>
-        <p style="color: var(--text-secondary); font-size: 13px; line-height: 1.5; margin-top: 8px;">
-          Klicke im Popup auf <strong>"Daten aktualisieren"</strong> um die 
-          Usage-Seite zu öffnen und die aktuellen Daten zu laden.
+        <p class="card-text" style="margin-top: 8px;">
+          Die Daten werden alle <strong>5 Minuten</strong> automatisch synchronisiert.
+          Du kannst auch manuell im Popup auf das Sync-Icon klicken.
         </p>
       </section>
 
-      <!-- Theme -->
+      <!-- Voraussetzungen -->
       <section class="card">
-        <h2 class="card-title">🎨 Erscheinungsbild</h2>
-        
-        <div class="radio-group horizontal">
-          <label class="radio-item">
-            <input type="radio" name="theme" value="system" checked>
-            <span>System</span>
-          </label>
-          <label class="radio-item">
-            <input type="radio" name="theme" value="light">
-            <span>Hell</span>
-          </label>
-          <label class="radio-item">
-            <input type="radio" name="theme" value="dark">
-            <span>Dunkel</span>
-          </label>
-        </div>
+        <h2 class="card-title">Voraussetzungen</h2>
+        <ul class="checklist">
+          <li>Claude Pro oder Max Abo</li>
+          <li>Eingeloggt auf claude.ai</li>
+          <li>Cookies f&uuml;r claude.ai erlaubt</li>
+        </ul>
       </section>
 
       <!-- Daten -->
       <section class="card">
-        <h2 class="card-title">💾 Daten</h2>
-        
-        <div class="data-info">
-          <span>Gespeicherte Daten:</span>
-          <span id="storage-size">– KB</span>
+        <h2 class="card-title">Daten</h2>
+
+        <div class="data-row">
+          <span>Gespeicherte Daten</span>
+          <span id="storage-size">&ndash;</span>
         </div>
-        
-        <div class="data-info">
-          <span>Erfasste Themen:</span>
-          <span id="topic-count">–</span>
+        <div class="data-row">
+          <span>Erfasste Themen</span>
+          <span id="topic-count">&ndash;</span>
         </div>
-        
-        <div class="data-info">
-          <span>Historie-Einträge:</span>
-          <span id="history-count">–</span>
+        <div class="data-row">
+          <span>Historie-Eintr&auml;ge</span>
+          <span id="history-count">&ndash;</span>
         </div>
-        
+
         <div class="button-row" style="margin-top: 16px;">
-          <button id="btn-export" class="btn-secondary">📥 Exportieren</button>
-          <button id="btn-import" class="btn-secondary">📤 Importieren</button>
-          <button id="btn-clear" class="btn-danger">🗑️ Löschen</button>
+          <button id="btn-export" class="btn-secondary">Exportieren</button>
+          <button id="btn-import" class="btn-secondary">Importieren</button>
+          <button id="btn-clear" class="btn-danger">Alle Daten l&ouml;schen</button>
         </div>
-        
+
         <input type="file" id="import-file" accept=".json" style="display: none">
       </section>
 
       <!-- Debug -->
       <section class="card">
-        <h2 class="card-title">🐛 Debug-Info</h2>
-        <div id="debug-info" style="font-size: 11px; color: var(--text-muted); font-family: monospace; white-space: pre-wrap;">
-          Lädt...
-        </div>
+        <details>
+          <summary class="card-title" style="cursor: pointer;">Debug-Info</summary>
+          <pre id="debug-info" class="debug-pre">L&auml;dt...</pre>
+        </details>
       </section>
+
+      <!-- Version -->
+      <div class="version-info">
+        Claude Dashboard v<span id="version">1.5.0</span>
+      </div>
     </main>
   </div>
 

@@ -10,77 +10,135 @@
   <div class="container">
     <!-- Header -->
     <header class="header">
-      <h1>Claude Dashboard</h1>
-      <button id="btn-settings" class="btn-icon" title="Einstellungen">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="12" cy="12" r="3"></circle>
-          <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-        </svg>
-      </button>
+      <div class="header-left">
+        <div class="header-icon">C</div>
+        <h1>Claude Dashboard</h1>
+      </div>
+      <div class="header-actions">
+        <button id="btn-sync" class="btn-icon" title="Aktualisieren">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <polyline points="1 20 1 14 7 14"></polyline>
+            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
+          </svg>
+        </button>
+        <button id="btn-settings" class="btn-icon" title="Einstellungen">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+          </svg>
+        </button>
+      </div>
     </header>
 
-    <!-- Status -->
-    <div id="status-bar" class="status-bar hidden">
-      <span id="status-text"></span>
+    <!-- System Status -->
+    <div id="system-status" class="system-status hidden">
+      <div class="status-dots">
+        <div class="status-dot-item" title="claude.ai">
+          <span id="status-web" class="dot"></span>
+          <span class="dot-label">Web</span>
+        </div>
+        <div class="status-dot-item" title="API">
+          <span id="status-api" class="dot"></span>
+          <span class="dot-label">API</span>
+        </div>
+        <div class="status-dot-item" title="Console">
+          <span id="status-console" class="dot"></span>
+          <span class="dot-label">Console</span>
+        </div>
+      </div>
+      <button id="btn-status-help" class="btn-status-help" title="Legende">?</button>
+    </div>
+
+    <!-- Status Legende -->
+    <div id="status-legend" class="status-legend hidden">
+      <div class="legend-row"><span class="dot operational"></span> Betriebsbereit</div>
+      <div class="legend-row"><span class="dot degraded"></span> Eingeschr&auml;nkt</div>
+      <div class="legend-row"><span class="dot partial_outage"></span> Teilausfall</div>
+      <div class="legend-row"><span class="dot major_outage"></span> St&ouml;rung</div>
+      <div class="legend-row"><span class="dot maintenance"></span> Wartung</div>
+      <div class="legend-source">Quelle: status.claude.com</div>
+    </div>
+
+    <!-- Alert Banner -->
+    <div id="alert-bar" class="alert-bar hidden">
+      <span id="alert-text"></span>
     </div>
 
     <!-- 5-Stunden Limit -->
-    <section class="section limit-section">
+    <section class="card limit-card">
       <div class="limit-header">
-        <span class="limit-title">⏱️ 5-Stunden Limit</span>
-        <span id="reset-5h" class="reset-time"></span>
+        <div class="limit-info">
+          <span class="limit-label">5-Stunden Limit</span>
+          <span id="reset-5h" class="reset-time"></span>
+        </div>
+        <div id="percent-5h" class="limit-percent">--</div>
       </div>
-      <div class="limit-bar-container">
-        <div id="bar-5h" class="limit-bar" style="width: 0%"></div>
-      </div>
-      <div class="limit-value">
-        <span id="percent-5h" class="percent">–</span>
-        <span class="percent-label">% verbraucht</span>
+      <div class="progress-track">
+        <div id="bar-5h" class="progress-fill" style="width: 0%"></div>
       </div>
     </section>
 
     <!-- 7-Tage Limit -->
-    <section class="section limit-section">
+    <section class="card limit-card">
       <div class="limit-header">
-        <span class="limit-title">📅 7-Tage Limit</span>
-        <span id="reset-7d" class="reset-time"></span>
+        <div class="limit-info">
+          <span class="limit-label">7-Tage Limit</span>
+          <span id="reset-7d" class="reset-time"></span>
+        </div>
+        <div id="percent-7d" class="limit-percent">--</div>
       </div>
-      <div class="limit-bar-container">
-        <div id="bar-7d" class="limit-bar" style="width: 0%"></div>
-      </div>
-      <div class="limit-value">
-        <span id="percent-7d" class="percent">–</span>
-        <span class="percent-label">% verbraucht</span>
+      <div class="progress-track">
+        <div id="bar-7d" class="progress-fill" style="width: 0%"></div>
       </div>
     </section>
 
-    <!-- Modell-Limits (falls vorhanden) -->
-    <section id="model-limits" class="section hidden">
-      <h2 class="section-title">🤖 Modell-Limits</h2>
+    <!-- Modell-Limits -->
+    <section id="model-limits" class="card hidden">
+      <div class="card-label">Modell-Limits (7 Tage)</div>
       <div id="model-list" class="model-list"></div>
     </section>
 
-    <!-- Themen -->
-    <section class="section">
-      <h2 class="section-title">
-        📝 Heutige Themen
-        <span id="topic-count" class="topic-count"></span>
-      </h2>
+    <!-- Heutige Themen -->
+    <section class="card">
+      <div class="card-label">
+        Heutige Chats
+        <span id="topic-count" class="badge"></span>
+      </div>
       <div id="topic-list" class="topic-list">
-        <div class="empty-state">Keine Themen erfasst</div>
+        <div class="empty-state">Noch keine Chats erfasst</div>
       </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-      <button id="btn-sync" class="btn-primary">🔄 Aktualisieren</button>
-      <button id="btn-topics" class="btn-secondary">📋 Themen</button>
+      <button id="btn-topics" class="footer-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="8" y1="6" x2="21" y2="6"></line>
+          <line x1="8" y1="12" x2="21" y2="12"></line>
+          <line x1="8" y1="18" x2="21" y2="18"></line>
+          <line x1="3" y1="6" x2="3.01" y2="6"></line>
+          <line x1="3" y1="12" x2="3.01" y2="12"></line>
+          <line x1="3" y1="18" x2="3.01" y2="18"></line>
+        </svg>
+        Themen-Log
+      </button>
+      <button id="btn-history" class="footer-link">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+        </svg>
+        Historie
+      </button>
+      <button id="btn-donate" class="footer-link donate-btn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+        </svg>
+        Danke sagen
+      </button>
+      <div class="sync-info">
+        <span id="last-sync">--:--</span>
+      </div>
     </footer>
-
-    <!-- Sync-Info -->
-    <div class="sync-info">
-      <span id="last-sync">Letzter Sync: –</span>
-    </div>
   </div>
 
   <script src="popup.js"></script>

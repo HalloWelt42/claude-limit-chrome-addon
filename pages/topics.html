@@ -8,25 +8,19 @@
 </head>
 <body>
   <div class="page-container">
-    <!-- Header -->
     <header class="page-header">
-      <button id="btn-back" class="btn-back">← Zurück</button>
-      <h1>📝 Themen-Log</h1>
+      <button id="btn-back" class="btn-back">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <h1>Themen-Log</h1>
     </header>
 
     <main class="page-content">
-      <!-- Info -->
-      <section class="card">
-        <p class="hint" style="margin: 0;">
-          Automatisch erfasst aus Chat-Titeln auf claude.ai
-        </p>
-      </section>
-
-      <!-- Filter -->
-      <section class="card">
-        <div class="form-group" style="margin: 0;">
-          <input type="text" id="filter-input" placeholder="🔍 Themen filtern...">
-        </div>
+      <!-- Search -->
+      <section class="card" style="padding: 10px 12px;">
+        <input type="text" id="filter-input" class="search-input" placeholder="Themen suchen...">
       </section>
 
       <!-- Topic List -->
