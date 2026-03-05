@@ -266,7 +266,7 @@ async function drawGridIcon(colors) {
   const half = Math.floor((size - gap) / 2);
 
   ctx.clearRect(0, 0, size, size);
-  const r = Math.round(size * 0.03);
+  const r = Math.round(size * 0.08);
 
   ctx.fillStyle = colors[0];
   ctx.beginPath(); ctx.roundRect(0, 0, half, half, r); ctx.fill();

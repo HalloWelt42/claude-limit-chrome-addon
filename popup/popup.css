@@ -506,7 +506,7 @@ body {
   cursor: pointer;
   border-radius: var(--radius-sm);
   padding: 5px 6px;
-  margin: -5px -6px;
+  margin: -5px 0;
   transition: background 0.15s;
 }
 
