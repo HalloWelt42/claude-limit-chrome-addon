@@ -504,18 +504,6 @@ body {
 
 .topic-link {
   cursor: pointer;
-  border-radius: var(--radius-sm);
-  padding: 5px 6px;
-  margin: -5px 0;
-  transition: background 0.15s;
-}
-
-.topic-link:hover {
-  background: var(--bg-elevated);
-}
-
-.topic-link:hover .topic-title {
-  color: var(--text);
 }
 
 .badge {
