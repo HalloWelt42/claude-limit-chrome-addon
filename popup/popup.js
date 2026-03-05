@@ -47,6 +47,10 @@ function setupListeners() {
     chrome.tabs.create({ url: chrome.runtime.getURL('pages/donate.html') });
   });
 
+  el.systemStatus.addEventListener('click', () => {
+    chrome.tabs.create({ url: 'https://status.anthropic.com' });
+  });
+
   el.btnSync.addEventListener('click', async () => {
     el.btnSync.classList.add('syncing');
     el.btnSync.disabled = true;

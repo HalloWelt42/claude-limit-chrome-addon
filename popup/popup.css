@@ -137,6 +137,13 @@ body {
   background: var(--bg-card);
   border-radius: var(--radius-sm);
   border: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.system-status:hover {
+  background: var(--bg-elevated);
+  border-color: var(--border);
 }
 
 .status-dots {
