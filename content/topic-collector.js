@@ -46,12 +46,12 @@
     try {
       await chrome.runtime.sendMessage({
         type: 'ADD_TOPIC',
-        payload: { date, time, title }
+        payload: { date, time, title, url: location.href }
       });
-      console.log('Dashboard fuer Claude: Thema erfasst -', title);
+      console.log('Dashboard: Thema erfasst -', title);
     } catch (error) {
       // Extension möglicherweise nicht verfügbar
-      console.debug('Dashboard fuer Claude: Konnte Thema nicht senden', error);
+      console.debug('Dashboard: Konnte Thema nicht senden', error);
     }
   }
   
@@ -80,7 +80,7 @@
       characterData: true
     });
     
-    console.log('Dashboard fuer Claude: Topic Collector gestartet');
+    console.log('Dashboard: Topic Collector gestartet');
   }
   
   function init() {

@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Dashboard f\u00fcr Claude",
-  "version": "1.16.0",
+  "version": "1.15.0",
   "description": "Dashboard f\u00fcr Claude - Zeigt 5h/7d Limits, System-Status und Chat-Themen mit Auto-Sync.",
 
   "permissions": [
