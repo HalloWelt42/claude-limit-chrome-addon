@@ -97,9 +97,10 @@
     "message": "Source: status.anthropic.com"
   },
   "footerText": {
-    "message": "Dashboard for Claude v$1 -- (c) 2025-2026 HalloWelt42",
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
     "placeholders": {
-      "1": { "content": "$1" }
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
     }
   },
 

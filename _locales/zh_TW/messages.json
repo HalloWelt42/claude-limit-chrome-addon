@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Claude 儀表板"
+  },
+  "appDescription": {
+    "message": "Claude 儀表板 - 顯示5小時/7天限制、系統狀態和聊天主題,支援自動同步。"
+  },
+  "appDefaultTitle": {
+    "message": "Claude 儀表板"
+  },
+
+  "titleSync": {
+    "message": "重新整理"
+  },
+  "titleSettings": {
+    "message": "設定"
+  },
+  "titleStatusPage": {
+    "message": "開啟狀態頁面"
+  },
+
+  "fiveHourLimit": {
+    "message": "5小時限制"
+  },
+  "sevenDayLimit": {
+    "message": "7天限制"
+  },
+  "modelLimits7d": {
+    "message": "模型限制 (7天)"
+  },
+  "todaysChats": {
+    "message": "今日聊天"
+  },
+  "noChatsYet": {
+    "message": "尚無聊天記錄"
+  },
+
+  "topicLog": {
+    "message": "主題日誌"
+  },
+  "history": {
+    "message": "歷史記錄"
+  },
+  "sayThanks": {
+    "message": "表示感謝"
+  },
+
+  "legendTitle": {
+    "message": "圖例"
+  },
+  "iconGrid": {
+    "message": "圖示 (2x2 網格)"
+  },
+  "fiveHLabel": {
+    "message": "5小時限制"
+  },
+  "sevenDLabel": {
+    "message": "7天"
+  },
+  "statusLabel": {
+    "message": "狀態"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "狀態指示點"
+  },
+  "operational": {
+    "message": "正常運作"
+  },
+  "degraded": {
+    "message": "效能下降"
+  },
+  "partialOutage": {
+    "message": "部分中斷"
+  },
+  "majorOutage": {
+    "message": "嚴重中斷"
+  },
+  "maintenance": {
+    "message": "維護中"
+  },
+  "badgeRotates": {
+    "message": "Badge (輪替)"
+  },
+  "fiveHUsage": {
+    "message": "5小時用量"
+  },
+  "sevenDUsage": {
+    "message": "7天用量"
+  },
+  "outage": {
+    "message": "中斷"
+  },
+  "sourceStatus": {
+    "message": "來源: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "同步失敗"
+  },
+  "connectionError": {
+    "message": "連線錯誤"
+  },
+  "noDataClickSync": {
+    "message": "尚無資料 -- 請點擊Sync"
+  },
+  "errorLoadingData": {
+    "message": "資料載入錯誤"
+  },
+  "resetNow": {
+    "message": "已重置"
+  },
+  "resetIn": {
+    "message": "重置 $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "$1天$2小時後",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "$1小時$2分鐘後",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "$1分鐘後",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "設定"
+  },
+  "pageTitle_settings": {
+    "message": "設定 - Claude 儀表板"
+  },
+  "howItWorks": {
+    "message": "運作方式"
+  },
+  "howItWorksText1": {
+    "message": "此擴充功能直接從<strong>Claude.ai API</strong>讀取您的使用資料。您必須在claude.ai上登入 -- 不需要API金鑰。"
+  },
+  "howItWorksText2": {
+    "message": "資料每<strong>5分鐘</strong>自動同步一次。您也可以在彈出視窗中手動點擊Sync圖示。"
+  },
+  "prerequisites": {
+    "message": "前置條件"
+  },
+  "prereqPro": {
+    "message": "Claude Pro或Max訂閱"
+  },
+  "prereqLoggedIn": {
+    "message": "已登入claude.ai"
+  },
+  "prereqCookies": {
+    "message": "已啟用claude.ai的Cookie"
+  },
+  "dataSection": {
+    "message": "資料"
+  },
+  "storedData": {
+    "message": "已儲存資料"
+  },
+  "capturedTopics": {
+    "message": "已擷取主題"
+  },
+  "historyEntries": {
+    "message": "歷史條目"
+  },
+  "exportBtn": {
+    "message": "匯出"
+  },
+  "deleteAllData": {
+    "message": "刪除所有資料"
+  },
+  "debugInfo": {
+    "message": "除錯資訊"
+  },
+  "loading": {
+    "message": "載入中..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2天)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1天",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "上次同步"
+  },
+  "never": {
+    "message": "從未"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "未設定"
+  },
+  "fiveHLimitDebug": {
+    "message": "5小時限制"
+  },
+  "sevenDLimitDebug": {
+    "message": "7天限制"
+  },
+  "statusDebug": {
+    "message": "狀態"
+  },
+  "statusSyncLabel": {
+    "message": "狀態Sync"
+  },
+  "unknown": {
+    "message": "未知"
+  },
+  "lastErrorLabel": {
+    "message": "最後錯誤"
+  },
+  "exportFailed": {
+    "message": "匯出失敗"
+  },
+  "confirmDelete": {
+    "message": "確定要刪除所有資料嗎?此操作無法復原。"
+  },
+  "dataDeleted": {
+    "message": "資料已刪除!"
+  },
+  "errorGeneric": {
+    "message": "錯誤: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "主題日誌 - Claude 儀表板"
+  },
+  "topicLogTitle": {
+    "message": "主題日誌"
+  },
+  "searchPlaceholder": {
+    "message": "搜尋主題..."
+  },
+  "noTopicsRecorded": {
+    "message": "尚無主題記錄"
+  },
+  "loadError": {
+    "message": "載入錯誤"
+  },
+  "topicsCount": {
+    "message": "$1個主題",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "\"$1\"沒有搜尋結果",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "今天"
+  },
+  "yesterday": {
+    "message": "昨天"
+  },
+
+  "pageTitle_history": {
+    "message": "歷史記錄 - Claude 儀表板"
+  },
+  "usageHistory": {
+    "message": "使用歷史"
+  },
+  "periodTitle": {
+    "message": "時間範圍"
+  },
+  "fromLabel": {
+    "message": "從"
+  },
+  "toLabel": {
+    "message": "到"
+  },
+  "applyBtn": {
+    "message": "套用"
+  },
+  "days7": {
+    "message": "7天"
+  },
+  "days30": {
+    "message": "30天"
+  },
+  "days90": {
+    "message": "90天"
+  },
+  "allData": {
+    "message": "全部"
+  },
+  "usageInPeriod": {
+    "message": "期間用量"
+  },
+  "syncPoints": {
+    "message": "Sync次數"
+  },
+  "activeDays": {
+    "message": "活躍天數"
+  },
+  "max5hLimit": {
+    "message": "最高5小時限制"
+  },
+  "max7dLimit": {
+    "message": "最高7天限制"
+  },
+  "fiveHLimitHistory": {
+    "message": "5小時限制歷史"
+  },
+  "exportAsJson": {
+    "message": "匯出為JSON"
+  },
+  "noDataInPeriod": {
+    "message": "該時間範圍內無資料"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- 支持"
+  },
+  "madeWithLove": {
+    "message": "在薩克森-安哈爾特用心打造"
+  },
+  "openSourceDesc": {
+    "message": "來自薩克森-安哈爾特的開源專案。<br>無追蹤,無廣告,不妥協。"
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- 請我喝杯咖啡"
+  },
+  "orByCrypto": {
+    "message": "或透過加密貨幣:"
+  },
+  "copyAddress": {
+    "message": "複製地址"
+  },
+  "copied": {
+    "message": "已複製!"
+  },
+  "thanksForSupport": {
+    "message": "感謝您的支持!"
+  },
+
+  "notLoggedInError": {
+    "message": "未登入或沒有聊天組織"
+  }
+}

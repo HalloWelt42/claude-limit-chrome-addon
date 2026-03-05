@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Claude 仪表盘"
+  },
+  "appDescription": {
+    "message": "Claude 仪表盘 - 显示5小时/7天限制、系统状态和聊天主题,支持自动同步。"
+  },
+  "appDefaultTitle": {
+    "message": "Claude 仪表盘"
+  },
+
+  "titleSync": {
+    "message": "刷新"
+  },
+  "titleSettings": {
+    "message": "设置"
+  },
+  "titleStatusPage": {
+    "message": "打开状态页面"
+  },
+
+  "fiveHourLimit": {
+    "message": "5小时限制"
+  },
+  "sevenDayLimit": {
+    "message": "7天限制"
+  },
+  "modelLimits7d": {
+    "message": "模型限制 (7天)"
+  },
+  "todaysChats": {
+    "message": "今日聊天"
+  },
+  "noChatsYet": {
+    "message": "尚无聊天记录"
+  },
+
+  "topicLog": {
+    "message": "主题日志"
+  },
+  "history": {
+    "message": "历史记录"
+  },
+  "sayThanks": {
+    "message": "表示感谢"
+  },
+
+  "legendTitle": {
+    "message": "图例"
+  },
+  "iconGrid": {
+    "message": "图标 (2x2 网格)"
+  },
+  "fiveHLabel": {
+    "message": "5小时限制"
+  },
+  "sevenDLabel": {
+    "message": "7天"
+  },
+  "statusLabel": {
+    "message": "状态"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "状态指示点"
+  },
+  "operational": {
+    "message": "正常运行"
+  },
+  "degraded": {
+    "message": "性能下降"
+  },
+  "partialOutage": {
+    "message": "部分中断"
+  },
+  "majorOutage": {
+    "message": "严重中断"
+  },
+  "maintenance": {
+    "message": "维护中"
+  },
+  "badgeRotates": {
+    "message": "Badge (轮换)"
+  },
+  "fiveHUsage": {
+    "message": "5小时用量"
+  },
+  "sevenDUsage": {
+    "message": "7天用量"
+  },
+  "outage": {
+    "message": "中断"
+  },
+  "sourceStatus": {
+    "message": "来源: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "同步失败"
+  },
+  "connectionError": {
+    "message": "连接错误"
+  },
+  "noDataClickSync": {
+    "message": "暂无数据 -- 请点击Sync"
+  },
+  "errorLoadingData": {
+    "message": "数据加载错误"
+  },
+  "resetNow": {
+    "message": "已重置"
+  },
+  "resetIn": {
+    "message": "重置 $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "$1天$2小时后",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "$1小时$2分钟后",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "$1分钟后",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "设置"
+  },
+  "pageTitle_settings": {
+    "message": "设置 - Claude 仪表盘"
+  },
+  "howItWorks": {
+    "message": "工作原理"
+  },
+  "howItWorksText1": {
+    "message": "此扩展直接从<strong>Claude.ai API</strong>读取您的使用数据。您必须在claude.ai上登录 -- 无需API密钥。"
+  },
+  "howItWorksText2": {
+    "message": "数据每<strong>5分钟</strong>自动同步一次。您也可以在弹出窗口中手动点击Sync图标。"
+  },
+  "prerequisites": {
+    "message": "前提条件"
+  },
+  "prereqPro": {
+    "message": "Claude Pro或Max订阅"
+  },
+  "prereqLoggedIn": {
+    "message": "已登录claude.ai"
+  },
+  "prereqCookies": {
+    "message": "已启用claude.ai的Cookie"
+  },
+  "dataSection": {
+    "message": "数据"
+  },
+  "storedData": {
+    "message": "已存储数据"
+  },
+  "capturedTopics": {
+    "message": "已捕获主题"
+  },
+  "historyEntries": {
+    "message": "历史条目"
+  },
+  "exportBtn": {
+    "message": "导出"
+  },
+  "deleteAllData": {
+    "message": "删除所有数据"
+  },
+  "debugInfo": {
+    "message": "调试信息"
+  },
+  "loading": {
+    "message": "加载中..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2天)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1天",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "上次同步"
+  },
+  "never": {
+    "message": "从未"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "未设置"
+  },
+  "fiveHLimitDebug": {
+    "message": "5小时限制"
+  },
+  "sevenDLimitDebug": {
+    "message": "7天限制"
+  },
+  "statusDebug": {
+    "message": "状态"
+  },
+  "statusSyncLabel": {
+    "message": "状态Sync"
+  },
+  "unknown": {
+    "message": "未知"
+  },
+  "lastErrorLabel": {
+    "message": "最后错误"
+  },
+  "exportFailed": {
+    "message": "导出失败"
+  },
+  "confirmDelete": {
+    "message": "确定要删除所有数据吗?此操作无法撤销。"
+  },
+  "dataDeleted": {
+    "message": "数据已删除!"
+  },
+  "errorGeneric": {
+    "message": "错误: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "主题日志 - Claude 仪表盘"
+  },
+  "topicLogTitle": {
+    "message": "主题日志"
+  },
+  "searchPlaceholder": {
+    "message": "搜索主题..."
+  },
+  "noTopicsRecorded": {
+    "message": "暂无主题记录"
+  },
+  "loadError": {
+    "message": "加载错误"
+  },
+  "topicsCount": {
+    "message": "$1个主题",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "\"$1\"没有搜索结果",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "今天"
+  },
+  "yesterday": {
+    "message": "昨天"
+  },
+
+  "pageTitle_history": {
+    "message": "历史记录 - Claude 仪表盘"
+  },
+  "usageHistory": {
+    "message": "使用历史"
+  },
+  "periodTitle": {
+    "message": "时间段"
+  },
+  "fromLabel": {
+    "message": "从"
+  },
+  "toLabel": {
+    "message": "到"
+  },
+  "applyBtn": {
+    "message": "应用"
+  },
+  "days7": {
+    "message": "7天"
+  },
+  "days30": {
+    "message": "30天"
+  },
+  "days90": {
+    "message": "90天"
+  },
+  "allData": {
+    "message": "全部"
+  },
+  "usageInPeriod": {
+    "message": "期间用量"
+  },
+  "syncPoints": {
+    "message": "Sync次数"
+  },
+  "activeDays": {
+    "message": "活跃天数"
+  },
+  "max5hLimit": {
+    "message": "最高5小时限制"
+  },
+  "max7dLimit": {
+    "message": "最高7天限制"
+  },
+  "fiveHLimitHistory": {
+    "message": "5小时限制历史"
+  },
+  "exportAsJson": {
+    "message": "导出为JSON"
+  },
+  "noDataInPeriod": {
+    "message": "该时间段内无数据"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- 支持"
+  },
+  "madeWithLove": {
+    "message": "在萨克森-安哈尔特用心打造"
+  },
+  "openSourceDesc": {
+    "message": "来自萨克森-安哈尔特的开源项目。<br>无追踪,无广告,不妥协。"
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- 请我喝杯咖啡"
+  },
+  "orByCrypto": {
+    "message": "或通过加密货币:"
+  },
+  "copyAddress": {
+    "message": "复制地址"
+  },
+  "copied": {
+    "message": "已复制!"
+  },
+  "thanksForSupport": {
+    "message": "感谢您的支持!"
+  },
+
+  "notLoggedInError": {
+    "message": "未登录或没有聊天组织"
+  }
+}

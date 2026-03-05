@@ -89,7 +89,7 @@ async function loadAndDisplay() {
     updateStatus(data);
     updateVersion();
   } catch (e) {
-    console.error('Popup load error:', e);
+    console.warn('Popup load error:', e);
     showAlert(i18n('errorLoadingData'), 'error');
   }
 }
@@ -235,7 +235,6 @@ function updateTopics(data) {
       item.addEventListener('click', () => {
         chrome.tabs.create({ url: t.url });
       });
-      item.title = t.title;
     }
 
     const time = document.createElement('span');
@@ -245,7 +244,6 @@ function updateTopics(data) {
     const title = document.createElement('span');
     title.className = 'topic-title';
     title.textContent = t.title;
-    if (!t.url) title.title = t.title;
 
     item.appendChild(time);
     item.appendChild(title);
@@ -274,7 +272,7 @@ function updateStatus(data) {
 function updateVersion() {
   const manifest = chrome.runtime.getManifest();
   if (el.popupFooter) {
-    el.popupFooter.textContent = i18n('footerText', [manifest.version]);
+    el.popupFooter.textContent = i18n('footerText', [manifest.version, String(new Date().getFullYear())]);
   }
 }
 

@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - Показує лiмiти 5г/7д, статус системи та теми чатiв з автосинхронiзацiєю."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "Оновити"
+  },
+  "titleSettings": {
+    "message": "Налаштування"
+  },
+  "titleStatusPage": {
+    "message": "Вiдкрити сторiнку статусу"
+  },
+
+  "fiveHourLimit": {
+    "message": "5-годинний лiмiт"
+  },
+  "sevenDayLimit": {
+    "message": "7-денний лiмiт"
+  },
+  "modelLimits7d": {
+    "message": "Лiмiти моделей (7 днiв)"
+  },
+  "todaysChats": {
+    "message": "Сьогоднiшнi чати"
+  },
+  "noChatsYet": {
+    "message": "Чати ще не записанi"
+  },
+
+  "topicLog": {
+    "message": "Журнал тем"
+  },
+  "history": {
+    "message": "Iсторiя"
+  },
+  "sayThanks": {
+    "message": "Подякувати"
+  },
+
+  "legendTitle": {
+    "message": "Легенда"
+  },
+  "iconGrid": {
+    "message": "Iконка (сiтка 2x2)"
+  },
+  "fiveHLabel": {
+    "message": "5г лiмiт"
+  },
+  "sevenDLabel": {
+    "message": "7 днiв"
+  },
+  "statusLabel": {
+    "message": "Статус"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Точки статусу"
+  },
+  "operational": {
+    "message": "Працює"
+  },
+  "degraded": {
+    "message": "Погiршення"
+  },
+  "partialOutage": {
+    "message": "Часткова перерва"
+  },
+  "majorOutage": {
+    "message": "Значна перерва"
+  },
+  "maintenance": {
+    "message": "Обслуговування"
+  },
+  "badgeRotates": {
+    "message": "Badge (чергується)"
+  },
+  "fiveHUsage": {
+    "message": "5г використання"
+  },
+  "sevenDUsage": {
+    "message": "7д використання"
+  },
+  "outage": {
+    "message": "Перерва"
+  },
+  "sourceStatus": {
+    "message": "Джерело: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Синхронiзацiя не вдалася"
+  },
+  "connectionError": {
+    "message": "Помилка з'єднання"
+  },
+  "noDataClickSync": {
+    "message": "Немає даних -- натиснiть Sync"
+  },
+  "errorLoadingData": {
+    "message": "Помилка завантаження даних"
+  },
+  "resetNow": {
+    "message": "Скидання зараз"
+  },
+  "resetIn": {
+    "message": "Скидання $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "через $1д $2г",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "через $1г $2хв",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "через $1хв",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Налаштування"
+  },
+  "pageTitle_settings": {
+    "message": "Налаштування - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "Як це працює"
+  },
+  "howItWorksText1": {
+    "message": "Це розширення зчитує данi про використання безпосередньо з <strong>Claude.ai API</strong>. Ви маєте бути авторизованi на claude.ai -- ключ API не потрiбен."
+  },
+  "howItWorksText2": {
+    "message": "Данi синхронiзуються автоматично кожнi <strong>5 хвилин</strong>. Ви також можете вручну натиснути iконку синхронiзацiї у спливаючому вiкнi."
+  },
+  "prerequisites": {
+    "message": "Вимоги"
+  },
+  "prereqPro": {
+    "message": "Пiдписка Claude Pro або Max"
+  },
+  "prereqLoggedIn": {
+    "message": "Авторизацiя на claude.ai"
+  },
+  "prereqCookies": {
+    "message": "Cookies увiмкненi для claude.ai"
+  },
+  "dataSection": {
+    "message": "Данi"
+  },
+  "storedData": {
+    "message": "Збереженi данi"
+  },
+  "capturedTopics": {
+    "message": "Записанi теми"
+  },
+  "historyEntries": {
+    "message": "Записи iсторiї"
+  },
+  "exportBtn": {
+    "message": "Експорт"
+  },
+  "deleteAllData": {
+    "message": "Видалити всi данi"
+  },
+  "debugInfo": {
+    "message": "Вiдладочна iнформацiя"
+  },
+  "loading": {
+    "message": "Завантаження..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 днiв)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 днiв",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Остання синхронiзацiя"
+  },
+  "never": {
+    "message": "нiколи"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "не задано"
+  },
+  "fiveHLimitDebug": {
+    "message": "5г лiмiт"
+  },
+  "sevenDLimitDebug": {
+    "message": "7д лiмiт"
+  },
+  "statusDebug": {
+    "message": "Статус"
+  },
+  "statusSyncLabel": {
+    "message": "Синхронiзацiя статусу"
+  },
+  "unknown": {
+    "message": "невiдомо"
+  },
+  "lastErrorLabel": {
+    "message": "Остання помилка"
+  },
+  "exportFailed": {
+    "message": "Експорт не вдався"
+  },
+  "confirmDelete": {
+    "message": "Дiйсно видалити всi данi? Це не можна скасувати."
+  },
+  "dataDeleted": {
+    "message": "Данi видалено!"
+  },
+  "errorGeneric": {
+    "message": "Помилка: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Журнал тем - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "Журнал тем"
+  },
+  "searchPlaceholder": {
+    "message": "Пошук тем..."
+  },
+  "noTopicsRecorded": {
+    "message": "Теми не записанi"
+  },
+  "loadError": {
+    "message": "Помилка завантаження"
+  },
+  "topicsCount": {
+    "message": "$1 тем",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "Немає результатiв для \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Сьогоднi"
+  },
+  "yesterday": {
+    "message": "Вчора"
+  },
+
+  "pageTitle_history": {
+    "message": "Iсторiя - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "Iсторiя використання"
+  },
+  "periodTitle": {
+    "message": "Перiод"
+  },
+  "fromLabel": {
+    "message": "Вiд"
+  },
+  "toLabel": {
+    "message": "До"
+  },
+  "applyBtn": {
+    "message": "Застосувати"
+  },
+  "days7": {
+    "message": "7 днiв"
+  },
+  "days30": {
+    "message": "30 днiв"
+  },
+  "days90": {
+    "message": "90 днiв"
+  },
+  "allData": {
+    "message": "Все"
+  },
+  "usageInPeriod": {
+    "message": "Використання за перiод"
+  },
+  "syncPoints": {
+    "message": "Точки синхронiзацiї"
+  },
+  "activeDays": {
+    "message": "Активнi днi"
+  },
+  "max5hLimit": {
+    "message": "Макс. 5г лiмiт"
+  },
+  "max7dLimit": {
+    "message": "Макс. 7д лiмiт"
+  },
+  "fiveHLimitHistory": {
+    "message": "Iсторiя 5г лiмiту"
+  },
+  "exportAsJson": {
+    "message": "Експорт як JSON"
+  },
+  "noDataInPeriod": {
+    "message": "Немає даних за цей перiод"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- Пiдтримка"
+  },
+  "madeWithLove": {
+    "message": "Зроблено з любов'ю в Саксонiї-Ангальт"
+  },
+  "openSourceDesc": {
+    "message": "Вiдкритий код з Саксонiї-Ангальт.<br>Без вiдстеження, без реклами, без компромiсiв."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Купити менi каву"
+  },
+  "orByCrypto": {
+    "message": "Або через криптовалюту:"
+  },
+  "copyAddress": {
+    "message": "Копiювати адресу"
+  },
+  "copied": {
+    "message": "Скопiйовано!"
+  },
+  "thanksForSupport": {
+    "message": "Дякуємо за вашу пiдтримку!"
+  },
+
+  "notLoggedInError": {
+    "message": "Не авторизовано або немає органiзацiї чату"
+  }
+}

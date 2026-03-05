@@ -29,7 +29,7 @@ async function loadTopics() {
     allTopics = data?.topics || {};
     renderTopics();
   } catch (error) {
-    console.error('Error loading topics:', error);
+    console.warn('Error loading topics:', error);
     elements.topicContainer.textContent = '';
     const empty = document.createElement('div');
     empty.className = 'empty-state';

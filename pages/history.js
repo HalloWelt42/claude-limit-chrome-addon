@@ -43,7 +43,7 @@ async function loadData() {
     const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
     historyData = data?.history?.daily || {};
   } catch (error) {
-    console.error('Error loading data:', error);
+    console.warn('Error loading data:', error);
   }
 }
 
@@ -222,7 +222,7 @@ async function exportData() {
     a.click();
     URL.revokeObjectURL(url);
   } catch (error) {
-    console.error('Export failed:', error);
+    console.warn('Export failed:', error);
     alert(i18n('exportFailed'));
   }
 }

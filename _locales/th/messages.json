@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - แสดงขีดจำกัด 5ชม./7วัน สถานะระบบ และหัวข้อแชทพร้อมซิงค์อัตโนมัติ"
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "รีเฟรช"
+  },
+  "titleSettings": {
+    "message": "การตั้งค่า"
+  },
+  "titleStatusPage": {
+    "message": "เปิดหน้าสถานะ"
+  },
+
+  "fiveHourLimit": {
+    "message": "ขีดจำกัด 5 ชั่วโมง"
+  },
+  "sevenDayLimit": {
+    "message": "ขีดจำกัด 7 วัน"
+  },
+  "modelLimits7d": {
+    "message": "ขีดจำกัดโมเดล (7 วัน)"
+  },
+  "todaysChats": {
+    "message": "แชทวันนี้"
+  },
+  "noChatsYet": {
+    "message": "ยังไม่มีแชทที่บันทึก"
+  },
+
+  "topicLog": {
+    "message": "บันทึกหัวข้อ"
+  },
+  "history": {
+    "message": "ประวัติ"
+  },
+  "sayThanks": {
+    "message": "ขอบคุณ"
+  },
+
+  "legendTitle": {
+    "message": "คำอธิบาย"
+  },
+  "iconGrid": {
+    "message": "ไอคอน (ตาราง 2x2)"
+  },
+  "fiveHLabel": {
+    "message": "ขีดจำกัด 5ชม."
+  },
+  "sevenDLabel": {
+    "message": "7 วัน"
+  },
+  "statusLabel": {
+    "message": "สถานะ"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "จุดสถานะ"
+  },
+  "operational": {
+    "message": "ทำงานปกติ"
+  },
+  "degraded": {
+    "message": "ประสิทธิภาพลดลง"
+  },
+  "partialOutage": {
+    "message": "หยุดทำงานบางส่วน"
+  },
+  "majorOutage": {
+    "message": "หยุดทำงานรุนแรง"
+  },
+  "maintenance": {
+    "message": "บำรุงรักษา"
+  },
+  "badgeRotates": {
+    "message": "Badge (หมุนเวียน)"
+  },
+  "fiveHUsage": {
+    "message": "การใช้งาน 5ชม."
+  },
+  "sevenDUsage": {
+    "message": "การใช้งาน 7วัน"
+  },
+  "outage": {
+    "message": "หยุดทำงาน"
+  },
+  "sourceStatus": {
+    "message": "แหล่งที่มา: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "ซิงค์ล้มเหลว"
+  },
+  "connectionError": {
+    "message": "ข้อผิดพลาดการเชื่อมต่อ"
+  },
+  "noDataClickSync": {
+    "message": "ยังไม่มีข้อมูล -- คลิก Sync"
+  },
+  "errorLoadingData": {
+    "message": "เกิดข้อผิดพลาดในการโหลดข้อมูล"
+  },
+  "resetNow": {
+    "message": "รีเซ็ตตอนนี้"
+  },
+  "resetIn": {
+    "message": "รีเซ็ต $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "ใน $1ว $2ชม.",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "ใน $1ชม. $2น.",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "ใน $1น.",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "การตั้งค่า"
+  },
+  "pageTitle_settings": {
+    "message": "การตั้งค่า - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "วิธีการทำงาน"
+  },
+  "howItWorksText1": {
+    "message": "ส่วนขยายนี้อ่านข้อมูลการใช้งานโดยตรงจาก <strong>Claude.ai API</strong> คุณต้องเข้าสู่ระบบบน claude.ai -- ไม่ต้องใช้คีย์ API"
+  },
+  "howItWorksText2": {
+    "message": "ข้อมูลจะซิงค์อัตโนมัติทุก <strong>5 นาที</strong> คุณยังสามารถคลิกไอคอนซิงค์ใน popup ได้ด้วยตนเอง"
+  },
+  "prerequisites": {
+    "message": "ข้อกำหนดเบื้องต้น"
+  },
+  "prereqPro": {
+    "message": "สมัครสมาชิก Claude Pro หรือ Max"
+  },
+  "prereqLoggedIn": {
+    "message": "เข้าสู่ระบบบน claude.ai"
+  },
+  "prereqCookies": {
+    "message": "เปิดใช้งาน Cookies สำหรับ claude.ai"
+  },
+  "dataSection": {
+    "message": "ข้อมูล"
+  },
+  "storedData": {
+    "message": "ข้อมูลที่จัดเก็บ"
+  },
+  "capturedTopics": {
+    "message": "หัวข้อที่บันทึก"
+  },
+  "historyEntries": {
+    "message": "รายการประวัติ"
+  },
+  "exportBtn": {
+    "message": "ส่งออก"
+  },
+  "deleteAllData": {
+    "message": "ลบข้อมูลทั้งหมด"
+  },
+  "debugInfo": {
+    "message": "ข้อมูลดีบัก"
+  },
+  "loading": {
+    "message": "กำลังโหลด..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 วัน)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 วัน",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "ซิงค์ล่าสุด"
+  },
+  "never": {
+    "message": "ไม่เคย"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "ยังไม่ได้ตั้งค่า"
+  },
+  "fiveHLimitDebug": {
+    "message": "ขีดจำกัด 5ชม."
+  },
+  "sevenDLimitDebug": {
+    "message": "ขีดจำกัด 7วัน"
+  },
+  "statusDebug": {
+    "message": "สถานะ"
+  },
+  "statusSyncLabel": {
+    "message": "ซิงค์สถานะ"
+  },
+  "unknown": {
+    "message": "ไม่ทราบ"
+  },
+  "lastErrorLabel": {
+    "message": "ข้อผิดพลาดล่าสุด"
+  },
+  "exportFailed": {
+    "message": "ส่งออกล้มเหลว"
+  },
+  "confirmDelete": {
+    "message": "ต้องการลบข้อมูลทั้งหมดจริงหรือ? การดำเนินการนี้ไม่สามารถย้อนกลับได้"
+  },
+  "dataDeleted": {
+    "message": "ลบข้อมูลแล้ว!"
+  },
+  "errorGeneric": {
+    "message": "ข้อผิดพลาด: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "บันทึกหัวข้อ - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "บันทึกหัวข้อ"
+  },
+  "searchPlaceholder": {
+    "message": "ค้นหาหัวข้อ..."
+  },
+  "noTopicsRecorded": {
+    "message": "ยังไม่มีหัวข้อที่บันทึก"
+  },
+  "loadError": {
+    "message": "เกิดข้อผิดพลาดในการโหลด"
+  },
+  "topicsCount": {
+    "message": "$1 หัวข้อ",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "ไม่พบผลลัพธ์สำหรับ \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "วันนี้"
+  },
+  "yesterday": {
+    "message": "เมื่อวาน"
+  },
+
+  "pageTitle_history": {
+    "message": "ประวัติ - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "ประวัติการใช้งาน"
+  },
+  "periodTitle": {
+    "message": "ช่วงเวลา"
+  },
+  "fromLabel": {
+    "message": "จาก"
+  },
+  "toLabel": {
+    "message": "ถึง"
+  },
+  "applyBtn": {
+    "message": "ใช้งาน"
+  },
+  "days7": {
+    "message": "7 วัน"
+  },
+  "days30": {
+    "message": "30 วัน"
+  },
+  "days90": {
+    "message": "90 วัน"
+  },
+  "allData": {
+    "message": "ทั้งหมด"
+  },
+  "usageInPeriod": {
+    "message": "การใช้งานในช่วงเวลา"
+  },
+  "syncPoints": {
+    "message": "จุดซิงค์"
+  },
+  "activeDays": {
+    "message": "วันที่ใช้งาน"
+  },
+  "max5hLimit": {
+    "message": "ขีดจำกัด 5ชม. สูงสุด"
+  },
+  "max7dLimit": {
+    "message": "ขีดจำกัด 7วัน สูงสุด"
+  },
+  "fiveHLimitHistory": {
+    "message": "ประวัติขีดจำกัด 5ชม."
+  },
+  "exportAsJson": {
+    "message": "ส่งออกเป็น JSON"
+  },
+  "noDataInPeriod": {
+    "message": "ไม่มีข้อมูลในช่วงเวลานี้"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- สนับสนุน"
+  },
+  "madeWithLove": {
+    "message": "สร้างด้วยความรักจากซัคเซิน-อันฮัลท์"
+  },
+  "openSourceDesc": {
+    "message": "โอเพนซอร์สจากซัคเซิน-อันฮัลท์<br>ไม่มีการติดตาม ไม่มีโฆษณา ไม่มีการประนีประนอม"
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- เลี้ยงกาแฟ"
+  },
+  "orByCrypto": {
+    "message": "หรือผ่านคริปโต:"
+  },
+  "copyAddress": {
+    "message": "คัดลอกที่อยู่"
+  },
+  "copied": {
+    "message": "คัดลอกแล้ว!"
+  },
+  "thanksForSupport": {
+    "message": "ขอบคุณสำหรับการสนับสนุน!"
+  },
+
+  "notLoggedInError": {
+    "message": "ยังไม่ได้เข้าสู่ระบบหรือไม่มีองค์กรแชท"
+  }
+}

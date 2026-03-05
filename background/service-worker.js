@@ -5,12 +5,12 @@ const STATUS_URL = 'https://status.claude.com/api/v2/summary.json';
 
 
 chrome.runtime.onInstalled.addListener(() => {
-  console.log('[Dashboard] Installiert');
+  console.log('[Dashboard] Installed');
   initializeExtension();
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  console.log('[Dashboard] Browser gestartet');
+  console.log('[Dashboard] Browser started');
   initializeExtension();
 });
 
@@ -60,7 +60,7 @@ async function syncUsage() {
   try {
     const orgUuid = await findChatOrgUuid();
     if (!orgUuid) {
-      console.warn('[Dashboard] Keine Chat-Org gefunden');
+      console.warn('[Dashboard] No chat org found');
       await updateBadge();
       return { success: false, error: chrome.i18n.getMessage('notLoggedInError') || 'Not logged in or no chat organization' };
     }
@@ -70,7 +70,9 @@ async function syncUsage() {
     });
 
     if (!response.ok) {
-      throw new Error(`Usage API: HTTP ${response.status}`);
+      const msg = 'Usage API: HTTP ' + response.status;
+      console.warn('[Dashboard]', msg);
+      return { success: false, error: msg };
     }
 
     const usage = await response.json();
@@ -106,7 +108,7 @@ async function syncUsage() {
     return { success: true, percent };
 
   } catch (error) {
-    console.error('[Dashboard] Usage sync failed:', error);
+    console.warn('[Dashboard] Usage sync failed:', error.message);
 
     const data = await loadStorageData();
     data.lastError = { message: error.message, time: new Date().toISOString() };
@@ -120,7 +122,10 @@ async function syncUsage() {
 async function syncStatus() {
   try {
     const response = await fetch(STATUS_URL);
-    if (!response.ok) throw new Error(`Status API: HTTP ${response.status}`);
+    if (!response.ok) {
+      console.warn('[Dashboard] Status API: HTTP ' + response.status);
+      return { success: false, error: 'Status API: HTTP ' + response.status };
+    }
 
     const json = await response.json();
     const components = {};
@@ -165,7 +170,7 @@ async function syncStatus() {
 
     return { success: true };
   } catch (error) {
-    console.error('[Dashboard] Status sync failed:', error);
+    console.warn('[Dashboard] Status sync failed:', error.message);
     return { success: false, error: error.message };
   }
 }
@@ -179,7 +184,10 @@ async function findChatOrgUuid() {
       credentials: 'include'
     });
 
-    if (!response.ok) throw new Error(`Orgs API: HTTP ${response.status}`);
+    if (!response.ok) {
+      console.warn('[Dashboard] Orgs API: HTTP ' + response.status);
+      return null;
+    }
 
     const orgs = await response.json();
     const chatOrg = orgs.find(org =>
@@ -188,7 +196,7 @@ async function findChatOrgUuid() {
 
     return chatOrg?.uuid || null;
   } catch (error) {
-    console.error('[Dashboard] Org lookup failed:', error);
+    console.warn('[Dashboard] Org lookup failed:', error.message);
     return null;
   }
 }
@@ -394,4 +402,4 @@ function getDefaultData() {
   };
 }
 
-console.log('[Dashboard] Service Worker geladen');
+console.log('[Dashboard] Service Worker loaded');

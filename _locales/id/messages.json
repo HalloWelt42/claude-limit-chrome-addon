@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - Menampilkan batas 5j/7h, status sistem, dan topik obrolan dengan sinkronisasi otomatis."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "Segarkan"
+  },
+  "titleSettings": {
+    "message": "Pengaturan"
+  },
+  "titleStatusPage": {
+    "message": "Buka halaman status"
+  },
+
+  "fiveHourLimit": {
+    "message": "Batas 5 Jam"
+  },
+  "sevenDayLimit": {
+    "message": "Batas 7 Hari"
+  },
+  "modelLimits7d": {
+    "message": "Batas Model (7 Hari)"
+  },
+  "todaysChats": {
+    "message": "Obrolan Hari Ini"
+  },
+  "noChatsYet": {
+    "message": "Belum ada obrolan yang tercatat"
+  },
+
+  "topicLog": {
+    "message": "Log Topik"
+  },
+  "history": {
+    "message": "Riwayat"
+  },
+  "sayThanks": {
+    "message": "Ucapkan terima kasih"
+  },
+
+  "legendTitle": {
+    "message": "Keterangan"
+  },
+  "iconGrid": {
+    "message": "Ikon (Grid 2x2)"
+  },
+  "fiveHLabel": {
+    "message": "Batas 5j"
+  },
+  "sevenDLabel": {
+    "message": "7 Hari"
+  },
+  "statusLabel": {
+    "message": "Status"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Titik Status"
+  },
+  "operational": {
+    "message": "Beroperasi"
+  },
+  "degraded": {
+    "message": "Menurun"
+  },
+  "partialOutage": {
+    "message": "Gangguan Sebagian"
+  },
+  "majorOutage": {
+    "message": "Gangguan Besar"
+  },
+  "maintenance": {
+    "message": "Pemeliharaan"
+  },
+  "badgeRotates": {
+    "message": "Badge (berputar)"
+  },
+  "fiveHUsage": {
+    "message": "Penggunaan 5j"
+  },
+  "sevenDUsage": {
+    "message": "Penggunaan 7h"
+  },
+  "outage": {
+    "message": "Gangguan"
+  },
+  "sourceStatus": {
+    "message": "Sumber: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Sinkronisasi gagal"
+  },
+  "connectionError": {
+    "message": "Kesalahan koneksi"
+  },
+  "noDataClickSync": {
+    "message": "Belum ada data -- klik Sync"
+  },
+  "errorLoadingData": {
+    "message": "Kesalahan memuat data"
+  },
+  "resetNow": {
+    "message": "Reset sekarang"
+  },
+  "resetIn": {
+    "message": "Reset $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "dalam $1h $2j",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "dalam $1j $2m",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "dalam $1m",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Pengaturan"
+  },
+  "pageTitle_settings": {
+    "message": "Pengaturan - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "Cara kerja"
+  },
+  "howItWorksText1": {
+    "message": "Ekstensi ini membaca data penggunaan Anda langsung dari <strong>Claude.ai API</strong>. Anda harus masuk di claude.ai -- tidak perlu kunci API."
+  },
+  "howItWorksText2": {
+    "message": "Data disinkronkan secara otomatis setiap <strong>5 menit</strong>. Anda juga dapat mengklik ikon sinkronisasi di popup secara manual."
+  },
+  "prerequisites": {
+    "message": "Persyaratan"
+  },
+  "prereqPro": {
+    "message": "Langganan Claude Pro atau Max"
+  },
+  "prereqLoggedIn": {
+    "message": "Masuk di claude.ai"
+  },
+  "prereqCookies": {
+    "message": "Cookies diaktifkan untuk claude.ai"
+  },
+  "dataSection": {
+    "message": "Data"
+  },
+  "storedData": {
+    "message": "Data tersimpan"
+  },
+  "capturedTopics": {
+    "message": "Topik yang tercatat"
+  },
+  "historyEntries": {
+    "message": "Entri riwayat"
+  },
+  "exportBtn": {
+    "message": "Ekspor"
+  },
+  "deleteAllData": {
+    "message": "Hapus semua data"
+  },
+  "debugInfo": {
+    "message": "Info Debug"
+  },
+  "loading": {
+    "message": "Memuat..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 hari)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 hari",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Sinkronisasi terakhir"
+  },
+  "never": {
+    "message": "tidak pernah"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "belum diatur"
+  },
+  "fiveHLimitDebug": {
+    "message": "Batas 5j"
+  },
+  "sevenDLimitDebug": {
+    "message": "Batas 7h"
+  },
+  "statusDebug": {
+    "message": "Status"
+  },
+  "statusSyncLabel": {
+    "message": "Sinkronisasi Status"
+  },
+  "unknown": {
+    "message": "tidak diketahui"
+  },
+  "lastErrorLabel": {
+    "message": "Kesalahan terakhir"
+  },
+  "exportFailed": {
+    "message": "Ekspor gagal"
+  },
+  "confirmDelete": {
+    "message": "Yakin ingin menghapus semua data? Tindakan ini tidak dapat dibatalkan."
+  },
+  "dataDeleted": {
+    "message": "Data dihapus!"
+  },
+  "errorGeneric": {
+    "message": "Kesalahan: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Log Topik - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "Log Topik"
+  },
+  "searchPlaceholder": {
+    "message": "Cari topik..."
+  },
+  "noTopicsRecorded": {
+    "message": "Belum ada topik yang tercatat"
+  },
+  "loadError": {
+    "message": "Kesalahan memuat"
+  },
+  "topicsCount": {
+    "message": "$1 topik",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "Tidak ada hasil untuk \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Hari ini"
+  },
+  "yesterday": {
+    "message": "Kemarin"
+  },
+
+  "pageTitle_history": {
+    "message": "Riwayat - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "Riwayat Penggunaan"
+  },
+  "periodTitle": {
+    "message": "Periode"
+  },
+  "fromLabel": {
+    "message": "Dari"
+  },
+  "toLabel": {
+    "message": "Sampai"
+  },
+  "applyBtn": {
+    "message": "Terapkan"
+  },
+  "days7": {
+    "message": "7 Hari"
+  },
+  "days30": {
+    "message": "30 Hari"
+  },
+  "days90": {
+    "message": "90 Hari"
+  },
+  "allData": {
+    "message": "Semua"
+  },
+  "usageInPeriod": {
+    "message": "Penggunaan dalam Periode"
+  },
+  "syncPoints": {
+    "message": "Titik Sinkronisasi"
+  },
+  "activeDays": {
+    "message": "Hari Aktif"
+  },
+  "max5hLimit": {
+    "message": "Maks. Batas 5j"
+  },
+  "max7dLimit": {
+    "message": "Maks. Batas 7h"
+  },
+  "fiveHLimitHistory": {
+    "message": "Riwayat Batas 5j"
+  },
+  "exportAsJson": {
+    "message": "Ekspor sebagai JSON"
+  },
+  "noDataInPeriod": {
+    "message": "Tidak ada data dalam periode ini"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- Dukungan"
+  },
+  "madeWithLove": {
+    "message": "Dibuat dengan cinta di Sachsen-Anhalt"
+  },
+  "openSourceDesc": {
+    "message": "Sumber terbuka dari Sachsen-Anhalt.<br>Tanpa pelacakan, tanpa iklan, tanpa kompromi."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Belikan saya kopi"
+  },
+  "orByCrypto": {
+    "message": "Atau melalui mata uang kripto:"
+  },
+  "copyAddress": {
+    "message": "Salin alamat"
+  },
+  "copied": {
+    "message": "Tersalin!"
+  },
+  "thanksForSupport": {
+    "message": "Terima kasih atas dukungan Anda!"
+  },
+
+  "notLoggedInError": {
+    "message": "Belum masuk atau tidak ada organisasi obrolan"
+  }
+}

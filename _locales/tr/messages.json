@@ -1,0 +1,376 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - 5s/7g limitlerini, sistem durumunu ve sohbet konularini otomatik senkronizasyonla gosterir."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "Yenile"
+  },
+  "titleSettings": {
+    "message": "Ayarlar"
+  },
+  "titleStatusPage": {
+    "message": "Durum sayfasini ac"
+  },
+
+  "fiveHourLimit": {
+    "message": "5 Saatlik Limit"
+  },
+  "sevenDayLimit": {
+    "message": "7 Gunluk Limit"
+  },
+  "modelLimits7d": {
+    "message": "Model Limitleri (7 Gun)"
+  },
+  "todaysChats": {
+    "message": "Bugunun Sohbetleri"
+  },
+  "noChatsYet": {
+    "message": "Henuz sohbet kaydedilmedi"
+  },
+
+  "topicLog": {
+    "message": "Konu Gunlugu"
+  },
+  "history": {
+    "message": "Gecmis"
+  },
+  "sayThanks": {
+    "message": "Tesekkur et"
+  },
+
+  "legendTitle": {
+    "message": "Aciklama"
+  },
+  "iconGrid": {
+    "message": "Simge (2x2 Izgara)"
+  },
+  "fiveHLabel": {
+    "message": "5s Limit"
+  },
+  "sevenDLabel": {
+    "message": "7 Gun"
+  },
+  "statusLabel": {
+    "message": "Durum"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Durum Noktalari"
+  },
+  "operational": {
+    "message": "Calisir Durumda"
+  },
+  "degraded": {
+    "message": "Dusuk Performans"
+  },
+  "partialOutage": {
+    "message": "Kismi Kesinti"
+  },
+  "majorOutage": {
+    "message": "Buyuk Kesinti"
+  },
+  "maintenance": {
+    "message": "Bakim"
+  },
+  "badgeRotates": {
+    "message": "Badge (donusumlu)"
+  },
+  "fiveHUsage": {
+    "message": "5s kullanim"
+  },
+  "sevenDUsage": {
+    "message": "7g kullanim"
+  },
+  "outage": {
+    "message": "Kesinti"
+  },
+  "sourceStatus": {
+    "message": "Kaynak: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) $2 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Senkronizasyon basarisiz"
+  },
+  "connectionError": {
+    "message": "Baglanti hatasi"
+  },
+  "noDataClickSync": {
+    "message": "Henuz veri yok -- Sync'e tiklayin"
+  },
+  "errorLoadingData": {
+    "message": "Veri yuklenirken hata"
+  },
+  "resetNow": {
+    "message": "Simdi sifirla"
+  },
+  "resetIn": {
+    "message": "Sifirlama $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "$1g $2s icinde",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "$1s $2dk icinde",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "$1dk icinde",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Ayarlar"
+  },
+  "pageTitle_settings": {
+    "message": "Ayarlar - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "Nasil calisir"
+  },
+  "howItWorksText1": {
+    "message": "Bu uzanti, kullanim verilerinizi dogrudan <strong>Claude.ai API</strong>'den okur. claude.ai'da oturum acmis olmaniz gerekir -- API anahtari gerekmez."
+  },
+  "howItWorksText2": {
+    "message": "Veriler her <strong>5 dakikada</strong> otomatik olarak senkronize edilir. Popup'taki senkronizasyon simgesine tiklayarak manuel olarak da senkronize edebilirsiniz."
+  },
+  "prerequisites": {
+    "message": "Gereksinimler"
+  },
+  "prereqPro": {
+    "message": "Claude Pro veya Max aboneligi"
+  },
+  "prereqLoggedIn": {
+    "message": "claude.ai'da oturum acilmis"
+  },
+  "prereqCookies": {
+    "message": "claude.ai icin cerezler etkin"
+  },
+  "dataSection": {
+    "message": "Veri"
+  },
+  "storedData": {
+    "message": "Kayitli veri"
+  },
+  "capturedTopics": {
+    "message": "Kaydedilen konular"
+  },
+  "historyEntries": {
+    "message": "Gecmis kayitlari"
+  },
+  "exportBtn": {
+    "message": "Disari aktar"
+  },
+  "deleteAllData": {
+    "message": "Tum verileri sil"
+  },
+  "debugInfo": {
+    "message": "Hata Ayiklama Bilgisi"
+  },
+  "loading": {
+    "message": "Yukleniyor..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 gun)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 gun",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Son senkronizasyon"
+  },
+  "never": {
+    "message": "hic"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "ayarlanmamis"
+  },
+  "fiveHLimitDebug": {
+    "message": "5s Limit"
+  },
+  "sevenDLimitDebug": {
+    "message": "7g Limit"
+  },
+  "statusDebug": {
+    "message": "Durum"
+  },
+  "statusSyncLabel": {
+    "message": "Durum Senkronizasyonu"
+  },
+  "unknown": {
+    "message": "bilinmiyor"
+  },
+  "lastErrorLabel": {
+    "message": "Son hata"
+  },
+  "exportFailed": {
+    "message": "Disari aktarma basarisiz"
+  },
+  "confirmDelete": {
+    "message": "Tum veriler silinsin mi? Bu islem geri alinamaz."
+  },
+  "dataDeleted": {
+    "message": "Veriler silindi!"
+  },
+  "errorGeneric": {
+    "message": "Hata: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Konu Gunlugu - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "Konu Gunlugu"
+  },
+  "searchPlaceholder": {
+    "message": "Konu ara..."
+  },
+  "noTopicsRecorded": {
+    "message": "Konu kaydedilmedi"
+  },
+  "loadError": {
+    "message": "Yukleme hatasi"
+  },
+  "topicsCount": {
+    "message": "$1 konu",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "\"$1\" icin sonuc bulunamadi",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Bugun"
+  },
+  "yesterday": {
+    "message": "Dun"
+  },
+
+  "pageTitle_history": {
+    "message": "Gecmis - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "Kullanim Gecmisi"
+  },
+  "periodTitle": {
+    "message": "Donem"
+  },
+  "fromLabel": {
+    "message": "Baslangic"
+  },
+  "toLabel": {
+    "message": "Bitis"
+  },
+  "applyBtn": {
+    "message": "Uygula"
+  },
+  "days7": {
+    "message": "7 Gun"
+  },
+  "days30": {
+    "message": "30 Gun"
+  },
+  "days90": {
+    "message": "90 Gun"
+  },
+  "allData": {
+    "message": "Tumunu"
+  },
+  "usageInPeriod": {
+    "message": "Donemdeki Kullanim"
+  },
+  "syncPoints": {
+    "message": "Senkronizasyon Noktalari"
+  },
+  "activeDays": {
+    "message": "Aktif Gunler"
+  },
+  "max5hLimit": {
+    "message": "Maks. 5s Limit"
+  },
+  "max7dLimit": {
+    "message": "Maks. 7g Limit"
+  },
+  "fiveHLimitHistory": {
+    "message": "5s Limit Gecmisi"
+  },
+  "exportAsJson": {
+    "message": "JSON olarak disari aktar"
+  },
+  "noDataInPeriod": {
+    "message": "Bu donemde veri yok"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- Destek"
+  },
+  "madeWithLove": {
+    "message": "Saksonya-Anhalt'ta sevgiyle yapildi"
+  },
+  "openSourceDesc": {
+    "message": "Saksonya-Anhalt'tan acik kaynak.<br>Takip yok, reklam yok, taviz yok."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Bana bir kahve ismarla"
+  },
+  "orByCrypto": {
+    "message": "Veya kripto para ile:"
+  },
+  "copyAddress": {
+    "message": "Adresi kopyala"
+  },
+  "copied": {
+    "message": "Kopyalandi!"
+  },
+  "thanksForSupport": {
+    "message": "Desteginiz icin tesekkurler!"
+  },
+
+  "notLoggedInError": {
+    "message": "Oturum acilmamis veya sohbet organizasyonu yok"
+  }
+}
