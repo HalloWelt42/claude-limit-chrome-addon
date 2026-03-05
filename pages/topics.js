@@ -29,11 +29,11 @@ async function loadTopics() {
     allTopics = data?.topics || {};
     renderTopics();
   } catch (error) {
-    console.error('Fehler beim Laden:', error);
+    console.error('Error loading topics:', error);
     elements.topicContainer.textContent = '';
     const empty = document.createElement('div');
     empty.className = 'empty-state';
-    empty.textContent = 'Fehler beim Laden';
+    empty.textContent = i18n('loadError');
     elements.topicContainer.appendChild(empty);
   }
 }
@@ -46,7 +46,7 @@ function renderTopics(filter = '') {
   if (dates.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'empty-state';
-    empty.textContent = 'Keine Themen erfasst';
+    empty.textContent = i18n('noTopicsRecorded');
     elements.topicContainer.appendChild(empty);
     return;
   }
@@ -70,10 +70,10 @@ function renderTopics(filter = '') {
     header.className = 'day-header';
 
     const headerLabel = document.createElement('span');
-    headerLabel.textContent = formatRelativeDate(date) + ' \u2013 ' + date;
+    headerLabel.textContent = formatRelativeDate(date) + ' -- ' + date;
 
     const headerCount = document.createElement('span');
-    headerCount.textContent = filtered.length + ' Themen';
+    headerCount.textContent = i18n('topicsCount', [String(filtered.length)]);
 
     header.appendChild(headerLabel);
     header.appendChild(headerCount);
@@ -119,7 +119,7 @@ function renderTopics(filter = '') {
   if (!hasResults) {
     const empty = document.createElement('div');
     empty.className = 'empty-state';
-    empty.textContent = 'Keine Treffer f\u00fcr "' + filter + '"';
+    empty.textContent = i18n('noResultsFor', [filter]);
     elements.topicContainer.appendChild(empty);
   }
 }
@@ -132,12 +132,10 @@ function highlightText(container, text, filter) {
     const idx = lower.indexOf(filter, lastIndex);
     if (idx === -1) break;
 
-    // Text vor dem Match
     if (idx > lastIndex) {
       container.appendChild(document.createTextNode(text.slice(lastIndex, idx)));
     }
 
-    // Hervorgehobener Text
     const mark = document.createElement('mark');
     mark.textContent = text.slice(idx, idx + filter.length);
     container.appendChild(mark);
@@ -145,7 +143,6 @@ function highlightText(container, text, filter) {
     lastIndex = idx + filter.length;
   }
 
-  // Rest
   if (lastIndex < text.length) {
     container.appendChild(document.createTextNode(text.slice(lastIndex)));
   }
@@ -159,8 +156,8 @@ function formatRelativeDate(dateStr) {
   const todayStr = today.toISOString().split('T')[0];
   const yesterdayStr = yesterday.toISOString().split('T')[0];
 
-  if (dateStr === todayStr) return 'Heute';
-  if (dateStr === yesterdayStr) return 'Gestern';
+  if (dateStr === todayStr) return i18n('today');
+  if (dateStr === yesterdayStr) return i18n('yesterday');
 
-  return new Date(dateStr).toLocaleDateString('de-DE', { weekday: 'long' });
+  return new Date(dateStr).toLocaleDateString(undefined, { weekday: 'long' });
 }

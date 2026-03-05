@@ -62,7 +62,7 @@ async function syncUsage() {
     if (!orgUuid) {
       console.warn('[Dashboard] Keine Chat-Org gefunden');
       await updateBadge();
-      return { success: false, error: 'Nicht eingeloggt oder keine Chat-Organisation' };
+      return { success: false, error: chrome.i18n.getMessage('notLoggedInError') || 'Not logged in or no chat organization' };
     }
 
     const response = await fetch(`${API_BASE}/organizations/${orgUuid}/usage`, {

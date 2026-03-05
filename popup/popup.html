@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dashboard f&#252;r Claude</title>
+  <title data-i18n="appName"></title>
   <link rel="stylesheet" href="popup.css">
 </head>
 <body>
@@ -12,17 +12,17 @@
     <header class="header">
       <div class="header-left">
         <img class="header-icon" src="../icons/icon-16.png" alt="" width="16" height="16">
-        <h1>Dashboard f&#252;r Claude</h1>
+        <h1 data-i18n="appName"></h1>
       </div>
       <div class="header-actions">
-        <button id="btn-sync" class="btn-icon" title="Aktualisieren">
+        <button id="btn-sync" class="btn-icon" data-i18n-title="titleSync">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <polyline points="23 4 23 10 17 10"></polyline>
             <polyline points="1 20 1 14 7 14"></polyline>
             <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
           </svg>
         </button>
-        <button id="btn-settings" class="btn-icon" title="Einstellungen">
+        <button id="btn-settings" class="btn-icon" data-i18n-title="titleSettings">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="3"></circle>
             <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
@@ -32,7 +32,7 @@
     </header>
 
     <!-- System Status -->
-    <div id="system-status" class="system-status hidden" title="Status-Seite oeffnen">
+    <div id="system-status" class="system-status hidden" data-i18n-title="titleStatusPage">
       <div class="status-dots">
         <div class="status-dot-item" title="claude.ai">
           <span id="status-web" class="dot"></span>
@@ -67,11 +67,11 @@
       <span id="alert-text"></span>
     </div>
 
-    <!-- 5-Stunden Limit -->
+    <!-- 5-Hour Limit -->
     <section class="card limit-card">
       <div class="limit-header">
         <div class="limit-info">
-          <span class="limit-label">5-Stunden Limit</span>
+          <span class="limit-label" data-i18n="fiveHourLimit"></span>
           <span id="reset-5h" class="reset-time"></span>
         </div>
         <div id="percent-5h" class="limit-percent">--</div>
@@ -81,11 +81,11 @@
       </div>
     </section>
 
-    <!-- 7-Tage Limit -->
+    <!-- 7-Day Limit -->
     <section class="card limit-card">
       <div class="limit-header">
         <div class="limit-info">
-          <span class="limit-label">7-Tage Limit</span>
+          <span class="limit-label" data-i18n="sevenDayLimit"></span>
           <span id="reset-7d" class="reset-time"></span>
         </div>
         <div id="percent-7d" class="limit-percent">--</div>
@@ -95,20 +95,20 @@
       </div>
     </section>
 
-    <!-- Modell-Limits -->
+    <!-- Model Limits -->
     <section id="model-limits" class="card hidden">
-      <div class="card-label">Modell-Limits (7 Tage)</div>
+      <div class="card-label" data-i18n="modelLimits7d"></div>
       <div id="model-list" class="model-list"></div>
     </section>
 
-    <!-- Heutige Themen -->
+    <!-- Today's Topics -->
     <section class="card">
       <div class="card-label">
-        Heutige Chats
+        <span data-i18n="todaysChats"></span>
         <span id="topic-count" class="badge"></span>
       </div>
       <div id="topic-list" class="topic-list">
-        <div class="empty-state">Noch keine Chats erfasst</div>
+        <div class="empty-state" data-i18n="noChatsYet"></div>
       </div>
     </section>
 
@@ -123,72 +123,71 @@
           <line x1="3" y1="12" x2="3.01" y2="12"></line>
           <line x1="3" y1="18" x2="3.01" y2="18"></line>
         </svg>
-        Themen-Log
+        <span data-i18n="topicLog"></span>
       </button>
       <button id="btn-history" class="footer-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
         </svg>
-        Historie
+        <span data-i18n="history"></span>
       </button>
       <button id="btn-donate" class="footer-link donate-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
-        Danke sagen
+        <span data-i18n="sayThanks"></span>
       </button>
     </footer>
 
-    <!-- Legende -->
+    <!-- Legend -->
     <div class="status-legend">
-      <div class="legend-title">Legende</div>
+      <div class="legend-title" data-i18n="legendTitle"></div>
 
-      <!-- Icon-Grid zentriert oben -->
+      <!-- Icon Grid -->
       <div class="legend-icon-section">
-        <div class="legend-section-title">Icon (2x2 Grid)</div>
+        <div class="legend-section-title" data-i18n="iconGrid"></div>
         <div class="legend-grid-labeled">
-          <span class="legend-grid-label-l">5h-Limit</span>
+          <span class="legend-grid-label-l" data-i18n="fiveHLabel"></span>
           <span class="legend-square" style="background:var(--green)"></span>
           <span class="legend-square" style="background:var(--yellow)"></span>
-          <span class="legend-grid-label-r">7-Tage</span>
-          <span class="legend-grid-label-l">Status</span>
+          <span class="legend-grid-label-r" data-i18n="sevenDLabel"></span>
+          <span class="legend-grid-label-l" data-i18n="statusLabel"></span>
           <span class="legend-square" style="background:var(--green)"></span>
           <span class="legend-square" style="background:var(--green)"></span>
-          <span class="legend-grid-label-r">Sync</span>
+          <span class="legend-grid-label-r" data-i18n="syncLabel"></span>
         </div>
       </div>
 
-      <!-- Status-Punkte + Badge 2-spaltig nebeneinander -->
+      <!-- Status Dots + Badge -->
       <div class="legend-columns">
         <div>
-          <div class="legend-section-title">Status-Punkte</div>
+          <div class="legend-section-title" data-i18n="statusDots"></div>
           <div class="legend-table">
-            <span class="dot operational"></span><span>Betriebsbereit</span>
-            <span class="dot degraded"></span><span>Eingeschr&auml;nkt</span>
-            <span class="dot partial_outage"></span><span>Teilausfall</span>
-            <span class="dot major_outage"></span><span>St&ouml;rung</span>
-            <span class="dot maintenance"></span><span>Wartung</span>
+            <span class="dot operational"></span><span data-i18n="operational"></span>
+            <span class="dot degraded"></span><span data-i18n="degraded"></span>
+            <span class="dot partial_outage"></span><span data-i18n="partialOutage"></span>
+            <span class="dot major_outage"></span><span data-i18n="majorOutage"></span>
+            <span class="dot maintenance"></span><span data-i18n="maintenance"></span>
           </div>
         </div>
         <div>
-          <div class="legend-section-title">Badge (rotiert)</div>
+          <div class="legend-section-title" data-i18n="badgeRotates"></div>
           <div class="legend-table">
-            <span class="legend-badge-sample" style="background:var(--green)">d12</span><span>5h-Verbrauch</span>
-            <span class="legend-badge-sample" style="background:var(--yellow)">w55</span><span>7-Tage-Verbr.</span>
-            <span class="legend-badge-sample" style="background:var(--red)">!!!</span><span>Ausfall</span>
+            <span class="legend-badge-sample" style="background:var(--green)">d12</span><span data-i18n="fiveHUsage"></span>
+            <span class="legend-badge-sample" style="background:var(--yellow)">w55</span><span data-i18n="sevenDUsage"></span>
+            <span class="legend-badge-sample" style="background:var(--red)">!!!</span><span data-i18n="outage"></span>
           </div>
         </div>
       </div>
 
-      <div class="legend-source">Quelle: status.anthropic.com</div>
+      <div class="legend-source" data-i18n="sourceStatus"></div>
     </div>
 
     <!-- Version -->
-    <div class="popup-footer">
-      Dashboard f&#252;r Claude v<span id="popup-version"></span> -- &copy; 2025-2026 HalloWelt42
-    </div>
+    <div class="popup-footer" id="popup-footer"></div>
   </div>
 
+  <script src="../shared/i18n.js"></script>
   <script src="popup.js"></script>
 </body>
 </html>

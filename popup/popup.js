@@ -9,7 +9,7 @@ const el = {
   modelList: document.getElementById('model-list'),
   topicList: document.getElementById('topic-list'),
   topicCount: document.getElementById('topic-count'),
-  popupVersion: document.getElementById('popup-version'),
+  popupFooter: document.getElementById('popup-footer'),
   alertBar: document.getElementById('alert-bar'),
   alertText: document.getElementById('alert-text'),
   systemStatus: document.getElementById('system-status'),
@@ -62,10 +62,10 @@ function setupListeners() {
       if (result.success) {
         await loadAndDisplay();
       } else {
-        showAlert(result.error || 'Sync fehlgeschlagen', 'error');
+        showAlert(result.error || i18n('syncFailed'), 'error');
       }
     } catch (e) {
-      showAlert('Verbindungsfehler', 'error');
+      showAlert(i18n('connectionError'), 'error');
     }
 
     el.btnSync.classList.remove('syncing');
@@ -78,7 +78,7 @@ async function loadAndDisplay() {
     const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
 
     if (!data?.usage?.lastSync) {
-      showAlert('Noch keine Daten \u2013 klicke auf Sync', 'info');
+      showAlert(i18n('noDataClickSync'), 'info');
     } else {
       hideAlert();
     }
@@ -90,7 +90,7 @@ async function loadAndDisplay() {
     updateVersion();
   } catch (e) {
     console.error('Popup load error:', e);
-    showAlert('Fehler beim Laden der Daten', 'error');
+    showAlert(i18n('errorLoadingData'), 'error');
   }
 }
 
@@ -130,11 +130,11 @@ function startResetTimer(targetEl, isoStr, key) {
   const update = () => {
     const diff = new Date(isoStr) - Date.now();
     if (diff <= 0) {
-      targetEl.textContent = 'Reset jetzt';
+      targetEl.textContent = i18n('resetNow');
       clearInterval(resetTimers[key]);
       return;
     }
-    targetEl.textContent = 'Reset ' + formatCountdown(diff);
+    targetEl.textContent = i18n('resetIn', [formatCountdown(diff)]);
   };
 
   update();
@@ -146,9 +146,9 @@ function formatCountdown(ms) {
   const hours = Math.floor(mins / 60);
   const days = Math.floor(hours / 24);
 
-  if (days > 0) return `in ${days}T ${hours % 24}h`;
-  if (hours > 0) return `in ${hours}h ${mins % 60}m`;
-  return `in ${mins}m`;
+  if (days > 0) return i18n('countdownDaysHours', [String(days), String(hours % 24)]);
+  if (hours > 0) return i18n('countdownHoursMinutes', [String(hours), String(mins % 60)]);
+  return i18n('countdownMinutes', [String(mins)]);
 }
 
 
@@ -221,7 +221,7 @@ function updateTopics(data) {
   if (topics.length === 0) {
     const empty = document.createElement('div');
     empty.className = 'empty-state';
-    empty.textContent = 'Noch keine Chats erfasst';
+    empty.textContent = i18n('noChatsYet');
     el.topicList.appendChild(empty);
     return;
   }
@@ -273,8 +273,8 @@ function updateStatus(data) {
 
 function updateVersion() {
   const manifest = chrome.runtime.getManifest();
-  if (el.popupVersion) {
-    el.popupVersion.textContent = manifest.version;
+  if (el.popupFooter) {
+    el.popupFooter.textContent = i18n('footerText', [manifest.version]);
   }
 }
 

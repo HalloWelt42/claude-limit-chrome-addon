@@ -29,7 +29,6 @@ function setupEventListeners() {
 
   document.querySelectorAll('.btn-preset[data-range]').forEach(btn => {
     btn.addEventListener('click', () => {
-      // Aktiven Preset markieren
       document.querySelectorAll('.btn-preset').forEach(b => b.classList.remove('active'));
       btn.classList.add('active');
 
@@ -44,7 +43,7 @@ async function loadData() {
     const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
     historyData = data?.history?.daily || {};
   } catch (error) {
-    console.error('Fehler beim Laden:', error);
+    console.error('Error loading data:', error);
   }
 }
 
@@ -134,7 +133,7 @@ function renderChart(dailyData) {
       empty.className = 'empty-state';
       parent.appendChild(empty);
     }
-    empty.textContent = 'Keine Daten im Zeitraum';
+    empty.textContent = i18n('noDataInPeriod');
     return;
   }
 
@@ -143,14 +142,14 @@ function renderChart(dailyData) {
   const existingEmpty = parent.querySelector('.empty-state');
   if (existingEmpty) existingEmpty.remove();
 
-  // Aggregation bei vielen Tagen
+  // Aggregation for many days
   let step = 1;
   if (dailyData.length > 60) step = 3;
   else if (dailyData.length > 30) step = 2;
 
   const filtered = dailyData.filter((_, i) => i % step === 0);
 
-  // Bars relativ zu 100%
+  // Bars relative to 100%
   for (const d of filtered) {
     const bar = document.createElement('div');
     bar.className = 'chart-bar';
@@ -158,7 +157,7 @@ function renderChart(dailyData) {
     bar.style.height = height + '%';
     bar.title = formatDateShort(d.date) + ': ' + d.value + '%';
 
-    // Farbe konsistent mit Popup (green/yellow/red)
+    // Color consistent with popup (green/yellow/red)
     if (d.value >= 75) {
       bar.style.background = 'var(--red)';
     } else if (d.value >= 40) {
@@ -168,7 +167,7 @@ function renderChart(dailyData) {
     elements.chart.appendChild(bar);
   }
 
-  // X-Achse: Erstes und letztes Datum
+  // X-axis: first and last date
   if (filtered.length > 0) {
     const first = document.createElement('span');
     first.textContent = formatDateShort(filtered[0].date);
@@ -191,7 +190,7 @@ function renderChart(dailyData) {
 
 function formatDateShort(dateStr) {
   const d = new Date(dateStr);
-  return d.toLocaleDateString('de-DE', { day: '2-digit', month: '2-digit' });
+  return d.toLocaleDateString(undefined, { day: '2-digit', month: '2-digit' });
 }
 
 async function exportData() {
@@ -223,7 +222,7 @@ async function exportData() {
     a.click();
     URL.revokeObjectURL(url);
   } catch (error) {
-    console.error('Export fehlgeschlagen:', error);
-    alert('Export fehlgeschlagen');
+    console.error('Export failed:', error);
+    alert(i18n('exportFailed'));
   }
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Historie - Dashboard f&uuml;r Claude</title>
+  <title data-i18n="pageTitle_history"></title>
   <link rel="stylesheet" href="page-common.css">
 </head>
 <body>
@@ -14,61 +14,61 @@
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
-      <h1>Verbrauchs-Historie</h1>
+      <h1 data-i18n="usageHistory"></h1>
     </header>
 
     <main class="page-content">
-      <!-- Zeitraum -->
+      <!-- Period -->
       <section class="card">
-        <h2 class="card-title">Zeitraum</h2>
+        <h2 class="card-title" data-i18n="periodTitle"></h2>
 
         <div class="date-range">
           <div class="form-group">
-            <label for="date-from">Von</label>
+            <label for="date-from" data-i18n="fromLabel"></label>
             <input type="date" id="date-from">
           </div>
           <div class="form-group">
-            <label for="date-to">Bis</label>
+            <label for="date-to" data-i18n="toLabel"></label>
             <input type="date" id="date-to">
           </div>
-          <button id="btn-apply" class="btn-primary">Anwenden</button>
+          <button id="btn-apply" class="btn-primary" data-i18n="applyBtn"></button>
         </div>
 
         <div class="preset-buttons">
-          <button class="btn-preset" data-range="7">7 Tage</button>
-          <button class="btn-preset" data-range="30">30 Tage</button>
-          <button class="btn-preset" data-range="90">90 Tage</button>
-          <button class="btn-preset" data-range="all">Alles</button>
+          <button class="btn-preset" data-range="7" data-i18n="days7"></button>
+          <button class="btn-preset" data-range="30" data-i18n="days30"></button>
+          <button class="btn-preset" data-range="90" data-i18n="days90"></button>
+          <button class="btn-preset" data-range="all" data-i18n="allData"></button>
         </div>
       </section>
 
-      <!-- Statistiken -->
+      <!-- Statistics -->
       <section class="card">
-        <h2 class="card-title">Verbrauch im Zeitraum</h2>
+        <h2 class="card-title" data-i18n="usageInPeriod"></h2>
 
         <div class="stats-grid">
           <div class="stat-item">
             <div id="stat-syncs" class="stat-value">0</div>
-            <div class="stat-label">Sync-Punkte</div>
+            <div class="stat-label" data-i18n="syncPoints"></div>
           </div>
           <div class="stat-item">
             <div id="stat-days" class="stat-value">0</div>
-            <div class="stat-label">Aktive Tage</div>
+            <div class="stat-label" data-i18n="activeDays"></div>
           </div>
           <div class="stat-item">
             <div id="stat-max-5h" class="stat-value">0%</div>
-            <div class="stat-label">Max 5h-Limit</div>
+            <div class="stat-label" data-i18n="max5hLimit"></div>
           </div>
           <div class="stat-item">
             <div id="stat-max-7d" class="stat-value">0%</div>
-            <div class="stat-label">Max 7d-Limit</div>
+            <div class="stat-label" data-i18n="max7dLimit"></div>
           </div>
         </div>
       </section>
 
-      <!-- Tagesverlauf -->
+      <!-- Chart -->
       <section class="card">
-        <h2 class="card-title">5h-Limit Verlauf</h2>
+        <h2 class="card-title" data-i18n="fiveHLimitHistory"></h2>
         <div id="chart-wrapper" class="chart-wrapper">
           <div id="chart-y-axis" class="chart-y-axis">
             <span>100%</span>
@@ -95,13 +95,12 @@
 
       <!-- Export -->
       <section class="card">
-        <button id="btn-export" class="btn-secondary btn-full">
-          Als JSON exportieren
-        </button>
+        <button id="btn-export" class="btn-secondary btn-full" data-i18n="exportAsJson"></button>
       </section>
     </main>
   </div>
 
+  <script src="../shared/i18n.js"></script>
   <script src="history.js"></script>
 </body>
 </html>
