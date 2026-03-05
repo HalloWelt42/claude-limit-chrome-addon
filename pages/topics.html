@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Themen-Log - Dashboard f&uuml;r Claude</title>
+  <title data-i18n="pageTitle_topics"></title>
   <link rel="stylesheet" href="page-common.css">
 </head>
 <body>
@@ -14,22 +14,23 @@
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
-      <h1>Themen-Log</h1>
+      <h1 data-i18n="topicLogTitle"></h1>
     </header>
 
     <main class="page-content">
       <!-- Search -->
       <section class="card" style="padding: 10px 12px;">
-        <input type="text" id="filter-input" class="search-input" placeholder="Themen suchen...">
+        <input type="text" id="filter-input" class="search-input" data-i18n-placeholder="searchPlaceholder">
       </section>
 
       <!-- Topic List -->
       <section class="card" id="topic-container">
-        <div class="empty-state">Keine Themen erfasst</div>
+        <div class="empty-state" data-i18n="noTopicsRecorded"></div>
       </section>
     </main>
   </div>
 
+  <script src="../shared/i18n.js"></script>
   <script src="topics.js"></script>
 </body>
 </html>

@@ -47,7 +47,7 @@ document.querySelectorAll('.copy-btn[data-coin]').forEach(function(btn) {
     navigator.clipboard.writeText(address).then(function() {
       var textEl = btn.querySelector('.copy-text');
       var original = textEl.textContent;
-      textEl.textContent = 'Kopiert!';
+      textEl.textContent = i18n('copied');
       setTimeout(function() { textEl.textContent = original; }, 2000);
     });
   });

@@ -1,8 +1,9 @@
 {
   "manifest_version": 3,
-  "name": "Dashboard f\u00fcr Claude",
-  "version": "1.19.0",
-  "description": "Dashboard f\u00fcr Claude - Zeigt 5h/7d Limits, System-Status und Chat-Themen mit Auto-Sync.",
+  "name": "__MSG_appName__",
+  "version": "1.20.0",
+  "description": "__MSG_appDescription__",
+  "default_locale": "en",
 
   "permissions": [
     "storage",
@@ -26,7 +27,7 @@
       "48": "icons/icon-48.png",
       "128": "icons/icon-128.png"
     },
-    "default_title": "Dashboard f\u00fcr Claude"
+    "default_title": "__MSG_appDefaultTitle__"
   },
 
   "content_scripts": [

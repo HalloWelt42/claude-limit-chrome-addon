@@ -1,0 +1,375 @@
+{
+  "appName": {
+    "message": "Dashboard for Claude"
+  },
+  "appDescription": {
+    "message": "Dashboard for Claude - Shows 5h/7d limits, system status and chat topics with auto-sync."
+  },
+  "appDefaultTitle": {
+    "message": "Dashboard for Claude"
+  },
+
+  "titleSync": {
+    "message": "Refresh"
+  },
+  "titleSettings": {
+    "message": "Settings"
+  },
+  "titleStatusPage": {
+    "message": "Open status page"
+  },
+
+  "fiveHourLimit": {
+    "message": "5-Hour Limit"
+  },
+  "sevenDayLimit": {
+    "message": "7-Day Limit"
+  },
+  "modelLimits7d": {
+    "message": "Model Limits (7 Days)"
+  },
+  "todaysChats": {
+    "message": "Today's Chats"
+  },
+  "noChatsYet": {
+    "message": "No chats recorded yet"
+  },
+
+  "topicLog": {
+    "message": "Topic Log"
+  },
+  "history": {
+    "message": "History"
+  },
+  "sayThanks": {
+    "message": "Say thanks"
+  },
+
+  "legendTitle": {
+    "message": "Legend"
+  },
+  "iconGrid": {
+    "message": "Icon (2x2 Grid)"
+  },
+  "fiveHLabel": {
+    "message": "5h Limit"
+  },
+  "sevenDLabel": {
+    "message": "7-Day"
+  },
+  "statusLabel": {
+    "message": "Status"
+  },
+  "syncLabel": {
+    "message": "Sync"
+  },
+  "statusDots": {
+    "message": "Status Dots"
+  },
+  "operational": {
+    "message": "Operational"
+  },
+  "degraded": {
+    "message": "Degraded"
+  },
+  "partialOutage": {
+    "message": "Partial Outage"
+  },
+  "majorOutage": {
+    "message": "Major Outage"
+  },
+  "maintenance": {
+    "message": "Maintenance"
+  },
+  "badgeRotates": {
+    "message": "Badge (rotates)"
+  },
+  "fiveHUsage": {
+    "message": "5h usage"
+  },
+  "sevenDUsage": {
+    "message": "7-day usage"
+  },
+  "outage": {
+    "message": "Outage"
+  },
+  "sourceStatus": {
+    "message": "Source: status.anthropic.com"
+  },
+  "footerText": {
+    "message": "Dashboard for Claude v$1 -- (c) 2025-2026 HalloWelt42",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "syncFailed": {
+    "message": "Sync failed"
+  },
+  "connectionError": {
+    "message": "Connection error"
+  },
+  "noDataClickSync": {
+    "message": "No data yet -- click Sync"
+  },
+  "errorLoadingData": {
+    "message": "Error loading data"
+  },
+  "resetNow": {
+    "message": "Reset now"
+  },
+  "resetIn": {
+    "message": "Reset $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "countdownDaysHours": {
+    "message": "in $1d $2h",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownHoursMinutes": {
+    "message": "in $1h $2m",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "countdownMinutes": {
+    "message": "in $1m",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "settingsTitle": {
+    "message": "Settings"
+  },
+  "pageTitle_settings": {
+    "message": "Settings - Dashboard for Claude"
+  },
+  "howItWorks": {
+    "message": "How it works"
+  },
+  "howItWorksText1": {
+    "message": "This extension reads your usage data directly from the <strong>Claude.ai API</strong>. You must be logged in on claude.ai -- no API key required."
+  },
+  "howItWorksText2": {
+    "message": "Data is synced automatically every <strong>5 minutes</strong>. You can also manually click the sync icon in the popup."
+  },
+  "prerequisites": {
+    "message": "Prerequisites"
+  },
+  "prereqPro": {
+    "message": "Claude Pro or Max subscription"
+  },
+  "prereqLoggedIn": {
+    "message": "Logged in on claude.ai"
+  },
+  "prereqCookies": {
+    "message": "Cookies enabled for claude.ai"
+  },
+  "dataSection": {
+    "message": "Data"
+  },
+  "storedData": {
+    "message": "Stored data"
+  },
+  "capturedTopics": {
+    "message": "Captured topics"
+  },
+  "historyEntries": {
+    "message": "History entries"
+  },
+  "exportBtn": {
+    "message": "Export"
+  },
+  "deleteAllData": {
+    "message": "Delete all data"
+  },
+  "debugInfo": {
+    "message": "Debug Info"
+  },
+  "loading": {
+    "message": "Loading..."
+  },
+  "topicCountFormat": {
+    "message": "$1 ($2 days)",
+    "placeholders": {
+      "1": { "content": "$1" },
+      "2": { "content": "$2" }
+    }
+  },
+  "daysFormat": {
+    "message": "$1 days",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "lastSyncLabel": {
+    "message": "Last sync"
+  },
+  "never": {
+    "message": "never"
+  },
+  "orgUuidLabel": {
+    "message": "OrgUUID"
+  },
+  "notSet": {
+    "message": "not set"
+  },
+  "fiveHLimitDebug": {
+    "message": "5h Limit"
+  },
+  "sevenDLimitDebug": {
+    "message": "7d Limit"
+  },
+  "statusDebug": {
+    "message": "Status"
+  },
+  "statusSyncLabel": {
+    "message": "Status Sync"
+  },
+  "unknown": {
+    "message": "unknown"
+  },
+  "lastErrorLabel": {
+    "message": "Last error"
+  },
+  "exportFailed": {
+    "message": "Export failed"
+  },
+  "confirmDelete": {
+    "message": "Really delete all data? This cannot be undone."
+  },
+  "dataDeleted": {
+    "message": "Data deleted!"
+  },
+  "errorGeneric": {
+    "message": "Error: $1",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+
+  "pageTitle_topics": {
+    "message": "Topic Log - Dashboard for Claude"
+  },
+  "topicLogTitle": {
+    "message": "Topic Log"
+  },
+  "searchPlaceholder": {
+    "message": "Search topics..."
+  },
+  "noTopicsRecorded": {
+    "message": "No topics recorded"
+  },
+  "loadError": {
+    "message": "Error loading"
+  },
+  "topicsCount": {
+    "message": "$1 topics",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "noResultsFor": {
+    "message": "No results for \"$1\"",
+    "placeholders": {
+      "1": { "content": "$1" }
+    }
+  },
+  "today": {
+    "message": "Today"
+  },
+  "yesterday": {
+    "message": "Yesterday"
+  },
+
+  "pageTitle_history": {
+    "message": "History - Dashboard for Claude"
+  },
+  "usageHistory": {
+    "message": "Usage History"
+  },
+  "periodTitle": {
+    "message": "Period"
+  },
+  "fromLabel": {
+    "message": "From"
+  },
+  "toLabel": {
+    "message": "To"
+  },
+  "applyBtn": {
+    "message": "Apply"
+  },
+  "days7": {
+    "message": "7 Days"
+  },
+  "days30": {
+    "message": "30 Days"
+  },
+  "days90": {
+    "message": "90 Days"
+  },
+  "allData": {
+    "message": "All"
+  },
+  "usageInPeriod": {
+    "message": "Usage in Period"
+  },
+  "syncPoints": {
+    "message": "Sync Points"
+  },
+  "activeDays": {
+    "message": "Active Days"
+  },
+  "max5hLimit": {
+    "message": "Max 5h Limit"
+  },
+  "max7dLimit": {
+    "message": "Max 7d Limit"
+  },
+  "fiveHLimitHistory": {
+    "message": "5h Limit History"
+  },
+  "exportAsJson": {
+    "message": "Export as JSON"
+  },
+  "noDataInPeriod": {
+    "message": "No data in this period"
+  },
+
+  "pageTitle_donate": {
+    "message": "Dashboard for Claude -- Support"
+  },
+  "madeWithLove": {
+    "message": "Made with love in Saxony-Anhalt"
+  },
+  "openSourceDesc": {
+    "message": "Open source from Saxony-Anhalt.<br>No tracking, no ads, no compromises."
+  },
+  "kofiLabel": {
+    "message": "Ko-fi -- Buy me a coffee"
+  },
+  "orByCrypto": {
+    "message": "Or via cryptocurrency:"
+  },
+  "copyAddress": {
+    "message": "Copy address"
+  },
+  "copied": {
+    "message": "Copied!"
+  },
+  "thanksForSupport": {
+    "message": "Thanks for your support!"
+  },
+
+  "notLoggedInError": {
+    "message": "Not logged in or no chat organization"
+  }
+}

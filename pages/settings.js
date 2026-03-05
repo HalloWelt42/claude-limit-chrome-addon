@@ -8,7 +8,7 @@ const elements = {
   topicCount: document.getElementById('topic-count'),
   historyCount: document.getElementById('history-count'),
   debugInfo: document.getElementById('debug-info'),
-  version: document.getElementById('version')
+  versionInfo: document.getElementById('version-info')
 };
 
 document.addEventListener('DOMContentLoaded', async () => {
@@ -26,8 +26,8 @@ function setupEventListeners() {
 async function loadVersion() {
   try {
     const manifest = chrome.runtime.getManifest();
-    if (elements.version) {
-      elements.version.textContent = manifest.version;
+    if (elements.versionInfo) {
+      elements.versionInfo.textContent = i18n('footerText', [manifest.version]);
     }
   } catch (e) {
     // Ignore
@@ -38,39 +38,39 @@ async function loadData() {
   try {
     const data = await chrome.runtime.sendMessage({ type: 'GET_DATA' });
 
-    // Statistiken
+    // Statistics
     const topicDays = Object.keys(data?.topics || {}).length;
     const topicTotal = Object.values(data?.topics || {}).reduce((sum, arr) => sum + arr.length, 0);
-    elements.topicCount.textContent = topicTotal + ' (' + topicDays + ' Tage)';
+    elements.topicCount.textContent = i18n('topicCountFormat', [String(topicTotal), String(topicDays)]);
 
     const historyDays = Object.keys(data?.history?.daily || {}).length;
-    elements.historyCount.textContent = historyDays + ' Tage';
+    elements.historyCount.textContent = i18n('daysFormat', [String(historyDays)]);
 
     // Storage Size
     const size = new Blob([JSON.stringify(data)]).size;
     elements.storageSize.textContent = (size / 1024).toFixed(1) + ' KB';
 
-    // Debug-Info
+    // Debug Info
     const lines = [
-      'Letzter Sync: ' + (data?.usage?.lastSync || 'nie'),
-      'OrgUUID: ' + (data?.orgUuid ? data.orgUuid.substring(0, 8) + '...' : 'nicht gesetzt'),
+      i18n('lastSyncLabel') + ': ' + (data?.usage?.lastSync || i18n('never')),
+      i18n('orgUuidLabel') + ': ' + (data?.orgUuid ? data.orgUuid.substring(0, 8) + '...' : i18n('notSet')),
       '',
-      '5h Limit: ' + (data?.usage?.fiveHour?.utilization ?? '-') + '%',
-      '7d Limit: ' + (data?.usage?.sevenDay?.utilization ?? '-') + '%',
+      i18n('fiveHLimitDebug') + ': ' + (data?.usage?.fiveHour?.utilization ?? '-') + '%',
+      i18n('sevenDLimitDebug') + ': ' + (data?.usage?.sevenDay?.utilization ?? '-') + '%',
       '',
-      'Status: ' + (data?.status?.overall || 'unbekannt'),
-      'Status Sync: ' + (data?.status?.lastSync || 'nie'),
+      i18n('statusDebug') + ': ' + (data?.status?.overall || i18n('unknown')),
+      i18n('statusSyncLabel') + ': ' + (data?.status?.lastSync || i18n('never')),
     ];
 
     if (data?.lastError) {
-      lines.push('', 'Letzter Fehler:', JSON.stringify(data.lastError, null, 2));
+      lines.push('', i18n('lastErrorLabel') + ':', JSON.stringify(data.lastError, null, 2));
     }
 
     elements.debugInfo.textContent = lines.join('\n');
 
   } catch (error) {
-    console.error('Fehler beim Laden:', error);
-    elements.debugInfo.textContent = 'Fehler: ' + error.message;
+    console.error('Error loading data:', error);
+    elements.debugInfo.textContent = i18n('errorGeneric', [error.message]);
   }
 }
 
@@ -85,20 +85,20 @@ async function exportData() {
     a.click();
     URL.revokeObjectURL(url);
   } catch (error) {
-    alert('Export fehlgeschlagen: ' + error.message);
+    alert(i18n('exportFailed') + ': ' + error.message);
   }
 }
 
 async function clearData() {
-  if (!confirm('Wirklich alle Daten loeschen? Dies kann nicht rueckgaengig gemacht werden.')) {
+  if (!confirm(i18n('confirmDelete'))) {
     return;
   }
 
   try {
     await chrome.runtime.sendMessage({ type: 'CLEAR_DATA' });
-    alert('Daten geloescht!');
+    alert(i18n('dataDeleted'));
     location.reload();
   } catch (error) {
-    alert('Fehler: ' + error.message);
+    alert(i18n('errorGeneric', [error.message]));
   }
 }

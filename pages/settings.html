@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Einstellungen - Dashboard f&uuml;r Claude</title>
+  <title data-i18n="pageTitle_settings"></title>
   <link rel="stylesheet" href="page-common.css">
 </head>
 <body>
@@ -14,72 +14,64 @@
           <polyline points="15 18 9 12 15 6"></polyline>
         </svg>
       </button>
-      <h1>Einstellungen</h1>
+      <h1 data-i18n="settingsTitle"></h1>
     </header>
 
     <main class="page-content">
-      <!-- Funktionsweise -->
+      <!-- How it works -->
       <section class="card">
-        <h2 class="card-title">So funktioniert's</h2>
-        <p class="card-text">
-          Diese Extension ruft deine Verbrauchsdaten direkt von der
-          <strong>Claude.ai API</strong> ab. Du musst eingeloggt sein auf
-          claude.ai &ndash; es wird kein API Key ben&ouml;tigt.
-        </p>
-        <p class="card-text" style="margin-top: 8px;">
-          Die Daten werden alle <strong>5 Minuten</strong> automatisch synchronisiert.
-          Du kannst auch manuell im Popup auf das Sync-Icon klicken.
-        </p>
+        <h2 class="card-title" data-i18n="howItWorks"></h2>
+        <p class="card-text" data-i18n-html="howItWorksText1"></p>
+        <p class="card-text" style="margin-top: 8px;" data-i18n-html="howItWorksText2"></p>
       </section>
 
-      <!-- Voraussetzungen -->
+      <!-- Prerequisites -->
       <section class="card">
-        <h2 class="card-title">Voraussetzungen</h2>
+        <h2 class="card-title" data-i18n="prerequisites"></h2>
         <ul class="checklist">
-          <li>Claude Pro oder Max Abo</li>
-          <li>Eingeloggt auf claude.ai</li>
-          <li>Cookies f&uuml;r claude.ai erlaubt</li>
+          <li data-i18n="prereqPro"></li>
+          <li data-i18n="prereqLoggedIn"></li>
+          <li data-i18n="prereqCookies"></li>
         </ul>
       </section>
 
-      <!-- Daten -->
+      <!-- Data -->
       <section class="card">
-        <h2 class="card-title">Daten</h2>
+        <h2 class="card-title" data-i18n="dataSection"></h2>
 
         <div class="data-row">
-          <span>Gespeicherte Daten</span>
-          <span id="storage-size">&ndash;</span>
+          <span data-i18n="storedData"></span>
+          <span id="storage-size">--</span>
         </div>
         <div class="data-row">
-          <span>Erfasste Themen</span>
-          <span id="topic-count">&ndash;</span>
+          <span data-i18n="capturedTopics"></span>
+          <span id="topic-count">--</span>
         </div>
         <div class="data-row">
-          <span>Historie-Eintr&auml;ge</span>
-          <span id="history-count">&ndash;</span>
+          <span data-i18n="historyEntries"></span>
+          <span id="history-count">--</span>
         </div>
 
         <div class="button-row" style="margin-top: 16px;">
-          <button id="btn-export" class="btn-secondary">Exportieren</button>
-          <button id="btn-clear" class="btn-danger">Alle Daten l&ouml;schen</button>
+          <button id="btn-export" class="btn-secondary" data-i18n="exportBtn"></button>
+          <button id="btn-clear" class="btn-danger" data-i18n="deleteAllData"></button>
         </div>
       </section>
 
       <!-- Debug -->
       <section class="card">
         <details>
-          <summary class="card-title" style="cursor: pointer;">Debug-Info</summary>
-          <pre id="debug-info" class="debug-pre">L&auml;dt...</pre>
+          <summary class="card-title" style="cursor: pointer;" data-i18n="debugInfo"></summary>
+          <pre id="debug-info" class="debug-pre" data-i18n="loading"></pre>
         </details>
       </section>
 
       <!-- Version -->
-      <div class="version-info">
-        Dashboard f&uuml;r Claude v<span id="version">1.19.0</span>
-      </div>
+      <div class="version-info" id="version-info"></div>
     </main>
   </div>
 
+  <script src="../shared/i18n.js"></script>
   <script src="settings.js"></script>
 </body>
 </html>
