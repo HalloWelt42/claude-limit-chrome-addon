@@ -1,11 +1,11 @@
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 :root {
-  --bg: #2b2a27;
-  --bg-card: #35342f;
-  --bg-hover: #4a4843;
-  --text: #ece8e1;
-  --text-muted: #8a867e;
+  --bg: #1a1a1a;
+  --bg-card: #2d2d2d;
+  --bg-hover: #374151;
+  --text: #ffffff;
+  --text-muted: #9ca3af;
   --donate-color: #ff5e5b;
   --donate-color-hover: #ff4442;
   --donate-bg-hover: rgba(255, 94, 91, 0.1);
@@ -16,11 +16,11 @@
 
 @media (prefers-color-scheme: light) {
   :root {
-    --bg: #f5f5f4;
+    --bg: #f3f4f6;
     --bg-card: #ffffff;
-    --bg-hover: #e7e5e4;
-    --text: #1c1917;
-    --text-muted: #a8a29e;
+    --bg-hover: #e5e7eb;
+    --text: #1f2937;
+    --text-muted: #6b7280;
   }
 }
 
