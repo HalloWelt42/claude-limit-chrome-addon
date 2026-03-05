@@ -131,7 +131,7 @@ async function syncStatus() {
       'platform': 'platform',
       'api': 'api',
       'claude code': 'code',
-      'regierung': 'gov'
+      'government': 'gov'
     };
 
     if (json.components) {
