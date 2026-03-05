@@ -9,13 +9,15 @@ const el = {
   modelList: document.getElementById('model-list'),
   topicList: document.getElementById('topic-list'),
   topicCount: document.getElementById('topic-count'),
-  lastSync: document.getElementById('last-sync'),
+  popupVersion: document.getElementById('popup-version'),
   alertBar: document.getElementById('alert-bar'),
   alertText: document.getElementById('alert-text'),
   systemStatus: document.getElementById('system-status'),
   statusWeb: document.getElementById('status-web'),
+  statusPlatform: document.getElementById('status-platform'),
   statusApi: document.getElementById('status-api'),
-  statusConsole: document.getElementById('status-console'),
+  statusCode: document.getElementById('status-code'),
+  statusGov: document.getElementById('status-gov'),
   btnSettings: document.getElementById('btn-settings'),
   btnTopics: document.getElementById('btn-topics'),
   btnHistory: document.getElementById('btn-history'),
@@ -85,7 +87,7 @@ async function loadAndDisplay() {
     updateModels(data);
     updateTopics(data);
     updateStatus(data);
-    updateSyncTime(data);
+    updateVersion();
   } catch (e) {
     console.error('Popup load error:', e);
     showAlert('Fehler beim Laden der Daten', 'error');
@@ -228,6 +230,14 @@ function updateTopics(data) {
     const item = document.createElement('div');
     item.className = 'topic-item';
 
+    if (t.url) {
+      item.classList.add('topic-link');
+      item.addEventListener('click', () => {
+        chrome.tabs.create({ url: t.url });
+      });
+      item.title = t.title;
+    }
+
     const time = document.createElement('span');
     time.className = 'topic-time';
     time.textContent = t.time;
@@ -235,7 +245,7 @@ function updateTopics(data) {
     const title = document.createElement('span');
     title.className = 'topic-title';
     title.textContent = t.title;
-    title.title = t.title;
+    if (!t.url) title.title = t.title;
 
     item.appendChild(time);
     item.appendChild(title);
@@ -254,20 +264,17 @@ function updateStatus(data) {
 
   el.systemStatus.classList.remove('hidden');
   el.statusWeb.className = 'dot ' + (status.components.web || '');
+  el.statusPlatform.className = 'dot ' + (status.components.platform || '');
   el.statusApi.className = 'dot ' + (status.components.api || '');
-  el.statusConsole.className = 'dot ' + (status.components.console || '');
+  el.statusCode.className = 'dot ' + (status.components.code || '');
+  el.statusGov.className = 'dot ' + (status.components.gov || '');
 }
 
 
-function updateSyncTime(data) {
-  const last = data.usage?.lastSync;
-  if (last) {
-    const d = new Date(last);
-    el.lastSync.textContent = d.toLocaleTimeString('de-DE', {
-      hour: '2-digit', minute: '2-digit'
-    });
-  } else {
-    el.lastSync.textContent = '--:--';
+function updateVersion() {
+  const manifest = chrome.runtime.getManifest();
+  if (el.popupVersion) {
+    el.popupVersion.textContent = manifest.version;
   }
 }
 
