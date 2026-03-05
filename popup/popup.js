@@ -230,6 +230,14 @@ function updateTopics(data) {
     const item = document.createElement('div');
     item.className = 'topic-item';
 
+    if (t.url) {
+      item.classList.add('topic-link');
+      item.addEventListener('click', () => {
+        chrome.tabs.create({ url: t.url });
+      });
+      item.title = t.title;
+    }
+
     const time = document.createElement('span');
     time.className = 'topic-time';
     time.textContent = t.time;
@@ -237,7 +245,7 @@ function updateTopics(data) {
     const title = document.createElement('span');
     title.className = 'topic-title';
     title.textContent = t.title;
-    title.title = t.title;
+    if (!t.url) title.title = t.title;
 
     item.appendChild(time);
     item.appendChild(title);
