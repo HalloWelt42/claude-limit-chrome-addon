@@ -5,16 +5,16 @@
 }
 
 :root {
-  --bg-base: #1a1a2e;
-  --bg-card: #222240;
-  --bg-elevated: #2a2a4a;
-  --bg-track: #333355;
-  --border: #3a3a5c;
-  --border-subtle: #2e2e50;
+  --bg-base: #2b2a27;
+  --bg-card: #35342f;
+  --bg-elevated: #3e3d37;
+  --bg-track: #504e48;
+  --border: #4a4843;
+  --border-subtle: #403e3a;
 
-  --text: #e8e8f0;
-  --text-secondary: #9a9ab0;
-  --text-muted: #6a6a85;
+  --text: #ece8e1;
+  --text-secondary: #b0ab9f;
+  --text-muted: #8a867e;
 
   --accent: #d97706;
   --accent-glow: rgba(217, 119, 6, 0.15);
@@ -131,7 +131,6 @@ body {
   border: 1px solid var(--border-subtle);
   cursor: pointer;
   transition: background 0.15s, border-color 0.15s;
-  gap: 6px;
 }
 
 .system-status:hover {
@@ -139,21 +138,10 @@ body {
   border-color: var(--border);
 }
 
-.system-status:hover .status-link-icon {
-  opacity: 0.7;
-}
-
-.status-link-icon {
-  flex-shrink: 0;
-  color: var(--text-muted);
-  opacity: 0.35;
-  transition: opacity 0.15s;
-}
-
 .status-dots {
   display: flex;
-  gap: 10px;
-  flex: 1;
+  gap: 14px;
+  width: 100%;
   justify-content: center;
 }
 
@@ -188,60 +176,47 @@ body {
   letter-spacing: 0.02em;
 }
 
-/* Legende */
 .status-legend {
-  background: rgba(59, 130, 246, 0.1);
-  border: 1px solid rgba(59, 130, 246, 0.25);
-  border-radius: var(--radius);
-  padding: 12px 14px;
-  margin-top: 4px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 8px 12px;
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-wrap: wrap;
+  gap: 6px 16px;
 }
 
-.legend-title {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--blue);
-  letter-spacing: 0.02em;
-}
-
-.legend-icon-section {
+.legend-row {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 4px;
-  padding: 6px 0;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.15);
+  gap: 6px;
+  font-size: 11px;
+  color: var(--text-secondary);
 }
 
-.legend-icon-section .legend-section-title {
-  text-align: center;
+.legend-source {
+  width: 100%;
+  font-size: 10px;
+  color: var(--text-muted);
+  margin-top: 2px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 4px;
 }
 
-.legend-columns {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 16px;
+.legend-divider {
+  width: 100%;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 4px 0;
 }
 
 .legend-section-title {
+  width: 100%;
   font-size: 10px;
   font-weight: 600;
   color: var(--text-muted);
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin-bottom: 4px;
-}
-
-.legend-table {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 4px 8px;
-  align-items: center;
-  font-size: 11px;
-  color: var(--text-secondary);
 }
 
 .legend-grid-labeled {
@@ -279,22 +254,6 @@ body {
   color: #000;
   min-width: 18px;
   text-align: center;
-}
-
-.legend-source {
-  font-size: 10px;
-  color: var(--text-muted);
-  margin-top: 2px;
-  border-top: 1px solid rgba(59, 130, 246, 0.15);
-  padding-top: 6px;
-}
-
-/* Version Footer */
-.popup-footer {
-  text-align: center;
-  font-size: 10px;
-  color: var(--text-muted);
-  padding: 6px 0 2px;
 }
 
 .alert-bar {
@@ -472,7 +431,6 @@ body {
   gap: 1px;
   max-height: 110px;
   overflow-y: auto;
-  overflow-x: hidden;
 }
 
 .topic-item {
@@ -502,22 +460,6 @@ body {
   flex: 1;
 }
 
-.topic-link {
-  cursor: pointer;
-  border-radius: var(--radius-sm);
-  padding: 5px 6px;
-  margin: -5px -6px;
-  transition: background 0.15s;
-}
-
-.topic-link:hover {
-  background: var(--bg-elevated);
-}
-
-.topic-link:hover .topic-title {
-  color: var(--accent);
-}
-
 .badge {
   background: var(--bg-track);
   color: var(--text-muted);
@@ -537,18 +479,17 @@ body {
 .footer {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 4px;
   padding-top: 4px;
 }
 
 .footer-link {
   background: none;
-  border: 1px solid var(--border-subtle);
+  border: none;
   color: var(--text-muted);
   cursor: pointer;
   font-size: 11px;
-  padding: 5px 10px;
+  padding: 5px 8px;
   border-radius: var(--radius-sm);
   display: flex;
   align-items: center;
@@ -559,7 +500,6 @@ body {
 .footer-link:hover {
   color: var(--text);
   background: var(--bg-elevated);
-  border-color: var(--border);
 }
 
 .footer-link.donate-btn {
@@ -571,6 +511,11 @@ body {
   background: var(--red);
 }
 
+.sync-info {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--text-muted);
+}
 
 ::-webkit-scrollbar { width: 3px; }
 ::-webkit-scrollbar-track { background: transparent; }
