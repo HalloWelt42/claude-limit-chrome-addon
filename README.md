@@ -8,7 +8,7 @@ Browser-Extension zur Anzeige deines Claude-Nutzungslimits.
 
 - **Dynamisches Badge** - Zeigt 5h-Verbrauch als Donut-Diagramm mit Prozent
 - **5-Stunden Limit** - Aktueller Verbrauch + Live-Countdown bis Reset
-- **7-Tage Limit** - Wochenverbrauch mit Modell-Aufschluesselung (Opus/Sonnet)
+- **7-Tage Limit** - Wochenverbrauch mit Live-Countdown
 - **System-Status** - Live-Status von Web, API, Console (via status.claude.com)
 - **Themen-Log** - Erfasst Chat-Titel automatisch
 - **Auto-Sync** - Aktualisiert alle 5 Minuten
