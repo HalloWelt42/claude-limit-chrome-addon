@@ -3,9 +3,7 @@ const STORAGE_KEY = 'claude-dashboard';
 const elements = {
   btnBack: document.getElementById('btn-back'),
   btnExport: document.getElementById('btn-export'),
-  btnImport: document.getElementById('btn-import'),
   btnClear: document.getElementById('btn-clear'),
-  importFile: document.getElementById('import-file'),
   storageSize: document.getElementById('storage-size'),
   topicCount: document.getElementById('topic-count'),
   historyCount: document.getElementById('history-count'),
@@ -22,8 +20,6 @@ document.addEventListener('DOMContentLoaded', async () => {
 function setupEventListeners() {
   elements.btnBack.addEventListener('click', () => window.close());
   elements.btnExport.addEventListener('click', exportData);
-  elements.btnImport.addEventListener('click', () => elements.importFile.click());
-  elements.importFile.addEventListener('change', importData);
   elements.btnClear.addEventListener('click', clearData);
 }
 
@@ -91,23 +87,6 @@ async function exportData() {
   } catch (error) {
     alert('Export fehlgeschlagen: ' + error.message);
   }
-}
-
-async function importData(event) {
-  const file = event.target.files?.[0];
-  if (!file) return;
-
-  try {
-    const text = await file.text();
-    const data = JSON.parse(text);
-    await chrome.storage.local.set({ [STORAGE_KEY]: data });
-    alert('Import erfolgreich! Seite wird neu geladen.');
-    location.reload();
-  } catch (error) {
-    alert('Import fehlgeschlagen: ' + error.message);
-  }
-
-  event.target.value = '';
 }
 
 async function clearData() {

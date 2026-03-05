@@ -108,9 +108,8 @@ body {
 .donate-icon.kofi { background: #ff5e5b; }
 .donate-icon.paypal { background: #003087; }
 .donate-icon.btc { background: #f7931a; }
-.donate-icon.ltc { background: #345d9d; }
 .donate-icon.doge { background: #c2a633; }
-.donate-icon.xmr { background: #ff6600; }
+.donate-icon.eth { background: #627eea; }
 
 .donate-info {
   flex: 1;
