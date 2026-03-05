@@ -47,40 +47,6 @@
           <span class="dot-label">Console</span>
         </div>
       </div>
-      <button id="btn-status-help" class="btn-status-help" title="Legende">?</button>
-    </div>
-
-    <!-- Status Legende -->
-    <div id="status-legend" class="status-legend hidden">
-      <div class="legend-row"><span class="dot operational"></span> Betriebsbereit</div>
-      <div class="legend-row"><span class="dot degraded"></span> Eingeschr&auml;nkt</div>
-      <div class="legend-row"><span class="dot partial_outage"></span> Teilausfall</div>
-      <div class="legend-row"><span class="dot major_outage"></span> St&ouml;rung</div>
-      <div class="legend-row"><span class="dot maintenance"></span> Wartung</div>
-      <div class="legend-divider"></div>
-      <div class="legend-section-title">Icon (2x2 Grid)</div>
-      <div class="legend-grid-row">
-        <span class="legend-square" style="background:var(--green)"></span>
-        <span class="legend-square" style="background:var(--yellow)"></span>
-      </div>
-      <div class="legend-grid-row">
-        <span class="legend-square" style="background:var(--green)"></span>
-        <span class="legend-square" style="background:var(--green)"></span>
-      </div>
-      <div class="legend-grid-labels">
-        <span>&#x2196; 5h-Limit</span>
-        <span>&#x2197; 7-Tage</span>
-      </div>
-      <div class="legend-grid-labels">
-        <span>&#x2199; Status</span>
-        <span>&#x2198; Sync</span>
-      </div>
-      <div class="legend-divider"></div>
-      <div class="legend-section-title">Badge-Text (rotiert)</div>
-      <div class="legend-row"><span class="legend-badge-sample" style="background:var(--green)">d12</span> 5h-Verbrauch</div>
-      <div class="legend-row"><span class="legend-badge-sample" style="background:var(--yellow)">w55</span> 7-Tage-Verbrauch</div>
-      <div class="legend-row"><span class="legend-badge-sample" style="background:var(--red)">!!!</span> System-Ausfall</div>
-      <div class="legend-source">Quelle: status.claude.com</div>
     </div>
 
     <!-- Alert Banner -->
@@ -156,12 +122,45 @@
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
         </svg>
-        Danke sagen &#x2764;&#xFE0F;
+        Danke sagen
       </button>
       <div class="sync-info">
         <span id="last-sync">--:--</span>
       </div>
     </footer>
+
+    <!-- Legende -->
+    <div class="status-legend">
+      <div class="legend-row"><span class="dot operational"></span> Betriebsbereit</div>
+      <div class="legend-row"><span class="dot degraded"></span> Eingeschr&auml;nkt</div>
+      <div class="legend-row"><span class="dot partial_outage"></span> Teilausfall</div>
+      <div class="legend-row"><span class="dot major_outage"></span> St&ouml;rung</div>
+      <div class="legend-row"><span class="dot maintenance"></span> Wartung</div>
+      <div class="legend-divider"></div>
+      <div class="legend-section-title">Icon (2x2 Grid)</div>
+      <div class="legend-grid-row">
+        <span class="legend-square" style="background:var(--green)"></span>
+        <span class="legend-square" style="background:var(--yellow)"></span>
+      </div>
+      <div class="legend-grid-row">
+        <span class="legend-square" style="background:var(--green)"></span>
+        <span class="legend-square" style="background:var(--green)"></span>
+      </div>
+      <div class="legend-grid-labels">
+        <span>&#x2196; 5h-Limit</span>
+        <span>&#x2197; 7-Tage</span>
+      </div>
+      <div class="legend-grid-labels">
+        <span>&#x2199; Status</span>
+        <span>&#x2198; Sync</span>
+      </div>
+      <div class="legend-divider"></div>
+      <div class="legend-section-title">Badge-Text (rotiert)</div>
+      <div class="legend-row"><span class="legend-badge-sample" style="background:var(--green)">d12</span> 5h-Verbrauch</div>
+      <div class="legend-row"><span class="legend-badge-sample" style="background:var(--yellow)">w55</span> 7-Tage-Verbrauch</div>
+      <div class="legend-row"><span class="legend-badge-sample" style="background:var(--red)">!!!</span> System-Ausfall</div>
+      <div class="legend-source">Quelle: status.claude.com</div>
+    </div>
   </div>
 
   <script src="popup.js"></script>

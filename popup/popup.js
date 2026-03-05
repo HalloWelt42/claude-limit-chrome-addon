@@ -20,9 +20,7 @@ const el = {
   btnTopics: document.getElementById('btn-topics'),
   btnHistory: document.getElementById('btn-history'),
   btnSync: document.getElementById('btn-sync'),
-  btnDonate: document.getElementById('btn-donate'),
-  btnStatusHelp: document.getElementById('btn-status-help'),
-  statusLegend: document.getElementById('status-legend')
+  btnDonate: document.getElementById('btn-donate')
 };
 
 let resetTimers = {};
@@ -47,10 +45,6 @@ function setupListeners() {
 
   el.btnDonate.addEventListener('click', () => {
     chrome.tabs.create({ url: chrome.runtime.getURL('pages/donate.html') });
-  });
-
-  el.btnStatusHelp.addEventListener('click', () => {
-    el.statusLegend.classList.toggle('hidden');
   });
 
   el.btnSync.addEventListener('click', async () => {
