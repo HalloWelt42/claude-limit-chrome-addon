@@ -160,10 +160,34 @@ async function syncStatus() {
       overall = indicatorMap[json.status.indicator] || 'operational';
     }
 
+    // Active incidents override overall status
+    const impactRank = { none: 0, minor: 1, major: 2, critical: 3 };
+    const impactToStatus = { minor: 'degraded', major: 'partial_outage', critical: 'major_outage' };
+    let activeIncident = null;
+
+    if (json.incidents) {
+      for (const inc of json.incidents) {
+        if (inc.status === 'resolved' || inc.status === 'postmortem') continue;
+        const rank = impactRank[inc.impact] || 0;
+        if (rank > 0 && (!activeIncident || rank > impactRank[activeIncident.impact])) {
+          activeIncident = inc;
+        }
+      }
+    }
+
+    if (activeIncident && impactToStatus[activeIncident.impact]) {
+      const incidentStatus = impactToStatus[activeIncident.impact];
+      const overallRank = impactRank[json.status?.indicator] || 0;
+      if (impactRank[activeIncident.impact] > overallRank) {
+        overall = incidentStatus;
+      }
+    }
+
     const data = await loadStorageData();
     data.status = {
       overall,
       components,
+      incident: activeIncident ? activeIncident.name : null,
       lastSync: new Date().toISOString()
     };
     await saveStorageData(data);
