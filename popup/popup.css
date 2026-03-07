@@ -323,6 +323,31 @@ body {
   border-color: rgba(217, 119, 6, 0.2);
 }
 
+.incident-bar {
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  color: var(--yellow);
+  background: var(--yellow-glow);
+  border: 1px solid rgba(234, 179, 8, 0.2);
+  text-align: center;
+}
+
+.incident-bar.impact-major,
+.incident-bar.impact-critical {
+  color: var(--red);
+  background: var(--red-glow);
+  border-color: rgba(239, 68, 68, 0.2);
+}
+
+.system-status.has-incident {
+  border-color: var(--yellow);
+}
+
+.system-status.has-incident-major {
+  border-color: var(--red);
+}
+
 .hidden {
   display: none !important;
 }

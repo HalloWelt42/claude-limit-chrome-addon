@@ -12,6 +12,7 @@ const el = {
   popupFooter: document.getElementById('popup-footer'),
   alertBar: document.getElementById('alert-bar'),
   alertText: document.getElementById('alert-text'),
+  incidentBar: document.getElementById('incident-bar'),
   systemStatus: document.getElementById('system-status'),
   statusWeb: document.getElementById('status-web'),
   statusPlatform: document.getElementById('status-platform'),
@@ -257,6 +258,7 @@ function updateStatus(data) {
 
   if (!status?.components) {
     el.systemStatus.classList.add('hidden');
+    el.incidentBar.classList.add('hidden');
     return;
   }
 
@@ -266,6 +268,21 @@ function updateStatus(data) {
   el.statusApi.className = 'dot ' + (status.components.api || '');
   el.statusCode.className = 'dot ' + (status.components.code || '');
   el.statusGov.className = 'dot ' + (status.components.gov || '');
+
+  el.systemStatus.classList.remove('has-incident', 'has-incident-major');
+
+  if (status.incident) {
+    el.incidentBar.textContent = status.incident;
+    el.incidentBar.classList.remove('hidden', 'impact-major', 'impact-critical');
+    if (status.overall === 'partial_outage' || status.overall === 'major_outage') {
+      el.incidentBar.classList.add('impact-major');
+      el.systemStatus.classList.add('has-incident-major');
+    } else {
+      el.systemStatus.classList.add('has-incident');
+    }
+  } else {
+    el.incidentBar.classList.add('hidden');
+  }
 }
 
 
