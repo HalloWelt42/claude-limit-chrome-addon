@@ -1,8 +1,8 @@
-# Dashboard fuer Claude
+# Dashboard für Claude
 
 Browser-Extension zur Anzeige deines Claude-Nutzungslimits.
 
-![Dashboard fuer Claude - Popup](media/screenshot-popup.png)
+![Dashboard für Claude - Popup](media/screenshot-popup.png)
 
 ## Features
 
@@ -36,24 +36,24 @@ Direkt aus dem Chrome Web Store installieren.
 ## Verwendung
 
 ### Erste Einrichtung
-1. Oeffne [claude.ai](https://claude.ai) und logge dich ein
+1. Öffne [claude.ai](https://claude.ai) und logge dich ein
 2. Klicke auf das Extension-Icon
 3. Klicke auf Sync - die Daten werden automatisch geladen
 
 ### Badge lesen
 - **Zahl im Donut** = 5h-Verbrauch in %
-- **Gruen** (0-39%) = Viel Kapazitaet
+- **Grün** (0-39%) = Viel Kapazität
 - **Gelb** (40-74%) = Moderat
 - **Rot** (75-100%) = Fast am Limit
 
 ### Status-Anzeige
 Die Punkte im Popup zeigen den Live-Status der Claude-Dienste:
-- Gruen = Betriebsbereit
-- Gelb = Eingeschraenkt
+- Grün = Betriebsbereit
+- Gelb = Eingeschränkt
 - Rot (pulsierend) = Ausfall
 - Blau = Wartung
 
-Klicke auf **?** fuer die vollstaendige Legende.
+Klicke auf **?** für die vollständige Legende.
 
 ## Dateistruktur
 
@@ -80,7 +80,7 @@ claude-dashboard/
 
 ## Unterstützen
 
-Dashboard fuer Claude ist ein privates Open-Source-Projekt. Kein Tracking, keine Werbung, keine Kompromisse.
+Dashboard für Claude ist ein privates Open-Source-Projekt. Kein Tracking, keine Werbung, keine Kompromisse.
 
 Wenn dir das Projekt gefällt, kannst du über den ❤️-Button im Popup "Danke sagen" -  oder direkt hier:
 
