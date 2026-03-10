@@ -367,7 +367,7 @@ async function addTopic(payload) {
     changed = true;
   }
 
-  // URL bei aelteren Eintraegen mit gleichem Titel nachtraeglich ergaenzen
+  // URL bei älteren Einträgen mit gleichem Titel nachträglich ergänzen
   if (url) {
     for (const d of Object.keys(data.topics)) {
       if (d === date) continue;

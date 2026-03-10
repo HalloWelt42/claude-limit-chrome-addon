@@ -1,12 +1,12 @@
 {
   "appName": {
-    "message": "Dashboard fuer Claude"
+    "message": "Dashboard für Claude"
   },
   "appDescription": {
-    "message": "Dashboard fuer Claude - Zeigt 5h/7d-Limits, Systemstatus und Chat-Themen mit Auto-Sync."
+    "message": "Dashboard für Claude - Zeigt 5h/7d-Limits, Systemstatus und Chat-Themen mit Auto-Sync."
   },
   "appDefaultTitle": {
-    "message": "Dashboard fuer Claude"
+    "message": "Dashboard für Claude"
   },
 
   "titleSync": {
@@ -16,7 +16,7 @@
     "message": "Einstellungen"
   },
   "titleStatusPage": {
-    "message": "Status-Seite oeffnen"
+    "message": "Status-Seite öffnen"
   },
 
   "fiveHourLimit": {
@@ -70,13 +70,13 @@
     "message": "Betriebsbereit"
   },
   "degraded": {
-    "message": "Eingeschraenkt"
+    "message": "Eingeschränkt"
   },
   "partialOutage": {
     "message": "Teilausfall"
   },
   "majorOutage": {
-    "message": "Stoerung"
+    "message": "Störung"
   },
   "maintenance": {
     "message": "Wartung"
@@ -97,7 +97,7 @@
     "message": "Quelle: status.anthropic.com"
   },
   "footerText": {
-    "message": "Dashboard fuer Claude v$1 -- (c) $2 HalloWelt42",
+    "message": "Dashboard für Claude v$1 -- (c) $2 HalloWelt42",
     "placeholders": {
       "1": { "content": "$1" },
       "2": { "content": "$2" }
@@ -150,13 +150,13 @@
     "message": "Einstellungen"
   },
   "pageTitle_settings": {
-    "message": "Einstellungen - Dashboard fuer Claude"
+    "message": "Einstellungen - Dashboard für Claude"
   },
   "howItWorks": {
     "message": "So funktioniert's"
   },
   "howItWorksText1": {
-    "message": "Diese Extension ruft deine Verbrauchsdaten direkt von der <strong>Claude.ai API</strong> ab. Du musst eingeloggt sein auf claude.ai -- es wird kein API Key benoetigt."
+    "message": "Diese Extension ruft deine Verbrauchsdaten direkt von der <strong>Claude.ai API</strong> ab. Du musst eingeloggt sein auf claude.ai -- es wird kein API Key benötigt."
   },
   "howItWorksText2": {
     "message": "Die Daten werden alle <strong>5 Minuten</strong> automatisch synchronisiert. Du kannst auch manuell im Popup auf das Sync-Icon klicken."
@@ -171,7 +171,7 @@
     "message": "Eingeloggt auf claude.ai"
   },
   "prereqCookies": {
-    "message": "Cookies fuer claude.ai erlaubt"
+    "message": "Cookies für claude.ai erlaubt"
   },
   "dataSection": {
     "message": "Daten"
@@ -183,19 +183,19 @@
     "message": "Erfasste Themen"
   },
   "historyEntries": {
-    "message": "Historie-Eintraege"
+    "message": "Historie-Einträge"
   },
   "exportBtn": {
     "message": "Exportieren"
   },
   "deleteAllData": {
-    "message": "Alle Daten loeschen"
+    "message": "Alle Daten löschen"
   },
   "debugInfo": {
     "message": "Debug-Info"
   },
   "loading": {
-    "message": "Laedt..."
+    "message": "Lädt..."
   },
   "topicCountFormat": {
     "message": "$1 ($2 Tage)",
@@ -244,10 +244,10 @@
     "message": "Export fehlgeschlagen"
   },
   "confirmDelete": {
-    "message": "Wirklich alle Daten loeschen? Dies kann nicht rueckgaengig gemacht werden."
+    "message": "Wirklich alle Daten löschen? Dies kann nicht rückgängig gemacht werden."
   },
   "dataDeleted": {
-    "message": "Daten geloescht!"
+    "message": "Daten gelöscht!"
   },
   "errorGeneric": {
     "message": "Fehler: $1",
@@ -257,7 +257,7 @@
   },
 
   "pageTitle_topics": {
-    "message": "Themen-Log - Dashboard fuer Claude"
+    "message": "Themen-Log - Dashboard für Claude"
   },
   "topicLogTitle": {
     "message": "Themen-Log"
@@ -278,7 +278,7 @@
     }
   },
   "noResultsFor": {
-    "message": "Keine Treffer fuer \"$1\"",
+    "message": "Keine Treffer für \"$1\"",
     "placeholders": {
       "1": { "content": "$1" }
     }
@@ -291,7 +291,7 @@
   },
 
   "pageTitle_history": {
-    "message": "Historie - Dashboard fuer Claude"
+    "message": "Historie - Dashboard für Claude"
   },
   "usageHistory": {
     "message": "Verbrauchs-Historie"
@@ -346,7 +346,7 @@
   },
 
   "pageTitle_donate": {
-    "message": "Dashboard fuer Claude -- Unterstuetzung"
+    "message": "Dashboard für Claude -- Unterstützung"
   },
   "madeWithLove": {
     "message": "Made with love in Sachsen-Anhalt"
@@ -358,7 +358,7 @@
     "message": "Ko-fi -- Kaffee spendieren"
   },
   "orByCrypto": {
-    "message": "Oder per Kryptowaehrung:"
+    "message": "Oder per Kryptowährung:"
   },
   "copyAddress": {
     "message": "Adresse kopieren"
@@ -367,7 +367,7 @@
     "message": "Kopiert!"
   },
   "thanksForSupport": {
-    "message": "Danke fuer deine Unterstuetzung! &#x2764;&#xFE0F;"
+    "message": "Danke für deine Unterstützung! &#x2764;&#xFE0F;"
   },
 
   "notLoggedInError": {
