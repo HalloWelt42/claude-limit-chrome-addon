@@ -265,12 +265,6 @@ async function updateBadge() {
   await drawGridIcon(colors);
 
   const isOutage = statusOverall === 'partial_outage' || statusOverall === 'major_outage';
-  if (isOutage) {
-    await chrome.action.setBadgeText({ text: '!!!' });
-    await chrome.action.setBadgeBackgroundColor({ color: '#ef4444' });
-    await chrome.action.setBadgeTextColor({ color: '#000000' });
-    return;
-  }
 
   if (badgePhase === 0 && fiveHour > 0) {
     await chrome.action.setBadgeText({ text: 'd' + fiveHour });
@@ -279,6 +273,10 @@ async function updateBadge() {
   } else if (badgePhase === 1 && sevenDay > 0) {
     await chrome.action.setBadgeText({ text: 'w' + sevenDay });
     await chrome.action.setBadgeBackgroundColor({ color: getColorForPercent(sevenDay) });
+    await chrome.action.setBadgeTextColor({ color: '#000000' });
+  } else if (badgePhase === 2 && isOutage) {
+    await chrome.action.setBadgeText({ text: '!!!' });
+    await chrome.action.setBadgeBackgroundColor({ color: '#ef4444' });
     await chrome.action.setBadgeTextColor({ color: '#000000' });
   } else {
     await chrome.action.setBadgeText({ text: '' });
