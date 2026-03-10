@@ -1,4 +1,4 @@
-# Dashboard fuer Claude -- Datenschutzerklaerung / Privacy Policy
+# Dashboard für Claude -- Datenschutzerklärung / Privacy Policy
 
 *Letzte Aktualisierung / Last updated: 2026-03-05*
 
@@ -8,7 +8,7 @@
 
 ### Überblick
 
-Dashboard fuer Claude ist eine Browser-Erweiterung, die **ausschliesslich lokal** auf deinem Geraet arbeitet. Es werden **keine Daten an externe Server uebertragen**, keine Analysen durchgefuehrt und kein Tracking eingesetzt.
+Dashboard für Claude ist eine Browser-Erweiterung, die **ausschließlich lokal** auf deinem Gerät arbeitet. Es werden **keine Daten an externe Server übertragen**, keine Analysen durchgeführt und kein Tracking eingesetzt.
 
 ### Welche Daten werden gespeichert?
 
@@ -22,7 +22,7 @@ Alle Daten werden ausschließlich in der lokalen Chrome Storage API deines Brows
 
 ### Externe Netzwerkanfragen
 
-Dashboard fuer Claude fuehrt folgende Netzwerkanfragen durch -- **automatisch alle 5 Minuten**:
+Dashboard für Claude führt folgende Netzwerkanfragen durch -- **automatisch alle 5 Minuten**:
 
 - **Claude.ai API**: Abruf deiner Nutzungs-/Limitdaten (erfordert aktive Anmeldung auf claude.ai)
 - **status.claude.com**: Abruf des System-Status der Claude-Dienste
@@ -46,7 +46,7 @@ Es werden **keine Daten an Server des Entwicklers** gesendet.
 
 ### Drittanbieter-Dienste
 
-Dashboard fuer Claude verwendet **keine** Analyse-, Werbe- oder Tracking-Dienste. Die einzigen externen Anfragen gehen an claude.ai (deine eigenen Kontodaten) und status.claude.com (oeffentlicher Status).
+Dashboard für Claude verwendet **keine** Analyse-, Werbe- oder Tracking-Dienste. Die einzigen externen Anfragen gehen an claude.ai (deine eigenen Kontodaten) und status.claude.com (öffentlicher Status).
 
 ### Deine Rechte
 
