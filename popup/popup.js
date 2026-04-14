@@ -18,6 +18,7 @@ const el = {
   statusPlatform: document.getElementById('status-platform'),
   statusApi: document.getElementById('status-api'),
   statusCode: document.getElementById('status-code'),
+  statusCowork: document.getElementById('status-cowork'),
   statusGov: document.getElementById('status-gov'),
   btnSettings: document.getElementById('btn-settings'),
   btnTopics: document.getElementById('btn-topics'),
@@ -267,6 +268,7 @@ function updateStatus(data) {
   el.statusPlatform.className = 'dot ' + (status.components.platform || '');
   el.statusApi.className = 'dot ' + (status.components.api || '');
   el.statusCode.className = 'dot ' + (status.components.code || '');
+  el.statusCowork.className = 'dot ' + (status.components.cowork || '');
   el.statusGov.className = 'dot ' + (status.components.gov || '');
 
   el.systemStatus.classList.remove('has-incident', 'has-incident-major');

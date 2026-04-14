@@ -136,6 +136,7 @@ async function syncStatus() {
       'platform': 'platform',
       'api': 'api',
       'claude code': 'code',
+      'cowork': 'cowork',
       'government': 'gov'
     };
 
